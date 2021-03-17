@@ -6,11 +6,11 @@
 
 
      <!-- this form is homepage handler-->
-        <section class="row justify-content-center">
+        <section class="row justify-content-center category">
             <div class="col-sm-12 row justify-content-center">
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/dairy-products.png"/>
+                        <img src="/images/dairy-products.png"/>
                         <div>
                            <h3>Dairy Products</h3>
                         </div> 
@@ -19,7 +19,7 @@
 
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/grains.png"/>
+                        <img src="/images/grains.png"/>
                         <div>
                            <h3>Grains</h3>
                         </div> 
@@ -28,7 +28,7 @@
 
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/fruits.png" />
+                        <img src="/images/fruits.png" />
                         <div>
                            <h3>Fruits</h3>
                         </div> 
@@ -37,7 +37,7 @@
 
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/vegetables.png"/>
+                        <img src="/images/vegetables.png"/>
                         <div>
                            <h3>Vegetables</h3>
                         </div> 
@@ -48,8 +48,8 @@
             <div class="col-sm-12 row justify-content-center">
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/meats.png"/>
-                        <div class="card-body">
+                        <img src="/images/meats.png"/>
+                        <div>
                            <h3>Meats</h3>
                         </div> 
                     </div>
@@ -57,7 +57,7 @@
                 
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/sauce-spice.png"/>
+                        <img src="/images/sauce-spice.png"/>
                         <div>
                            <h3>Sauce & Spice</h3>
                         </div> 
@@ -66,7 +66,7 @@
 
                 <div class="col-sm-3">
                     <div>    
-                        <img src="./assets/images/others.png"/>
+                        <img src="/images/others.png"/>
                         <div>
                            <h3>Others</h3>
                         </div> 
@@ -76,7 +76,7 @@
         </section>
 
         <!-- Add produts -->
-        <form>
+        <form class="input-form">
             <div class="row justify-content-center">
                 <div class="select-item">
                     <select class="form-select col-sm-12">
@@ -86,23 +86,17 @@
                         <option value="three">Orange</option>
                     </select>
 
-                    <div class="col-sm-12">
-                        <img src="./assets/images/apple.png" />
+                    <div class="col-sm-12 product-image">
+                        <img src="/images/apple.png" class="products" />
                     </div>
                 </div>    
             </div>
             
-            <div class="row justify-content-center">
-                <div class="col-sm-3">
-                    <button type="submit" class="btn">Add Item</button>
-                </div>
-
-                <div class="col-sm-4">
-                    <input id="datepicker" width="276" placeholder="Pick An Expire Date"/>
-                </div>
-
-                <div class="col-sm-3">
-                    <input type="number" value="0" min="0" max="50" step="1"/>
-                </div>
+            <div class="row justify-content-center product-form">    
+                <input id="datepicker" width="276" placeholder="Pick An Expire Date" style="height: 44px;"/>
+                <input type="number" value="0" min="0" max="50" step="1" class="amount"/>
+                <button type="submit" class="btn add-item">Add Item</button>
             </div>
         </form>
+
+        
