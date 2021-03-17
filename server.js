@@ -54,7 +54,7 @@ const PORT = process.env.PORT || 3001;
 
 // *** Start of init express session cookies pass ***
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'Super secret secrets',
     cookie: {},
     resave: false,
     saveUninitialized: true,
