@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS perishable_inventory_tracker;
+CREATE DATABASE perishable_inventory_tracker;
