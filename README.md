@@ -1,6 +1,3 @@
-
-
-
 # <a href="">🥗Welcome to your very own Perishable Food Tracker🥗</a>
 It is time to utilize our technological advances and stop having to worry about such trivial information such as food expiration dates!
 
@@ -40,5 +37,6 @@ It is time to utilize our technological advances and stop having to worry about 
 
 
 # Link to webpage
+
 
 

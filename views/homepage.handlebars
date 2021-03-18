@@ -1,0 +1,108 @@
+{{!-- <div class="container"> 
+    {{#each <posts> as |post|}}
+    {{> post-info post }}
+  {{/each}}
+</div> --}}
+
+
+     <!-- this form is homepage handler-->
+        <section class="row justify-content-center">
+            <div class="col-sm-12 row justify-content-center">
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/dairy-products.png"/>
+                        <div>
+                           <h3>Dairy Products</h3>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/grains.png"/>
+                        <div>
+                           <h3>Grains</h3>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/fruits.png" />
+                        <div>
+                           <h3>Fruits</h3>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/vegetables.png"/>
+                        <div>
+                           <h3>Vegetables</h3>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 row justify-content-center">
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/meats.png"/>
+                        <div class="card-body">
+                           <h3>Meats</h3>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/sauce-spice.png"/>
+                        <div>
+                           <h3>Sauce & Spice</h3>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div>    
+                        <img src="./assets/images/others.png"/>
+                        <div>
+                           <h3>Others</h3>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add produts -->
+        <form>
+            <div class="row justify-content-center">
+                <div class="select-item">
+                    <select class="form-select col-sm-12">
+                        <option selected>Please select the item from list</option>
+                        <option value="one">Apple</option>
+                        <option value="two">Pear</option>
+                        <option value="three">Orange</option>
+                    </select>
+
+                    <div class="col-sm-12">
+                        <img src="./assets/images/apple.png" />
+                    </div>
+                </div>    
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-sm-3">
+                    <button type="submit" class="btn">Add Item</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <input id="datepicker" width="276" placeholder="Pick An Expire Date"/>
+                </div>
+
+                <div class="col-sm-3">
+                    <input type="number" value="0" min="0" max="50" step="1"/>
+                </div>
+            </div>
+        </form>
