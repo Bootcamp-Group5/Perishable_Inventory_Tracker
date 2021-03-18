@@ -42,8 +42,8 @@
                     </ul>  
                 </div> 
 
-                <div class="col-sm-10 options">
-                    <div class="col-sm-12 row"> 
+                <div class="col-sm-10 storage">
+                    <div class="col-sm-12 row options"> 
                         <div class="col-sm-5">
                             <h4><i class='fa fa-calendar'></i> Order By Expiration Date</h4>
                         </div>    
@@ -72,102 +72,124 @@
 
                     <!-- Add produts -->
                     <form class="inventory row">
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="./Public/images/apple.png" class="card-img-top"/>
-                                <h4 class="product-name">Name</h4>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-12 date">
-                                        <input type="date" name="date" placeholder="Expire Date">
-                                    </div>
-
-                                    <div class="col-sm-12 quantity">
-                                        <p>Quantity</p>
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
-
+                        
+                            <div class="card sm-3" style="max-width: 400px;">
+                                <div class="row g-0 product-card">
+                                    <img src="./Public/images/apple.png" class="col-sm-3 product-image"/>
                                     
-                                    <div class="col-sm-12 update">
-                                        <button type="submit" class="btn">Update Change</button>
-                                        <button type="submit" class="btn">Remove Item</button>
+                                    <div class="col-sm-8">
+                                        <div class="card-body row">
+                                            <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                                            <div class="col-sm-12 date row">
+                                                <p class="col-sm-11">Expire Date: </p>
+                                                <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                                            </div>
+
+                                            <div class="col-sm-12 quantity row">
+                                                <p class="col-sm-7">Quantity: </p>
+                                                <div class="col-sm-4">
+                                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 update">
+                                                <button type="submit" class="btn">Update</button>
+                                                <button type="submit" class="btn">Remove</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="./Public/images/grains.png" class="card-img-top"/>
-                                <h4 class="product-name">Name</h4>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-8 date">
-                                        <input type="date" name="date" placeholder="Expire Date">
-                                    </div>
-
-                                    <div class="col-sm-12 quantity">
-                                        <p>Quantity</p>
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
-
+                            <div class="card sm-3" style="max-width: 400px;">
+                                <div class="row g-0 product-card">
+                                    <img src="./Public/images/apple.png" class="col-sm-3 product-image"/>
                                     
-                                    <div class="col-sm-12 update">
-                                        <button type="submit" class="btn">Update Change</button>
-                                        <button type="submit" class="btn">Remove Item</button>
+                                    <div class="col-sm-8">
+                                        <div class="card-body row">
+                                            <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                                            <div class="col-sm-12 date row">
+                                                <p class="col-sm-11">Expire Date: </p>
+                                                <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                                            </div>
+
+                                            <div class="col-sm-12 quantity row">
+                                                <p class="col-sm-7">Quantity: </p>
+                                                <div class="col-sm-4">
+                                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 update">
+                                                <button type="submit" class="btn">Update</button>
+                                                <button type="submit" class="btn">Remove</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="./Public/images/fruits.png" class="card-img-top"/>
-                                <h4 class="product-name">Name</h4>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-8 date">
-                                        <input type="date" name="date" placeholder="Expire Date">
-                                    </div>
-
-                                    <div class="col-sm-12 quantity">
-                                        <p>Quantity</p>
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
-
+                            <div class="card sm-3" style="max-width: 400px;">
+                                <div class="row g-0 product-card">
+                                    <img src="./Public/images/apple.png" class="col-sm-3 product-image"/>
                                     
-                                    <div class="col-sm-12 update">
-                                        <button type="submit" class="btn">Update Change</button>
-                                        <button type="submit" class="btn">Remove Item</button>
+                                    <div class="col-sm-8">
+                                        <div class="card-body row">
+                                            <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                                            <div class="col-sm-12 date row">
+                                                <p class="col-sm-11">Expire Date: </p>
+                                                <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                                            </div>
+
+                                            <div class="col-sm-12 quantity row">
+                                                <p class="col-sm-7">Quantity: </p>
+                                                <div class="col-sm-4">
+                                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 update">
+                                                <button type="submit" class="btn">Update</button>
+                                                <button type="submit" class="btn">Remove</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="./Public/images/meats.png" class="card-img-top"/>
-                                <h4 class="product-name">Name</h4>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-8 date">
-                                        <input type="date" name="date" placeholder="Expire Date">
-                                    </div>
-
-                                    <div class="col-sm-12 quantity">
-                                        <p>Quantity</p>
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
-
+                            <div class="card sm-3" style="max-width: 400px;">
+                                <div class="row g-0 product-card">
+                                    <img src="./Public/images/apple.png" class="col-sm-3 product-image"/>
                                     
-                                    <div class="col-sm-12 update">
-                                        <button type="submit" class="btn">Update Change</button>
-                                        <button type="submit" class="btn">Remove Item</button>
+                                    <div class="col-sm-8">
+                                        <div class="card-body row">
+                                            <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                                            <div class="col-sm-12 date row">
+                                                <p class="col-sm-11">Expire Date: </p>
+                                                <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                                            </div>
+
+                                            <div class="col-sm-12 quantity row">
+                                                <p class="col-sm-7">Quantity: </p>
+                                                <div class="col-sm-4">
+                                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 update">
+                                                <button type="submit" class="btn">Update</button>
+                                                <button type="submit" class="btn">Remove</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                           
 
                     </form>
 
