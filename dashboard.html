@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./Public/stylesheets/style.css">
   <title>Perishable Invertory Tracker</title>
 </head>
 
@@ -31,72 +30,145 @@
         <!-- this form is dashboard handler-->
         <section >
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-2 history">
                     <button type="clear" class="btn">Clear History</button>
                               
-                    <ul class="card-body list">
+                    <ul class="list">
                     <!-- searched history -->
-                      
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
                     </ul>  
                 </div> 
 
-                <div class="col-sm-10">
+                <div class="col-sm-10 options">
                     <div class="col-sm-12 row"> 
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-calendar'></i> Fliter By Expiration Date</h4>
+                            <h4><i class='fa fa-calendar'></i> Order By Expiration Date</h4>
                         </div>    
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sitemap'></i> Fliter By Categories</h4>
+                            <h4><i class='fa fa-sitemap'></i> Order By Categories</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-lemon-o'></i> Fliter By Product Name</h4>
+                            <h4><i class='fa fa-lemon-o'></i> Order By Product Name</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sort-numeric-asc'></i> Fliter By Numbers</h4>
+                            <h4><i class='fa fa-sort-numeric-asc'></i> Order By Quantity</h4>
                         </div>    
                     </div>
 
                       <!-- Search products -->
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 search-bar">
                         <form class="row">
-                            <input type="text" class="col-sm-10" placeholder="Enter A Product's Name" />
+                            <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" />
                             <div class="col-sm-2">
-                                <button type="search" class="btn" id= "search-button"><i class='fa fa-search'></i></button> 
+                                <button type="search" class="btn"><i class='fa fa-search'></i></button> 
                             </div>
                         </form>
                     </div>
 
                     <!-- Add produts -->
-                    <form>
-                        <div class="">
-                            <div class="card" style="width: 15rem">
-                                <img src="./assets/images/apple.png" class="card-img-top"/>
+                    <form class="inventory row">
+                        <div class="col-sm-3">
+                            <div class="card" style="width: 10rem">
+                                <img src="./Public/images/apple.png" class="card-img-top"/>
+                                <h4 class="product-name">Name</h4>
 
                                 <div class="card-body row">
-                                    <div class="col-sm-8">
-                                        <input id="datepicker" width="200" placeholder="Change An Expire Date" />
+                                    <div class="col-sm-12 date">
+                                        <input type="date" name="date" placeholder="Expire Date">
                                     </div>
 
-                                    <div class="col-sm-5">
-                                        <p>Update Quantity</p>
-                                    </div>
-
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-12 quantity">
+                                        <p>Quantity</p>
                                         <input type="number" value="0" min="0" max="50" step="1"/>
                                     </div>
-                                    
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn">Update Change</button>
-                                    </div>
 
-                                    <div class="col-sm-6">
+                                    
+                                    <div class="col-sm-12 update">
+                                        <button type="submit" class="btn">Update Change</button>
                                         <button type="submit" class="btn">Remove Item</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-sm-3">
+                            <div class="card" style="width: 10rem">
+                                <img src="./Public/images/grains.png" class="card-img-top"/>
+                                <h4 class="product-name">Name</h4>
+
+                                <div class="card-body row">
+                                    <div class="col-sm-8 date">
+                                        <input type="date" name="date" placeholder="Expire Date">
+                                    </div>
+
+                                    <div class="col-sm-12 quantity">
+                                        <p>Quantity</p>
+                                        <input type="number" value="0" min="0" max="50" step="1"/>
+                                    </div>
+
+                                    
+                                    <div class="col-sm-12 update">
+                                        <button type="submit" class="btn">Update Change</button>
+                                        <button type="submit" class="btn">Remove Item</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="card" style="width: 10rem">
+                                <img src="./Public/images/fruits.png" class="card-img-top"/>
+                                <h4 class="product-name">Name</h4>
+
+                                <div class="card-body row">
+                                    <div class="col-sm-8 date">
+                                        <input type="date" name="date" placeholder="Expire Date">
+                                    </div>
+
+                                    <div class="col-sm-12 quantity">
+                                        <p>Quantity</p>
+                                        <input type="number" value="0" min="0" max="50" step="1"/>
+                                    </div>
+
+                                    
+                                    <div class="col-sm-12 update">
+                                        <button type="submit" class="btn">Update Change</button>
+                                        <button type="submit" class="btn">Remove Item</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="card" style="width: 10rem">
+                                <img src="./Public/images/meats.png" class="card-img-top"/>
+                                <h4 class="product-name">Name</h4>
+
+                                <div class="card-body row">
+                                    <div class="col-sm-8 date">
+                                        <input type="date" name="date" placeholder="Expire Date">
+                                    </div>
+
+                                    <div class="col-sm-12 quantity">
+                                        <p>Quantity</p>
+                                        <input type="number" value="0" min="0" max="50" step="1"/>
+                                    </div>
+
+                                    
+                                    <div class="col-sm-12 update">
+                                        <button type="submit" class="btn">Update Change</button>
+                                        <button type="submit" class="btn">Remove Item</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </form>
 
                 </div>  
@@ -105,14 +177,6 @@
     </main>
 
     <footer></footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
 
 </body>
 
