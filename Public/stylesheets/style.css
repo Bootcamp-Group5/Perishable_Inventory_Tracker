@@ -263,3 +263,7 @@ img {
     display: grid;
     gap: 6px;
 }
+
+.product-name {
+    text-align: center;
+}
