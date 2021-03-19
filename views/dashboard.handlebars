@@ -41,15 +41,18 @@
                             <button type="search" class="btn col-sm-2"><i class='fa fa-search'></i></button> 
                         </form>
                     </div>
-
-                    {{#each products as |product|}}
+                  
                         <!-- Add produts -->
+                        
                         <form class="inventory row">
-                                <div class="card sm-3" style="max-width: 400px;">
+                            {{#each products as |product|}}
+                                <div class="card sm-3 items" style="max-width: 400px;">
+                                    
                                     {{> product-info product}}
+                                    
                                 </div>
+                            {{/each}}
                         </form>
-                    {{/each}}
 
                 </div>  
             </div>
