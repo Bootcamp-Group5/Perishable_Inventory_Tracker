@@ -21,7 +21,7 @@ const helpers = require('./utils/helpers');
 // Used to add back the concept of layout, partials and others.
 const exphbs = require('express-handlebars');
 //const hbs = exphbs.create({ helpers }); 
-const hbs = exphbs.create({}); 
+const hbs = exphbs.create({helpers}); 
 // *** End of Import Handlebars library require *** // 
 
 
