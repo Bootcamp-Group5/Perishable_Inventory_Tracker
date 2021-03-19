@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
       // get({ plain: true }) will get us the attributes that we defined.
      // console.log(dbPostData[0].get({ plain: true }));
       // We need full sequelize array
-      const products = dbProductData.map(products => products.get({ plain: true }));
+      const products = dbProductData.map(product => product.get({ plain: true }));
       //res.render('homepage', dbPostData[0].get({ plain: true }));
       res.render('homepage', { 
         products,
@@ -62,7 +62,6 @@ router.get('/signUp', (req, res) => {
   }
   
 });
-
 
 // logic for single-post handlebar
 router.get('/product/:id', (req, res) => {

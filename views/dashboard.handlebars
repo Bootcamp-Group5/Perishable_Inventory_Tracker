@@ -1,35 +1,43 @@
- <section >
+
+
+    
+        <!-- this form is dashboard handler-->
+        <section >
             <div class="row">
                 <div class="col-sm-2 history">
                     <button type="clear" class="btn">Clear History</button>
                               
                     <ul class="list">
                     <!-- searched history -->
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
+                      <li class="btn">apple</li>
                     </ul>  
                 </div> 
 
-                <div class="col-sm-10 options">
-                    <div class="col-sm-12 row"> 
+                <div class="col-sm-10 storage">
+                    <div class="col-sm-12 row options"> 
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-calendar'></i> Fliter By Expiration Date</h4>
+                            <h4><i class='fa fa-calendar'></i> Order By Expiration Date</h4>
                         </div>    
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sitemap'></i> Fliter By Categories</h4>
+                            <h4><i class='fa fa-sitemap'></i> Order By Categories</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-lemon-o'></i> Fliter By Product Name</h4>
+                            <h4><i class='fa fa-lemon-o'></i> Order By Product Name</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sort-numeric-asc'></i> Fliter By Numbers</h4>
+                            <h4><i class='fa fa-sort-numeric-asc'></i> Order By Quantity</h4>
                         </div>    
                     </div>
 
                       <!-- Search products -->
                     <div class="col-sm-12 search-bar">
                         <form class="row">
-                            <input type="text" class="col-sm-9" placeholder="Enter A Product's Name" />
+                            <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" />
                             <div class="col-sm-2">
                                 <button type="search" class="btn"><i class='fa fa-search'></i></button> 
                             </div>
@@ -38,31 +46,44 @@
 
                     <!-- Add produts -->
                     <form class="inventory row">
-                        <!-- start here for each product card -->
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="./Public/images/apple.png" class="card-img-top"/>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-12 date">
-                                        <input id="datepicker" width="170" placeholder="Expire Date" />
-                                    </div>
-
-                                    <div class="col-sm-12 quantity">
-                                        <p>Quantity</p>
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
-
+                        
+                            <div class="card sm-3" style="max-width: 400px;">
+                                <div class="row g-0 product-card">
+                                    <img src="./images/apple.png" class="col-sm-3 product-image"/>
                                     
-                                    <div class="col-sm-12 update">
-                                        <button type="submit" class="btn">Update Change</button>
-                                        <button type="submit" class="btn">Remove Item</button>
+                                    <div class="col-sm-8">
+                                        <div class="card-body row">
+                                            <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                                            <div class="col-sm-12 date row">
+                                                <p class="col-sm-11">Expire Date: </p>
+                                                <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                                            </div>
+
+                                            <div class="col-sm-12 quantity row">
+                                                <p class="col-sm-7">Quantity: </p>
+                                                <div class="col-sm-4">
+                                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 update">
+                                                <button type="submit" class="btn">Update</button>
+                                                <button type="submit" class="btn">Remove</button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </form>
 
                 </div>  
             </div>
-</section>
+        </section>
+
+
+    <footer></footer>
+
+</body>
+
+</html>
