@@ -9,10 +9,10 @@
                               
                     <ul class="list">
                     <!-- searched history -->
-                      <li class="btn">apple</li>
-                      <li class="btn">apple</li>
-                      <li class="btn">apple</li>
-                      <li class="btn">apple</li>
+                      <li>apple</li>
+                      <li>apple</li>
+                      <li>apple</li>
+                      <li>apple</li>
                     </ul>  
                 </div> 
 
@@ -38,9 +38,7 @@
                     <div class="col-sm-12 search-bar">
                         <form class="row">
                             <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" />
-                            <div class="col-sm-2">
-                                <button type="search" class="btn"><i class='fa fa-search'></i></button> 
-                            </div>
+                            <button type="search" class="btn col-sm-2"><i class='fa fa-search'></i></button> 
                         </form>
                     </div>
 
@@ -48,10 +46,9 @@
                         <!-- Add produts -->
                         <form class="inventory row">
                                 <div class="card sm-3" style="max-width: 400px;">
+                                    {{> product-info product}}
                                 </div>
                         </form>
-                            
-                        {{> product-info product}}
                     {{/each}}
 
                 </div>  
