@@ -1,20 +1,22 @@
 :root {
-    --primary: #dcead1;
-    --secondary: rgba(93, 171, 155, 0.8);
-    --gradient: linear-gradient(90deg, hsla(64, 41%, 92%, 0.7) 0%, 
-                                       hsla(180, 39%, 88%, 0.7) 23%, 
-                                       hsla(196, 83%, 84%, 0.7) 43%, 
-                                       hsla(194, 71%, 85%, 0.7) 61%, 
-                                       hsla(292, 63%, 84%, 0.3) 82%, 
-                                       hsla(305, 75%, 83%, 0.3) 100%);
-    --hover:  rgb(125, 119, 161);
-    --font: #4f497d;
-    --border: rgba(128, 241, 215, 0.9);
-    --comment: rgba(240, 243, 237, 0.8);
-    --link: rgba(42,132,68,0.9);
+    --primary: rgb(204, 234, 212);
+    --gradient: linear-gradient(0deg, hsl(165deg, 86%, 37%) 0%, hsla(145, 84%, 73%, 1) 52%, hsl(165deg, 78%, 36%) 100%);
+    --letter: rgba(10,138,101, 0.9);
+    --shadow-one: rgba(255,246,115,0.9);
+    --shadow-two:rgba(18,117,82,0.4);
+    --shadow-three: rgba(18,117,82,0.2);
+    --hover:  #129872;
+    --font: #08694d;
+    --card: linear-gradient(180deg, 
+            hsla(72, 100%, 98%, 0.7) 0%, 
+            hsla(63, 49%, 92%, 0.7) 50%, 
+            hsla(72, 100%, 98%, 0.7) 100%);
     --background: rgba(0, 0, 0, 0); 
-    --button-color: #ef95f3;
-    --button-image: linear-gradient(45deg, #ef95f3 0%, #4bcff3 52%, #87f1b6cf 90%);
+    --search-box: #c4c4c4;
+    --box-color: #fff;
+    --box-shadow: rgba(0,0,0,0.1);
+    --button-color: #75e6a7cf;
+    --button-image: linear-gradient(45deg, #75e6a7cf 0%, #bbefa5 52%, #79e2a8cf 90%);
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
@@ -30,8 +32,7 @@ body {
     margin: 0;
     color: var(--font);
     font-family: Helvetica, Arial, sans-serif;
-    background-image: var(--gradient);
-    background-attachment: fixed;
+    background-image: url(../images/background.PNG);
     font-size: 20px;
 }
 
@@ -40,9 +41,9 @@ body {
 }
 
 header {
-    background-image: url(../images/background.png);
+    background-image: url(../images/header.jpg);
     background-size: cover;
-    background-attachment: fixed;
+    background-position: bottom;
     padding: 20px 35px;
     line-height: 2.0;
 }
@@ -51,6 +52,22 @@ header div h1 {
     display: flex;
     margin-top: 20px;
     justify-content: center;
+    font-size: 50px;    
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--letter);
+    text-shadow: 1px -1px 1px var(--shadow-one),
+        1px -2px 1px var(--shadow-one),
+        1px -3px 1px var(--shadow-one),
+        1px -4px 1px var(--shadow-one),
+        1px -5px 1px var(--shadow-one),
+        1px -6px 1px var(--shadow-one),
+        1px -7px 1px var(--shadow-one), 
+        1px -8px 1px var(--shadow-one),    
+    1px -9px 6px var(--shadow-two),
+    1px -11px 10px var(--shadow-three),
+    1px -13px 35px var(--shadow-three),
+    1px -15px 60px var(--shadow-two);
 }
 
 
@@ -127,10 +144,10 @@ label {
 .form-select {
     padding: 9px;
     margin: 30px;
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--search-box);
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
 }
 
 .category-image {
@@ -151,10 +168,10 @@ label {
 
 .amount {
     padding: 5px;
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--search-box);
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
 }
 
 
@@ -166,20 +183,20 @@ label {
 
 .expire-date {
     margin: 0 0 0 -15px;
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--search-box);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--box-color);
     padding: 3px 5px;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
     width: 190px;
 
 }
 
 .date input {
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--search-box);
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
     height: 49px;
 }
 
@@ -232,10 +249,10 @@ label {
 }
 
 .bar{
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--search-box);
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
 }
 
 
@@ -246,6 +263,22 @@ label {
     gap: 6px;
 }
 
+.list li {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 23px;
+    transition: all .2s ease-out;
+}
+
+.list li:hover {
+    background: var(--hover);
+    border-radius: 10px;
+    text-shadow: none;
+    color: var(--primary);
+    padding: 3px;
+}
+
 .card-body {
     padding: 0;
     row-gap: 10px;
@@ -254,6 +287,15 @@ label {
 .card-title {
     margin: auto 8px;
     text-align: start;
+    transition: all .2s ease-out;
+}
+
+.card-title:hover {
+    background: var(--hover);
+    border-radius: 10px;
+    text-shadow: none;
+    color: var(--primary);
+    padding: 5px;
 }
 
 .dates, .add-items {
@@ -291,6 +333,7 @@ label {
 .product-card{
     display: flex;
     align-items: center;
+    padding: 5px;
 }
 
 .item-selection {
@@ -322,4 +365,9 @@ label {
 .card {
     background-color: var(--background);
     border: none;
+}
+
+.items {
+    background-image: var(--card);
+    border-radius: 45px;
 }
