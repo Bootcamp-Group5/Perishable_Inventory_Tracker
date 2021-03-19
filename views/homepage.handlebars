@@ -1,111 +1,102 @@
-{{!-- <div class="container"> 
-    {{#each <posts> as |post|}}
-    {{> post-info post }}
-  {{/each}}
-</div> --}}
 
-
-     <!-- this form is homepage handler-->
-        <section class="row category">
-            <div class="col-sm-3">
-                <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/dairy-products.png" class="category-image"/>
-                        <h3 class="card-title">Dairy Products</h3>    
-                    </div>
-                </div>
-
-                <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/grains.png" class="category-image"/>
-                        <h3 class="card-title">Grains</h3>    
-                    </div>
-                </div>
-
-                <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/fruits.png" class="category-image"/>
-                        <h3 class="card-title">Fruits</h3>    
-                    </div>
-                </div>
-
-                <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/vegetables.png" class="category-image"/>
-                        <h3 class="card-title">Vegetables</h3>    
-                    </div>
-                </div>
-
-                 <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/meats.png" class="category-image"/>
-                        <h3 class="card-title">Meats</h3>    
-                    </div>
-                </div>
-                
-                  <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/sauce-spice.png" class="category-image"/>
-                        <h3 class="card-title">Sauce & Spice</h3>    
-                    </div>
-                </div>
-
-                <div class="card sm-2 category-card" style="max-width: 500px;">
-                    <div class="row g-0">
-                        <img src="/images/others.png" class="category-image"/>
-                        <h3 class="card-title">Others</h3>    
-                    </div>
+    <!-- this form is homepage handler-->
+    <section class="row category">
+        <div class="col-sm-3">
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/dairy-products.png" class="category-image"/>
+                    <h3 class="card-title">Dairy Products</h3>    
                 </div>
             </div>
 
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/grains.png" class="category-image"/>
+                    <h3 class="card-title">Grains</h3>    
+                </div>
+            </div>
 
-              <!-- Add produts -->
-            <form class="col-sm-9 input-form">
-                <div class="row justify-content-center">
-                    <div class="col-sm-11 row product-search">
-                        <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" />
-                        <button type="search" class="btn"><i class='fa fa-search'></i></button>  
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/fruits.png" class="category-image"/>
+                    <h3 class="card-title">Fruits</h3>    
+                </div>
+            </div>
 
-                        <select class="form-select col-sm-8">
-                            <option selected>Please select the item from list</option>
-                            <option value="one">Apple</option>
-                            <option value="two">Pear</option>
-                            <option value="three">Orange</option>
-                        </select>   
-                    </div>
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/vegetables.png" class="category-image"/>
+                    <h3 class="card-title">Vegetables</h3>    
+                </div>
+            </div>
 
-                    <div class="col-sm-12 row select-item">   
-                        <div class="col-sm-6 row add-from"> 
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/meats.png" class="category-image"/>
+                    <h3 class="card-title">Meats</h3>    
+                </div>
+            </div>
+                
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/sauce-spice.png" class="category-image"/>
+                    <h3 class="card-title">Sauce & Spice</h3>    
+                </div>
+            </div>
 
-                            <div class="col-sm-12 row dates">
-                                <p class="col-sm-5">Expire Date: </p>
-                                <div class="col-sm-6">
-                                    <input type="date" name="date" placeholder="Expire Date" class="expire-date">
-                                </div> 
-                            </div>
+            <div class="card sm-2 category-card" style="max-width: 500px;">
+                <div class="row g-0">
+                    <img src="./Public/images/others.png" class="category-image"/>
+                    <h3 class="card-title">Others</h3>    
+                </div>
+            </div>
+        </div>
 
-                            <div class="col-sm-12 row add-items">
-                                <p class="col-sm-5">Quantity: </p>
-                                <div class="col-sm-6">
-                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
-                                </div>
+
+        <!-- Add produts -->
+        <form class="col-sm-9 input-form">
+            <div class="row justify-content-center">
+                <div class="col-sm-11 row product-search">
+                    <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" />
+                    <button type="search" class="btn"><i class='fa fa-search'></i></button>  
+
+                    <select class="form-select col-sm-8">
+                        <option selected>Please select the item from list</option>
+                        <option value="one">Apple</option>
+                        <option value="two">Pear</option>
+                        <option value="three">Orange</option>
+                    </select>   
+                </div>
+
+                <div class="col-sm-12 row select-item">   
+                    <div class="col-sm-6 row add-from"> 
+
+                        <div class="col-sm-12 row dates">
+                            <p class="col-sm-5">Expire Date: </p>
+                            <div class="col-sm-6">
+                                <input type="date" name="date" placeholder="Expire Date" class="expire-date">
                             </div> 
+                        </div>
 
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn">Add Item</button> 
-                            </div>     
+                        <div class="col-sm-12 row add-items">
+                            <p class="col-sm-5">Quantity: </p>
+                            <div class="col-sm-6">
+                                <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                            </div>
                         </div> 
 
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 10rem">
-                                <img src="/images/apple.png" class="card-img-top" />
-                            </div>    
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn">Add Item</button> 
                         </div>     
-                    </div>
-                </div>     
-            </form>
-        </section>
+                    </div> 
 
-      
+                    <div class="col-sm-3">
+                        <div class="card" style="width: 10rem">
+                            <img src="./Public/images/apple.png" class="card-img-top" />
+                        </div>    
+                    </div>     
+                </div>
+            </div>     
+        </form>
+    </section>
 
-        

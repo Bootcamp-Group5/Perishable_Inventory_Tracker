@@ -19,9 +19,13 @@
 
         <nav class="col-sm-12 nav">
           <!-- need to input the href after the API routes complete -->
+          {{#if loggedIn}}
           <a href="/" class="nav-link">Home</a>
           <a href="/dashboard" class="nav-link">Dashboard</a>
           <a href="/" id="logout" class="nav-link">logout</a>
+           {{else}}
+            <a href="/" class="nav-link">Home</a>
+          <a href="/dashboard" class="nav-link">Dashboard</a>
           <a href="/login" class="nav-link">login</a>   
         </nav>
     </header>

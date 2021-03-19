@@ -7,12 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="./Public/stylesheets/style.css">
   <title>Perishable Invertory Tracker</title>
 </head>
 
 <body>
+  <header class="row justify-content-center">
+    <div class="col-sm-12">
+        <h1>Perishable Invertory Tracker</h1>
+    </div>
 
+    <nav class="col-sm-12 nav">
+      <!-- need to input the href after the API routes complete -->
+      <a href="/" class="nav-link">Home</a>
+      <a href="/dashboard" class="nav-link">Dashboard</a>
+      <a href="/" id="logout" class="nav-link">logout</a>
+      <a href="/login" class="nav-link">login</a>   
+    </nav>
+  </header>
 
     <main>
         <!-- this form is login handler-->
