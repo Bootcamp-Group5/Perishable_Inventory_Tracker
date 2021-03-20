@@ -131,6 +131,55 @@ function sortByName() {
     console.log(products);
 };
 
+// *************************************************************************** //
+// ** These two functions work fine, if products have quantity or category ** //
+// *************************************************************************** //
+// function sortByQuantity() {
+//     const products = JSON.parse(localStorage.getItem('products'));
+
+//     if (products) {
+//         products.sort((a,b) => {
+//             const amountA = a.amount;
+//             const amountB = b.amount;
+
+//             if (amountA < amountB) {
+//                 return 1;
+//             };
+
+//             if (amountA > amountB) {
+//                 return -1;
+//             };
+
+//             return 0;
+//         });
+//     };
+
+//     console.log(products);
+// };
+
+// function sortByCategory() {
+//     const products = JSON.parse(localStorage.getItem('products'));
+
+//     if (products) {
+//         products.sort((a,b) => {
+//             const catA = a.category;
+//             const catB = b.categoy;
+
+//             if (catA > catB) {
+//                 return 1;
+//             };
+
+//             if (catA < nameB) {
+//                 return -1;
+//             };
+
+//             return 0;
+//         });
+//     };
+
+//     console.log(products);
+// };
+
 
 getAllProducts();
 loadHistory();
@@ -139,3 +188,5 @@ document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
 document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
 document.querySelector("#sort-by-name").addEventListener('click', sortByName);
+// document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
+// document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
