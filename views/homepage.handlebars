@@ -72,6 +72,13 @@
                     <div class="col-sm-6 row add-form"> 
 
                         <div class="col-sm-12 row dates">
+                            <class="col-sm-4">Product Name: </p>
+                            <div class="col-sm-6">
+                                <input type="text" id="p-name" />
+                            </div> 
+                        </div>
+
+                        <div class="col-sm-12 row dates">
                             <p class="col-sm-4">Expire Date: </p>
                             <div class="col-sm-6">
                                 <input type="date" id="date" class="expire-date">
@@ -81,12 +88,12 @@
                         <div class="col-sm-12 row add-items">
                             <p class="col-sm-4">Quantity: </p>
                             <div class="col-sm-6">
-                                <input type="number" value="1" min="1" max="50" step="1" class="amount" />
+                                <input type="number" id="quantity" value="1" min="1" max="50" step="1" class="amount" />
                             </div>
                         </div> 
 
                         <div class="col-sm-12">
-                            <button type="submit" class="btn">Add Item</button> 
+                            <button type="submit" class="btn" id="add-product">Add Item</button> 
                         </div>     
                     </div> 
 

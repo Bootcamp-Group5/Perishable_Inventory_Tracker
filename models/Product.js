@@ -19,7 +19,7 @@ Product.init(
       },
       image_string: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
         // validate: {
         //   isURL: true
         // }
