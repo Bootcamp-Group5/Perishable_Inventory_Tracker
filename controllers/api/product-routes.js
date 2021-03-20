@@ -77,8 +77,8 @@ router.post('/',  withAuth, (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
     Product.create({
       name: req.body.name,
-      image_string: req.body.image_string,
       expiration_date: req.body.expiration_date,
+      category: req.body.category,
       quantity: req.body.quantity,
       // insomina test will use  user_id: req.body.user_id
       // ussing session ID

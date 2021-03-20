@@ -24,6 +24,10 @@ Product.init(
         //   isURL: true
         // }
       },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       expiration_date: {
         type: DataTypes.STRING,
         allowNull: false
