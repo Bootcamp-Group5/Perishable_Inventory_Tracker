@@ -384,3 +384,11 @@ label {
     background-image: var(--card);
     border-radius: 45px;
 }
+
+.aboutus {
+    text-align: center;
+    width: 80%;
+    margin: 5vw auto;
+    height: 70%;
+    line-height: 3;
+}
