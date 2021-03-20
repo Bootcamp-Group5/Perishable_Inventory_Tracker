@@ -36,13 +36,6 @@ function addToSearchHistory(pName) {
     }
 };
 
-function addToList(item) {
-    const liEl = document.createElement('li');
-    liEl.textContent = item;
-
-    historyList.prepend(liEl);
-};
-
 function getProductName() {
     const productNameEl = document.querySelector("#p-name"); 
     let productName = productNameEl.value.trim();
@@ -53,13 +46,8 @@ function getProductName() {
     return productName
 };
 
-async function searchProduct(pName) {
-    // the apiRoute is not correct!!!
-    const res = await fetch(`/api/products/${pName}`).then(res => res.json());
-    
-    if (res.ok) {
-        saveProducts(res);
-    }
+function searchProduct(pName) {
+    // should have a apiRoute to fetch
 };
 
 function saveProducts(products) {
@@ -197,7 +185,7 @@ async function updateProductHandler(e) {
     });
 
     alert('successfully updated!!')
-}
+};
 
 
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
@@ -207,4 +195,6 @@ document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
 document.querySelector("#sort-by-name").addEventListener('click', sortByName);
 // document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
 // document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
-document.querySelector("#update").addEventListener('click', updateProductHandler)
+document.querySelectorAll(".update").forEach(item => {
+    item.addEventListener('click', updateProductHandler);
+})
