@@ -4,9 +4,8 @@ function insertDate() {
     document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
 };
 
-function addProductHandler(e) {
+async function addProductHandler(e) {
     e.preventDefault();
-    console.log('clicked');
 
     const name = getProductName();
     const category = getCategory();
@@ -17,18 +16,32 @@ function addProductHandler(e) {
         return alert('You need to select a category');
     };
 
+    const product = {
+        name,
+        category,
+        expiration_date,
+        quantity
+    };
+
+    await saveProduct(product);
+    resetForm();
+    alert('Added!');
+};
+
+function saveProduct(product) {
     fetch('/api/products', {
         method: 'POST',
-        body: JSON.stringify({
-            name,
-            category,
-            expiration_date,
-            quantity
-        }),
+        body: JSON.stringify( product ),
         headers: { 'Content-Type': 'application/json' }
-    })
-    .then(res => console.log(res));
+    });
 };
+
+function resetForm() {
+    document.querySelector('#p-name').value = '';
+    document.querySelector('select').selectedIndex = 0;
+    insertDate();
+    document.querySelector('#quantity').value = 1;
+}
 
 function getProductName() {
     const pName = document.querySelector('#p-name').value.trim();
