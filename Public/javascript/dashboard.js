@@ -1,3 +1,6 @@
+const historyList = document.querySelector('.list');
+let searchHistory = [];
+
 async function getAllProducts() {
     const products = await fetch('/api/products').then(res => res.json());
 
@@ -13,6 +16,31 @@ function searchProductHandler(e) {
     };
 
     searchProduct(productName);
+    addToSearchHistory(productName);
+};
+
+function addToSearchHistory(pName) {
+    let isIncluded = false;
+    for (let i = 0; i < searchHistory.length; i++) {
+        if (searchHistory[i] === pName) {
+            isIncluded = true;
+            break;
+        }
+    }
+    
+    if (!isIncluded) {
+        addToList(pName);
+
+        searchHistory.unshift(pName);
+        localStorage.setItem('history', JSON.stringify(searchHistory));
+    }
+};
+
+function addToList(item) {
+    const liEl = document.createElement('li');
+    liEl.textContent = item;
+
+    historyList.prepend(liEl);
 };
 
 function getProductName() {
