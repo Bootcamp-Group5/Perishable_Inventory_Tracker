@@ -31,7 +31,7 @@ function addToSearchHistory(pName) {
     if (!isIncluded) {
         addToList(pName);
 
-        searchHistory.unshift(pName);
+        searchHistory.push(pName);
         localStorage.setItem('history', JSON.stringify(searchHistory));
     }
 };
@@ -65,7 +65,7 @@ function saveProducts(products) {
 };
 
 function loadHistory() {
-    const searchHistory = JSON.parse(localStorage.getItem('history')) || [];
+    searchHistory = JSON.parse(localStorage.getItem('history')) || [];
     
     searchHistory.forEach(item => addToList(item));
 };
@@ -77,10 +77,18 @@ function clearHistory() {
     while (historyList.hasChildNodes()) {
         historyList.removeChild(historyList.firstChild);
     };
-}
+};
+
+function historySearchHandler(e) {
+    if (e.target.closest('li')) {
+        const product = e.target.textContent;
+        searchProduct(product);
+    };
+};
 
 
 getAllProducts();
 loadHistory();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
+historyList.addEventListener('click', historySearchHandler);
