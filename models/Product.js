@@ -31,6 +31,10 @@ Product.init(
         //   isURL: true
         // }
       },
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }, 
       user_id: {
         type: DataTypes.INTEGER,
         references: {
