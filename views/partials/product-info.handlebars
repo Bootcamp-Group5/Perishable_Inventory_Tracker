@@ -4,22 +4,23 @@
                 
                 <div class="col-sm-8">
                     <div class="card-body row">
-                        <h4 class="col-sm-12 product-name">Name <span><i class='fa fa-circle'></i></span></h4>
+                        <h4 class="col-sm-12 product-name" data-id="{{ id }}">{{ name }} <span><i class='fa fa-circle'></i></span></h4>
                         <div class="col-sm-12 date row">
                             <p class="col-sm-11">Expire Date: </p>
-                            <input type="date" name="date" placeholder="Expire Date" class="col-sm-12">
+                            <p>{{ expiration_date }}</p>
                         </div>
 
                         <div class="col-sm-12 quantity row">
                             <p class="col-sm-7">Quantity: </p>
                             <div class="col-sm-4">
+                                <!-- should add quantity to the value -->
                                 <input type="number" value="0" min="0" max="100" step="1" class="amount" />
                             </div>
                         </div>
 
                         <div class="col-sm-12 update">
-                            <button type="submit" class="btn">Update</button>
-                            <button type="submit" class="btn">Remove</button>
+                            <button type="submit" class="btn" id='update'>Update</button>
+                            <button type="submit" class="btn" id="remove">Remove</button>
                         </div>
 
                     </div>
