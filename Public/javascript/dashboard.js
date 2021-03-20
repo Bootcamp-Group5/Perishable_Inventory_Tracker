@@ -86,9 +86,56 @@ function historySearchHandler(e) {
     };
 };
 
+function sortByExp() {
+    const products = JSON.parse(localStorage.getItem('products'));
+    if (products) {
+        products.sort((a,b) => {
+            const expA = a.expiration_date;
+            const expB = b.expiration_date;
+
+            if (expA > expB) {
+                return 1;
+            };
+
+            if (expA < expB) {
+                return -1;
+            };
+
+            return 0;
+        });
+    };
+
+    console.log(products)
+};
+
+function sortByName() {
+    const products = JSON.parse(localStorage.getItem('products'));
+
+    if (products) {
+        products.sort((a,b) => {
+            const nameA = a.name;
+            const nameB = b.name;
+
+            if (nameA > nameB) {
+                return 1;
+            };
+
+            if (nameA < nameB) {
+                return -1;
+            };
+
+            return 0;
+        });
+    }
+
+    console.log(products);
+};
+
 
 getAllProducts();
 loadHistory();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
+document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
+document.querySelector("#sort-by-name").addEventListener('click', sortByName);
