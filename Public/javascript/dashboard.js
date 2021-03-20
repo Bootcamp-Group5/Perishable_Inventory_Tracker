@@ -64,6 +64,13 @@ function saveProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
 };
 
+function loadHistory() {
+    const searchHistory = JSON.parse(localStorage.getItem('history')) || [];
+    
+    searchHistory.forEach(item => addToList(item));
+}
+
 
 getAllProducts();
+loadHistory();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
