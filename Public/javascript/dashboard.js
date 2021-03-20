@@ -60,6 +60,13 @@ function loadHistory() {
     searchHistory.forEach(item => addToList(item));
 };
 
+function addToList(item) {
+    const liEl = document.createElement('li');
+    liEl.textContent = item;
+
+    historyList.prepend(liEl);
+};
+
 function clearHistory() {
     searchHistory = [];
     localStorage.removeItem('history');
@@ -184,7 +191,26 @@ async function updateProductHandler(e) {
         headers: { 'Content-Type': 'application/json' }
     });
 
-    alert('successfully updated!!')
+    alert('Successfully updated!!')
+};
+
+async function removeProductHandler(e) {
+    e.preventDefault();
+    const d = confirm('Are you sure you want to delete the product?');
+
+    if (!d) {
+        return 0;
+    };
+
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
+    await fetch(`/api/products/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    location.reload();
+    alert('Successfully deleted!')
 };
 
 
@@ -195,6 +221,9 @@ document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
 document.querySelector("#sort-by-name").addEventListener('click', sortByName);
 // document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
 // document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
-document.querySelectorAll(".update").forEach(item => {
+document.querySelectorAll(".update-btn").forEach(item => {
     item.addEventListener('click', updateProductHandler);
+});
+document.querySelectorAll(".remove-btn").forEach(elm => {
+    elm.addEventListener('click', removeProductHandler);
 })
