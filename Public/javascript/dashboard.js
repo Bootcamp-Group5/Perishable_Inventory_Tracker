@@ -1,11 +1,11 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
-async function getAllProducts() {
-    const products = await fetch('/api/products').then(res => res.json());
+// async function getAllProducts() {
+//     const products = await fetch('/api/products').then(res => res.json());
 
-    saveProducts(products);
-};
+//     saveProducts(products);
+// };
 
 function searchProductHandler(e) {
     e.preventDefault();
@@ -45,9 +45,11 @@ function addToList(item) {
 
 function getProductName() {
     const productNameEl = document.querySelector("#p-name"); 
-    const productName = productNameEl.value.toLowerCase();
+    let productName = productNameEl.value.trim();
+    productName = productName[0].toUpperCase() + productName.substring(1).toLowerCase();
 
     productNameEl.value = '';
+    console.log(productName);
     return productName
 };
 
@@ -139,8 +141,8 @@ function sortByName() {
 
 //     if (products) {
 //         products.sort((a,b) => {
-//             const amountA = a.amount;
-//             const amountB = b.amount;
+//             const amountA = a.quantity;
+//             const amountB = b.quantity;
 
 //             if (amountA < amountB) {
 //                 return 1;
@@ -180,9 +182,24 @@ function sortByName() {
 //     console.log(products);
 // };
 
+async function updateProductHandler(e) {
+    e.preventDefault();
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
 
-getAllProducts();
-loadHistory();
+    const quantity = card.querySelector('.quantity-nu').value;
+    await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            quantity,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    alert('successfully updated!!')
+}
+
+
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
@@ -190,3 +207,4 @@ document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
 document.querySelector("#sort-by-name").addEventListener('click', sortByName);
 // document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
 // document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
+document.querySelector("#update").addEventListener('click', updateProductHandler)
