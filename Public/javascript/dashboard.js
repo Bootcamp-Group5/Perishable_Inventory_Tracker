@@ -68,9 +68,19 @@ function loadHistory() {
     const searchHistory = JSON.parse(localStorage.getItem('history')) || [];
     
     searchHistory.forEach(item => addToList(item));
+};
+
+function clearHistory() {
+    searchHistory = [];
+    localStorage.removeItem('history');
+
+    while (historyList.hasChildNodes()) {
+        historyList.removeChild(historyList.firstChild);
+    };
 }
 
 
 getAllProducts();
 loadHistory();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
+document.querySelector("#clear").addEventListener('click', clearHistory);
