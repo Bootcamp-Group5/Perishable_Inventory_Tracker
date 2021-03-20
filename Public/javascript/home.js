@@ -1,7 +1,9 @@
 function insertDate() {
-    const today = new Date();
-
-    document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    let today = new Date();
+    today = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    const expDate = document.getElementById("date");
+    expDate.value = today;
+    expDate.setAttribute('min', today);
 };
 
 async function addProductHandler(e) {
@@ -33,7 +35,10 @@ function saveProduct(product) {
         method: 'POST',
         body: JSON.stringify( product ),
         headers: { 'Content-Type': 'application/json' }
-    });
+    })
+    .catch(err => {
+        console.log(err);
+    })
 };
 
 function resetForm() {
