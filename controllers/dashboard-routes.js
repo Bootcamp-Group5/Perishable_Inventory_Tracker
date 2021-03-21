@@ -16,6 +16,7 @@ router.get('/', withAuth, (req, res) => {
     'name',
     'image_string',
     'expiration_date',
+    'category',
     'quantity'
       //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
@@ -51,6 +52,7 @@ router.get('/full', withAuth, (req, res) => {
         'name',
         'image_string',
         'expiration_date',
+        'category',
         'quantity'
         //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],
@@ -79,6 +81,7 @@ router.get('/edit/:id', (req, res) => {
         'name',
         'image_string',
         'expiration_date',
+        'category',
         'quantity'
       //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
