@@ -6,7 +6,7 @@
     --shadow-two:rgba(18,117,82,0.4);
     --shadow-three: rgba(18,117,82,0.2);
     --hover:  #129872;
-    --font: #08694d;
+    --font: #9c30de;
     --card: linear-gradient(180deg, 
             hsla(72, 100%, 98%, 0.7) 0%, 
             hsla(63, 49%, 92%, 0.7) 50%, 
@@ -15,11 +15,13 @@
     --search-box: #c4c4c4;
     --box-color: #fff;
     --box-shadow: rgba(0,0,0,0.1);
-    --button-color: #75e6a7cf;
-    --button-image: linear-gradient(45deg, #75e6a7cf 0%, #bbefa5 52%, #79e2a8cf 90%);
+    --button-color: #b84ecf;
+    --button-image: linear-gradient(45deg, #b74cd1 0%, #eab15c 52%, #b74cd1 90%);
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
+    --body: linear-gradient(45deg, hsla(0, 0%, 69%, 0.2) 0%, hsla(0, 0%, 78%, 0.4) 23%, hsla(0, 0%, 92%, 0.7) 48%, hsla(0, 0%, 78%, 0.4) 76%, hsla(0, 0%, 68%, 0.2) 100%); 
+    --header: linear-gradient(45deg, #b84fce 9%, #ab2aed 60%, #b84fce  88%);
 }
 
 html {
@@ -32,7 +34,7 @@ body {
     margin: 0;
     color: var(--font);
     font-family: Helvetica, Arial, sans-serif;
-    background-image: url(../images/background.PNG);
+    background-image: var(--body);
     font-size: 20px;
 }
 
@@ -41,7 +43,7 @@ body {
 }
 
 header {
-    background-image: url(../images/header.jpg);
+    background-image: var(--header);
     background-size: cover;
     background-position: bottom;
     padding: 20px 35px;
@@ -55,19 +57,8 @@ header div h1 {
     font-size: 55px;    
     text-transform: uppercase;
     font-weight: 700;
-    color: var(--letter);
-    text-shadow: 1px -1px 1px var(--shadow-one),
-        1px -2px 1px var(--shadow-one),
-        1px -3px 1px var(--shadow-one),
-        1px -4px 1px var(--shadow-one),
-        1px -5px 1px var(--shadow-one),
-        1px -6px 1px var(--shadow-one),
-        1px -7px 1px var(--shadow-one), 
-        1px -8px 1px var(--shadow-one),    
-    1px -9px 6px var(--shadow-two),
-    1px -11px 10px var(--shadow-three),
-    1px -13px 35px var(--shadow-three),
-    1px -15px 60px var(--shadow-two);
+    color: #eaeaea;
+
 }
 
 
@@ -80,14 +71,14 @@ header nav a {
     text-decoration: none;
     font-size: 30px;
     transition: all .2s ease-out;
-    color: var(--font);
+    color: #eaeaea;
     margin-right: 8vw;
 }
 
 header nav a:hover {
-    background: var(--hover);
+    background: #eaeaea;
     border-radius: 15px;
-    color: var(--primary);
+    color: var(--font);
 }
 
 footer {
@@ -116,12 +107,13 @@ label {
     transition: all .5s ease-out;
     background-size: 1px 120px;
     background-position: 0 -10px;
-    color: var(--font);
+    color: #eaeaea;
     font-size: 20px;
 }
 
 .btn:hover {
     background-position: 1px -50px;
+    color: #eaeaea;
 }
 
 .btn:focus {
@@ -233,7 +225,7 @@ label {
 }
 
 .options h4:hover {
-    color: rgb(15, 114, 153);
+    color: #cf8517;
 }
 
 .inventory {
@@ -295,9 +287,9 @@ label {
 }
 
 .card-title:hover {
-    background: var(--hover);
+    background: var(--font);
     border-radius: 10px;
-    color: var(--primary);
+    color: #eaeaea;
     padding: 5px;
 }
 
@@ -381,7 +373,7 @@ label {
 }
 
 .items {
-    background-image: var(--card);
+    background-image: var(--background);
     border-radius: 45px;
 }
 
