@@ -1,11 +1,11 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
-async function getAllProducts() {
-    const products = await fetch('/api/products').then(res => res.json());
+// async function getAllProducts() {
+//     const products = await fetch('/api/products').then(res => res.json());
 
-    saveProducts(products);
-};
+//     saveProducts(products);
+// };
 
 function searchProductHandler(e) {
     e.preventDefault();
@@ -36,28 +36,18 @@ function addToSearchHistory(pName) {
     }
 };
 
-function addToList(item) {
-    const liEl = document.createElement('li');
-    liEl.textContent = item;
-
-    historyList.prepend(liEl);
-};
-
 function getProductName() {
     const productNameEl = document.querySelector("#p-name"); 
-    const productName = productNameEl.value.toLowerCase();
+    let productName = productNameEl.value.trim();
+    productName = productName[0].toUpperCase() + productName.substring(1).toLowerCase();
 
     productNameEl.value = '';
+    console.log(productName);
     return productName
 };
 
-async function searchProduct(pName) {
-    // the apiRoute is not correct!!!
-    const res = await fetch(`/api/products/${pName}`).then(res => res.json());
-    
-    if (res.ok) {
-        saveProducts(res);
-    }
+function searchProduct(pName) {
+    // should have a apiRoute to fetch
 };
 
 function saveProducts(products) {
@@ -68,6 +58,13 @@ function loadHistory() {
     searchHistory = JSON.parse(localStorage.getItem('history')) || [];
     
     searchHistory.forEach(item => addToList(item));
+};
+
+function addToList(item) {
+    const liEl = document.createElement('li');
+    liEl.textContent = item;
+
+    historyList.prepend(liEl);
 };
 
 function clearHistory() {
@@ -139,8 +136,8 @@ function sortByName() {
 
 //     if (products) {
 //         products.sort((a,b) => {
-//             const amountA = a.amount;
-//             const amountB = b.amount;
+//             const amountA = a.quantity;
+//             const amountB = b.quantity;
 
 //             if (amountA < amountB) {
 //                 return 1;
@@ -180,9 +177,43 @@ function sortByName() {
 //     console.log(products);
 // };
 
+async function updateProductHandler(e) {
+    e.preventDefault();
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
 
-getAllProducts();
-loadHistory();
+    const quantity = card.querySelector('.quantity-nu').value;
+    await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            quantity,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    alert('Successfully updated!!')
+};
+
+async function removeProductHandler(e) {
+    e.preventDefault();
+    const d = confirm('Are you sure you want to delete the product?');
+
+    if (!d) {
+        return 0;
+    };
+
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
+    await fetch(`/api/products/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    location.reload();
+    alert('Successfully deleted!')
+};
+
+
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
@@ -190,3 +221,9 @@ document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
 document.querySelector("#sort-by-name").addEventListener('click', sortByName);
 // document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
 // document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
+document.querySelectorAll(".update-btn").forEach(item => {
+    item.addEventListener('click', updateProductHandler);
+});
+document.querySelectorAll(".remove-btn").forEach(elm => {
+    elm.addEventListener('click', removeProductHandler);
+})

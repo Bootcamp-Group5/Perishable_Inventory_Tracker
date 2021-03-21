@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
       'id',
       'name',
       'image_string',
-      'expiration_date'
+      'expiration_date',
+      'quantity',
       //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
@@ -73,7 +74,8 @@ router.get('/product/:id', (req, res) => {
       'id',
       'name',
       'image_string',
-      'expiration_date'
+      'expiration_date',
+      'quantity'
       //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [

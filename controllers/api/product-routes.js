@@ -14,7 +14,9 @@ router.get('/', (req, res) => {
         'id',
         'name',
         'image_string',
-        'expiration_date'
+        'expiration_date',
+        'category',
+        'quantity'
         //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],
       
@@ -45,7 +47,8 @@ router.get('/:id', (req, res) => {
           'id',
           'name',
           'image_string',
-          'expiration_date'
+          'expiration_date',
+          'quantity'
          // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
@@ -75,8 +78,9 @@ router.post('/',  withAuth, (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
     Product.create({
       name: req.body.name,
-      image_string: req.body.image_string,
       expiration_date: req.body.expiration_date,
+      category: req.body.category,
+      quantity: req.body.quantity,
       // insomina test will use  user_id: req.body.user_id
       // ussing session ID
       user_id: req.session.user_id
@@ -92,9 +96,7 @@ router.post('/',  withAuth, (req, res) => {
 router.put('/:id', withAuth,  (req, res) => {
     Product.update(
         {
-        name: req.body.name,
-        image_string: req.body.image_string,
-        expiration_date: req.body.expiration_date,
+        quantity: req.body.quantity
         },
         {
         where: {

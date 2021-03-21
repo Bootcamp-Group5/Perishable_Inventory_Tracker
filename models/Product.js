@@ -19,10 +19,14 @@ Product.init(
       },
       image_string: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
         // validate: {
         //   isURL: true
         // }
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       expiration_date: {
         type: DataTypes.STRING,
@@ -31,6 +35,10 @@ Product.init(
         //   isURL: true
         // }
       },
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }, 
       user_id: {
         type: DataTypes.INTEGER,
         references: {
