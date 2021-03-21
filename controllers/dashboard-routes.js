@@ -110,10 +110,13 @@ router.get('/edit/:id', (req, res) => {
 });
 
 // route to order by x or y
-router.get('/orderBy/:x', (req, res) => {
+router.get('/orderBy/:sort', withAuth, (req, res) => {
   console.log('======================');
-  const order = req.params.x;
+  const order = req.params.sort;
   Product.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     // Query configuration
     order: [[order, 'ASC']], 
     attributes: [
