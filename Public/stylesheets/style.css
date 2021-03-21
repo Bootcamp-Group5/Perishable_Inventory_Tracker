@@ -5,12 +5,8 @@
     --shadow-one: rgba(255,246,115,0.9);
     --shadow-two:rgba(18,117,82,0.4);
     --shadow-three: rgba(18,117,82,0.2);
-    --hover:  #129872;
-    --font: #9c30de;
-    --card: linear-gradient(180deg, 
-            hsla(72, 100%, 98%, 0.7) 0%, 
-            hsla(63, 49%, 92%, 0.7) 50%, 
-            hsla(72, 100%, 98%, 0.7) 100%);
+    --hover:  #eaeaea;
+    --font: #8a28c5;
     --background: rgba(0, 0, 0, 0); 
     --search-box: #c4c4c4;
     --box-color: #fff;
@@ -20,8 +16,8 @@
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
-    --body: linear-gradient(45deg, hsla(0, 0%, 69%, 0.2) 0%, hsla(0, 0%, 78%, 0.4) 23%, hsla(0, 0%, 92%, 0.7) 48%, hsla(0, 0%, 78%, 0.4) 76%, hsla(0, 0%, 68%, 0.2) 100%); 
-    --header: linear-gradient(45deg, #b84fce 9%, #ab2aed 60%, #b84fce  88%);
+    --body: linear-gradient(45deg, #ffffffe6 9%, #ecece9e6 60%, #eaeae7e6  88%);
+    --header: linear-gradient(45deg, #740c9a 9%, #951cc3 60%, #790fa2  88%);
 }
 
 html {
@@ -57,7 +53,7 @@ header div h1 {
     font-size: 55px;    
     text-transform: uppercase;
     font-weight: 700;
-    color: #eaeaea;
+    color: var(--hover);
 
 }
 
@@ -71,12 +67,12 @@ header nav a {
     text-decoration: none;
     font-size: 30px;
     transition: all .2s ease-out;
-    color: #eaeaea;
+    color: var(--hover);
     margin-right: 8vw;
 }
 
 header nav a:hover {
-    background: #eaeaea;
+    background: var(--hover);
     border-radius: 15px;
     color: var(--font);
 }
@@ -107,13 +103,13 @@ label {
     transition: all .5s ease-out;
     background-size: 1px 120px;
     background-position: 0 -10px;
-    color: #eaeaea;
+    color: var(--hover);
     font-size: 20px;
 }
 
 .btn:hover {
     background-position: 1px -50px;
-    color: #eaeaea;
+    color: var(--hover);
 }
 
 .btn:focus {
@@ -124,7 +120,13 @@ label {
 .introduction {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 70px 10px 0 10px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.introduction p {
+    margin-bottom: 10vw;
 }
 
 
@@ -142,7 +144,7 @@ label {
 }
 
 .category-image {
-    width: 20%;
+    width: 17%;
     height: 20%;
 }
 
@@ -269,9 +271,9 @@ label {
 }
 
 .list li:hover {
-    background: var(--hover);
+    background: var(--font);
     border-radius: 10px;
-    color: var(--primary);
+    color: var(--hover);
     padding: 3px;
 }
 
@@ -289,7 +291,7 @@ label {
 .card-title:hover {
     background: var(--font);
     border-radius: 10px;
-    color: #eaeaea;
+    color: var(--hover);
     padding: 5px;
 }
 
@@ -320,12 +322,14 @@ label {
     margin: 10px 30px;
 }
 
+
+
 .product-search {
     row-gap: 30px;
 }
 
 .category-card {
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 
@@ -383,4 +387,9 @@ label {
     margin: 5vw auto;
     height: 70%;
     line-height: 3;
+}
+
+
+.apple img {
+    width: 50%;
 }
