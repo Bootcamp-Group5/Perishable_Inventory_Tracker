@@ -1,74 +1,62 @@
- <!-- this form is dashboard handler-->
+
+
+    
+        <!-- this form is dashboard handler-->
         <section >
             <div class="row">
-                <div class="col-sm-2">
-                    <button type="clear" class="btn">Clear History</button>
+                <div class="col-sm-2 history">
+                    <button type="clear" class="btn" id="clear">Clear History</button>
                               
-                    <ul class="card-body list">
+                    <ul class="list">
                     <!-- searched history -->
-                      
                     </ul>  
                 </div> 
 
-                <div class="col-sm-10">
-                    <div class="col-sm-12 row"> 
+                <div class="col-sm-10 storage">
+                    <div class="col-sm-12 row options"> 
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-calendar'></i> Fliter By Expiration Date</h4>
+                            <h4 id="sort-by-exp"><i class='fa fa-calendar'></i> Order By Expiration Date</h4>
                         </div>    
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sitemap'></i> Fliter By Categories</h4>
+                            <h4 id="sort-by-category"><i class='fa fa-sitemap'></i> Order By Categories</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-lemon-o'></i> Fliter By Product Name</h4>
+                            <h4 id="sort-by-name"><i class='fa fa-lemon-o'></i> Order By Product Name</h4>
                         </div>
                         
                         <div class="col-sm-5">
-                            <h4><i class='fa fa-sort-numeric-asc'></i> Fliter By Numbers</h4>
+                            <h4 id="sort-by-quantity"><i class='fa fa-sort-numeric-asc'></i> Order By Quantity</h4>
                         </div>    
                     </div>
 
                       <!-- Search products -->
-                    <div class="col-sm-12">
-                        <form class="row">
-                            <input type="text" class="col-sm-10" placeholder="Enter A Product's Name" />
-                            <div class="col-sm-2">
-                                <button type="search" class="btn" id= "search-button"><i class='fa fa-search'></i></button> 
-                            </div>
+                    <div class="col-sm-12 search-bar">
+                        <form class="row" id="search-product">
+                            <input type="text" class="col-sm-9 bar" placeholder="Enter A Product's Name" id="p-name" />
+                            <button type="submit" class="btn col-sm-2"><i class='fa fa-search'></i></button> 
                         </form>
                     </div>
-
-                    <!-- Add produts -->
-                    <form>
-                        <div class="">
-                            <div class="card" style="width: 15rem">
-                                <img src="./assets/images/apple.png" class="card-img-top"/>
-
-                                <div class="card-body row">
-                                    <div class="col-sm-8">
-                                        <input id="datepicker" width="200" placeholder="Change An Expire Date" />
-                                    </div>
-
-                                    <div class="col-sm-5">
-                                        <p>Update Quantity</p>
-                                    </div>
-
-                                    <div class="col-sm-5">
-                                        <input type="number" value="0" min="0" max="50" step="1"/>
-                                    </div>
+                  
+                        <!-- Add produts -->
+                        
+                        <form class="inventory row">
+                            {{#each products as |product|}}
+                                <div class="card sm-3 items" style="max-width: 400px;">
                                     
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn">Update Change</button>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn">Remove Item</button>
-                                    </div>
+                                    {{> product-info product}}
+                                    
                                 </div>
-                            </div>
-                        </div>
-                    </form>
+                            {{/each}}
+                        </form>
 
                 </div>  
             </div>
         </section>
+
+
+    <footer></footer>
+    <script src="/javascript/dashboard.js"></script>
+</body>
+
+</html>
