@@ -1,58 +1,73 @@
-
-    <!-- this form is homepage handler-->
+<!-- this form is homepage handler-->
     <section class="row category">
         <div class="col-sm-3">
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            <div class="accordion" id="accordionExample">
+                <div class="card ">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed multi-collapse" type="button" data-toggle="collapse" data-target="#Dairy" aria-expanded="false" aria-controls="collapseTwo">
+                            Dairy
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="Dairy" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="dairy-list" class="">
+                                <li>
+                                    Cheese
+                                </li>
+                                <li>
+                                    Milk
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/dairy-products.png" class="category-image"/>
                     <h3 class="card-title">Dairy Products</h3>    
                 </div>
-            </div>
-
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            </div> --}}
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/grains.png" class="category-image"/>
                     <h3 class="card-title">Grains</h3>    
                 </div>
-            </div>
-
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            </div> --}}
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/fruits.png" class="category-image"/>
                     <h3 class="card-title">Fruits</h3>    
                 </div>
-            </div>
-
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            </div> --}}
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/vegetables.png" class="category-image"/>
                     <h3 class="card-title">Vegetables</h3>    
                 </div>
-            </div>
-
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            </div> --}}
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/meats.png" class="category-image"/>
                     <h3 class="card-title">Meats</h3>    
                 </div>
-            </div>
-                
-            <div class="card sm-2 category-card" style="max-width: 500px;">
+            </div> --}}
+            {{!-- <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/sauce-spice.png" class="category-image"/>
                     <h3 class="card-title">Sauce &amp; Spice</h3>    
                 </div>
-            </div>
-
+            </div> --}}
+{{!-- 
             <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
                     <img src="/images/others.png" class="category-image"/>
                     <h3 class="card-title">Others</h3>    
                 </div>
-            </div>
+            </div> --}}
         </div>
-
-
         <!-- Add produts -->
         <form class="col-sm-9 input-form">
             <div class="row justify-content-center">
@@ -63,41 +78,34 @@
                         <option value="Grains">Grains</option>
                         <option value="Vegetables">Vegetables</option>
                         <option value="Meats">Meats</option>
-                        <option value="Fruits">Fruits</option>
                         <option value="Sause & Spice">Sause &amp; Spice</option>
                         <option value="Others">Others</option>
                     </select>   
                 </div>
-
                 <div class="col-sm-12 row select-item">   
                     <div class="col-sm-6 row add-form"> 
-
                         <div class="col-sm-12 row dates">
                             <class="col-sm-4">Product Name: </p>
                             <div class="col-sm-6">
                                 <input type="text" id="p-name" />
                             </div> 
                         </div>
-
                         <div class="col-sm-12 row dates">
                             <p class="col-sm-4">Expire Date: </p>
                             <div class="col-sm-6">
                                 <input type="date" id="date" class="expire-date">
                             </div> 
                         </div>
-
                         <div class="col-sm-12 row add-items">
                             <p class="col-sm-4">Quantity: </p>
                             <div class="col-sm-6">
                                 <input type="number" id="quantity" value="1" min="1" max="50" step="1" class="amount" />
                             </div>
                         </div> 
-
                         <div class="col-sm-12">
                             <button type="submit" class="btn" id="add-product">Add Item</button> 
                         </div>     
                     </div> 
-
                     <div class="col-sm-3">
                         <div class="card" style="width: 10rem">
                             <img src="/images/apple.png" class="card-img-top" />
@@ -108,4 +116,3 @@
         </form>
     </section>
     <script src="/javascript/home.js"></script>
-
