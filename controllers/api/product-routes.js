@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
         'name',
         'image_string',
         'expiration_date',
+        'category',
         'quantity'
         //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],

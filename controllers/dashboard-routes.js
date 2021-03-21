@@ -106,4 +106,40 @@ router.get('/edit/:id', (req, res) => {
     });
 });
 
+// route to order by x or y
+router.get('/orderBy/:x', (req, res) => {
+  console.log('======================');
+  const order = req.params.x;
+  Product.findAll({
+    // Query configuration
+    order: [[order, 'ASC']], 
+    attributes: [
+      'id',
+      'name',
+      'image_string',
+      'expiration_date',
+      'category',
+      'quantity'
+      //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+    ],
+    
+    // to return everything  include:[User]
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+  .then(dbProductData => {
+    const products = dbProductData.map(product => product.get({ plain: true }));
+    res.render('dashboard', { products, loggedIn: true });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+
+});
+
 module.exports = router;
