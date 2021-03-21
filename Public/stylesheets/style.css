@@ -385,6 +385,7 @@ label {
     border-radius: 45px;
 }
 
+
 ul {
     list-style: none;
 }
@@ -397,4 +398,12 @@ ul > li:hover {
     text-decoration: underline;
     cursor: pointer;
     color: rgba(21, 121, 244, 0.48);
+
+.aboutus {
+    text-align: center;
+    width: 80%;
+    margin: 5vw auto;
+    height: 70%;
+    line-height: 3;
+
 }
