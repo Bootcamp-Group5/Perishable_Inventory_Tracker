@@ -70,5 +70,15 @@ function getQuantity() {
     return document.querySelector('#quantity').value;
 }
 
+function chooseProductHandler(e) {
+    const pName = e.target.innerText;
+    const card = e.target.closest('.card');
+    const category = card.querySelector('button').innerText;
+
+    document.querySelector('select').value = category; 
+    document.querySelector('#p-name').value = pName; 
+}
+
 insertDate();
 document.querySelector('#add-product').addEventListener('click', addProductHandler);
+document.querySelector('#dairy-list').addEventListener('click', chooseProductHandler);
