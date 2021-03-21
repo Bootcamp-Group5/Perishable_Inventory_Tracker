@@ -31,7 +31,8 @@ router.get('/:id', (req, res) => {
           'id',
           'name',
           'image_string',
-          'expiration_date'
+          'expiration_date',
+          'quantity'
         ]
       },
     ]

@@ -14,7 +14,9 @@ router.get('/', (req, res) => {
         'id',
         'name',
         'image_string',
-        'expiration_date'
+        'expiration_date',
+        'category',
+        'quantity'
         //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
       ],
       
@@ -36,16 +38,18 @@ router.get('/', (req, res) => {
 
 
   // select x,y from post where x or y
-router.get('/:id', (req, res) => {
-    Product.findOne({
+router.get('/:name', (req, res) => {
+    Product.findAll({
         where: {
-        id: req.params.id
+          name: req.params.name
         },
         attributes: [
-          'id',
+          'id', 
           'name',
           'image_string',
-          'expiration_date'
+          'expiration_date',
+          'category',
+          'quantity'
          // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
@@ -56,15 +60,17 @@ router.get('/:id', (req, res) => {
         ]
     })
         .then(dbProductData => {
-        if (!dbProductData) {
-            res.status(404).json({ message: 'No product found with this id' });
-            return;
-        }
-        res.json(dbProductData);
+          if (!dbProductData) {
+              res.status(404).json({ message: 'No product found with this id' });
+              return;
+          }
+          // res.json(dbProductData);
+          const products = dbProductData.map(product => product.get({ plain: true }));
+          res.render('dashboard', { products, loggedIn: true });
         })
         .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+          console.log(err);
+          res.status(500).json(err);
         });
 });
 
@@ -75,8 +81,9 @@ router.post('/',  withAuth, (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
     Product.create({
       name: req.body.name,
-      image_string: req.body.image_string,
       expiration_date: req.body.expiration_date,
+      category: req.body.category,
+      quantity: req.body.quantity,
       // insomina test will use  user_id: req.body.user_id
       // ussing session ID
       user_id: req.session.user_id
@@ -92,9 +99,7 @@ router.post('/',  withAuth, (req, res) => {
 router.put('/:id', withAuth,  (req, res) => {
     Product.update(
         {
-        name: req.body.name,
-        image_string: req.body.image_string,
-        expiration_date: req.body.expiration_date,
+        quantity: req.body.quantity
         },
         {
         where: {

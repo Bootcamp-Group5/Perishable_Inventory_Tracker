@@ -1,22 +1,27 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
-async function getAllProducts() {
-    const products = await fetch('/api/products').then(res => res.json());
-
-    saveProducts(products);
-};
+document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
+document.querySelector("#clear").addEventListener('click', clearHistory);
+historyList.addEventListener('click', historySearchHandler);
+document.querySelectorAll(".update-btn").forEach(item => {
+    item.addEventListener('click', updateProductHandler);
+});
+document.querySelectorAll(".remove-btn").forEach(elm => {
+    elm.addEventListener('click', removeProductHandler);
+});
 
 function searchProductHandler(e) {
     e.preventDefault();
     const productName = getProductName();
+    console.log(productName);
 
-    if(!productName) {
-        return alert('You need to enter an item!');
-    };
-
-    searchProduct(productName);
-    addToSearchHistory(productName);
+    if (!productName) {
+        alert('Please enter a name!');
+    } else {
+        searchProduct(productName);
+        addToSearchHistory(productName);
+    }
 };
 
 function addToSearchHistory(pName) {
@@ -27,7 +32,7 @@ function addToSearchHistory(pName) {
             break;
         }
     }
-    
+     
     if (!isIncluded) {
         addToList(pName);
 
@@ -36,28 +41,23 @@ function addToSearchHistory(pName) {
     }
 };
 
-function addToList(item) {
-    const liEl = document.createElement('li');
-    liEl.textContent = item;
-
-    historyList.prepend(liEl);
-};
-
 function getProductName() {
     const productNameEl = document.querySelector("#p-name"); 
-    const productName = productNameEl.value.toLowerCase();
+    let productName = productNameEl.value.trim();
 
-    productNameEl.value = '';
-    return productName
+    if(!productName) {
+        return false;
+    } else {
+        productName = productName[0].toUpperCase() + productName.substring(1).toLowerCase();
+
+        productNameEl.value = '';
+        return productName;
+    }
 };
 
-async function searchProduct(pName) {
-    // the apiRoute is not correct!!!
-    const res = await fetch(`/api/products/${pName}`).then(res => res.json());
-    
-    if (res.ok) {
-        saveProducts(res);
-    }
+function searchProduct(pName) {
+    console.log(pName);
+    window.location = `/api/products/${pName}`;
 };
 
 function saveProducts(products) {
@@ -68,6 +68,13 @@ function loadHistory() {
     searchHistory = JSON.parse(localStorage.getItem('history')) || [];
     
     searchHistory.forEach(item => addToList(item));
+};
+
+function addToList(item) {
+    const liEl = document.createElement('li');
+    liEl.textContent = item;
+
+    historyList.prepend(liEl);
 };
 
 function clearHistory() {
@@ -86,107 +93,38 @@ function historySearchHandler(e) {
     };
 };
 
-function sortByExp() {
-    const products = JSON.parse(localStorage.getItem('products'));
-    if (products) {
-        products.sort((a,b) => {
-            const expA = a.expiration_date;
-            const expB = b.expiration_date;
+async function updateProductHandler(e) {
+    e.preventDefault();
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
 
-            if (expA > expB) {
-                return 1;
-            };
+    const quantity = card.querySelector('.quantity-nu').value;
+    await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            quantity,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
 
-            if (expA < expB) {
-                return -1;
-            };
+    alert('Successfully updated!!')
+};
 
-            return 0;
-        });
+async function removeProductHandler(e) {
+    e.preventDefault();
+    const d = confirm('Are you sure you want to delete the product?');
+
+    if (!d) {
+        return 0;
     };
 
-    console.log(products)
+    const card = e.target.closest('.p-card');
+    const id = card.getAttribute('data-id');
+    await fetch(`/api/products/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    location.reload();
+    alert('Successfully deleted!')
 };
-
-function sortByName() {
-    const products = JSON.parse(localStorage.getItem('products'));
-
-    if (products) {
-        products.sort((a,b) => {
-            const nameA = a.name;
-            const nameB = b.name;
-
-            if (nameA > nameB) {
-                return 1;
-            };
-
-            if (nameA < nameB) {
-                return -1;
-            };
-
-            return 0;
-        });
-    }
-
-    console.log(products);
-};
-
-// *************************************************************************** //
-// ** These two functions work fine, if products have quantity or category ** //
-// *************************************************************************** //
-// function sortByQuantity() {
-//     const products = JSON.parse(localStorage.getItem('products'));
-
-//     if (products) {
-//         products.sort((a,b) => {
-//             const amountA = a.amount;
-//             const amountB = b.amount;
-
-//             if (amountA < amountB) {
-//                 return 1;
-//             };
-
-//             if (amountA > amountB) {
-//                 return -1;
-//             };
-
-//             return 0;
-//         });
-//     };
-
-//     console.log(products);
-// };
-
-// function sortByCategory() {
-//     const products = JSON.parse(localStorage.getItem('products'));
-
-//     if (products) {
-//         products.sort((a,b) => {
-//             const catA = a.category;
-//             const catB = b.categoy;
-
-//             if (catA > catB) {
-//                 return 1;
-//             };
-
-//             if (catA < nameB) {
-//                 return -1;
-//             };
-
-//             return 0;
-//         });
-//     };
-
-//     console.log(products);
-// };
-
-
-getAllProducts();
-loadHistory();
-document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
-document.querySelector("#clear").addEventListener('click', clearHistory);
-historyList.addEventListener('click', historySearchHandler);
-document.querySelector("#sort-by-exp").addEventListener('click', sortByExp);
-document.querySelector("#sort-by-name").addEventListener('click', sortByName);
-// document.querySelector("#sort-by-category").addEventListener('click', sortByCategory);
-// document.querySelector("#sort-by-quantity").addEventListener('click', sortByQuantity);
