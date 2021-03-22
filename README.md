@@ -3,7 +3,7 @@ It is time to utilize our technological advances and stop having to worry about 
 
 # 🍎 Table of Contents 🍎
 
-* [Contributors](#Contributors)
+* [Contributors](#🍽 Contributors 🍽)
 * [Licenses](#Licenses) 
 * [Overview](#Overview)
 * [Features](#Features)
@@ -12,7 +12,7 @@ It is time to utilize our technological advances and stop having to worry about 
 * [Presentation](#Presentation)
 * [Status](#Status)
 * [Questions](#Questions)
-* [Webpage](#Webpage)
+* [Webpage](# 🍱 Webpage 🍱)
 
 # 🍽 Contributors 🍽
 
