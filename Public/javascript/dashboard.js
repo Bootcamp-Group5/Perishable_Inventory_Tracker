@@ -1,6 +1,7 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
+loadHistory();
 dateStatus();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);

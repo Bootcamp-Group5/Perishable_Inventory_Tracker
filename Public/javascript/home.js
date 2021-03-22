@@ -85,7 +85,11 @@ function chooseProductHandler(e) {
         const category = card.querySelector('button').innerText;
 
         document.querySelector('select').value = category; 
-        document.querySelector('#p-name').value = pName; 
+        if (pName !== 'Others') {
+            document.querySelector('#p-name').value = pName; 
+        } else {
+            document.querySelector('#p-name').value = '';
+        };
     }
 }
 
