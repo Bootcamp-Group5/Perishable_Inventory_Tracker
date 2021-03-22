@@ -1,6 +1,7 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
+dateStatus();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
@@ -10,6 +11,28 @@ document.querySelectorAll(".update-btn").forEach(item => {
 document.querySelectorAll(".remove-btn").forEach(elm => {
     elm.addEventListener('click', removeProductHandler);
 });
+
+function dateStatus() {
+    document.querySelectorAll('.exp-date').forEach(date => {
+        const card = date.closest('.card-body');
+        const icon = card.querySelector('.icon-status');
+
+        const expDate = moment(date.textContent, 'YYYY-MM-DD')
+        const today = moment();
+
+        const dateDiff = today.diff(expDate, 'days');
+
+        console.log(dateDiff);
+        if (dateDiff >= 0) {
+            icon.classList.add('past');
+        } else if (dateDiff >= -3) {    
+            icon.classList.add('danger');
+        } else {
+            icon.classList.add('safe');
+        };
+
+    });
+}
 
 function searchProductHandler(e) {
     e.preventDefault();
