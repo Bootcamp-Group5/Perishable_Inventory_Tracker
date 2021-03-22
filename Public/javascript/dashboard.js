@@ -99,16 +99,32 @@ async function updateProductHandler(e) {
     const id = card.getAttribute('data-id');
 
     const quantity = card.querySelector('.quantity-nu').value;
+    if (quantity === '0') {
+        deleteProductById(id);
+    } else {
+        updateProductByQuantity(id, quantity);
+    };
+    alert('Successfully updated!!')
+};
+
+async function deleteProductById(id) {
     await fetch(`/api/products/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            quantity,
-        }),
+        method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     });
 
-    alert('Successfully updated!!')
+    location.reload();
 };
+
+async function updateProductByQuantity(id, q) {
+    await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            q,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+}
 
 async function removeProductHandler(e) {
     e.preventDefault();
@@ -120,11 +136,6 @@ async function removeProductHandler(e) {
 
     const card = e.target.closest('.p-card');
     const id = card.getAttribute('data-id');
-    await fetch(`/api/products/${id}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' }
-    });
-
-    location.reload();
+    await deleteProductById(id);
     alert('Successfully deleted!')
 };
