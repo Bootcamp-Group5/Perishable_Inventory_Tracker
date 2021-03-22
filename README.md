@@ -1,4 +1,4 @@
-# <a href="">🥗Simply Unused 🥗</a>
+# <a href="">🥗Welcome to Simply Unused! 🥗</a>
 It is time to utilize our technological advances and stop having to worry about such trivial information such as food expiration dates!
 
 # 🍎 Table of Contents 🍎
