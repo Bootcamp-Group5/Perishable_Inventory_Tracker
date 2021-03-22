@@ -26,9 +26,17 @@ It is time to utilize our technological advances and stop having to worry about 
 
 # Technologies
 
+## Styled with 
+* <a href="https://getbootstrap.com/"> Bootstrap</a>
+* <a href="https://handlebarsjs.com/JS"> Handlebar JS
+* 
+  
 
 # Status
-
+* We are currently testing the possibiltys of barcode reading and picture recognition software.
+* We are also trying to implement a notification system that will alert the user through email or text that will tell them when the food is close to expiring.
+* Lastly we are going to give recipe alerts to the user, these alerts will be based on the items in their pantry and recommend easy to make dishes with their food products.
+* We beleive this will help reduce waste and also save the user money, this will be a paid feature. 
 
 # Functionality
 
