@@ -66,8 +66,8 @@
                 
             <div class="card sm-2 category-card" style="max-width: 500px;">
                 <div class="row g-0">
-                    <img src="./Public/images/sauce-spice.png" class="category-image"/>
-                    <h3 class="card-title">Sauce & Spice</h3>    
+                    <img src="./Public/images/seasoning.png" class="category-image"/>
+                    <h3 class="card-title">Seasoning</h3>    
                 </div>
             </div>
 
@@ -95,33 +95,37 @@
                     </select>   
                 </div>
 
-                <div class="col-sm-12 row select-item">   
-                    <div class="col-sm-6 row add-from"> 
+                <div class="card sm-3 items row select-item" style="max-width: 980px;">   
+                    <div class="col-sm-12 g-0 row add-form"> 
 
-                        <div class="col-sm-12 row dates">
-                            <p class="col-sm-5">Expire Date: </p>
-                            <div class="col-sm-6">
-                                <input type="date" name="date" placeholder="Expire Date" class="expire-date">
+                        <div class="col-sm-6">
+                            <div class="col-sm-12 row dates">
+                                <p class="col-sm-5">Expire Date: </p>
+                                <div class="col-sm-6">
+                                    <input type="date" name="date" placeholder="Expire Date" class="expire-date">
+                                </div> 
+                            </div>
+
+                            <div class="col-sm-12 row add-items">
+                                <p class="col-sm-5">Quantity: </p>
+                                <div class="col-sm-6">
+                                    <input type="number" value="0" min="0" max="50" step="1" class="amount" />
+                                </div>
+                            </div> 
+    
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn">Add Item</button> 
                             </div> 
                         </div>
 
-                        <div class="col-sm-12 row add-items">
-                            <p class="col-sm-5">Quantity: </p>
-                            <div class="col-sm-6">
-                                <input type="number" value="0" min="0" max="50" step="1" class="amount" />
-                            </div>
+                        <div class="col-sm-6">
+                            <div class="apple">
+                                <img src="./Public/images/apple.png"/>
+                            </div>    
                         </div> 
-
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn">Add Item</button> 
-                        </div>     
                     </div> 
 
-                    <div class="col-sm-3">
-                        <div class="card" style="width: 10rem">
-                            <img src="./Public/images/apple.png" class="card-img-top" />
-                        </div>    
-                    </div>     
+                      
                 </div>
             </div>     
         </form>

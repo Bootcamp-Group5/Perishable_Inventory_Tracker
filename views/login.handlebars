@@ -1,36 +1,35 @@
-        <!-- this form is login handler-->
-        <div class="introduction">
-            <h3>
-               This is a barcode reading application that will track your perishable foods and give you recipes.
-            </h3>
-        </div>
+<!-- this form is login handler-->
+<section class="row">
+  {{> about-us introduction}}
 
-        <form class="row justify-content-center login-form">
-            <div class="col-sm-6 row login">
-              <div class="col-sm-12">
-                <h2>Log In</h2>
-              </div>
+  <div class="row col-sm-6 row login-form">
+    <form class="col-sm-12 row login">
+      <div class="col-sm-12">
+        <h2>Log In</h2>
+      </div>
           
-              <div class="col-sm-12">
-                <label for="username-login" class="form-label">Username:</label>
-                <input type="text" id="username-login" class="form-control" />
-              </div>
+      <div class="col-sm-12">
+        <label for="username-login" class="form-label">Username:</label>
+        <input type="text" id="username-login" class="form-control" />
+      </div>
           
-              <div class="col-sm-12">
-                <label for="password-login" class="form-label">Password:</label>
-                <input type="password" id="password-login" class="form-control" />
-              </div>
+      <div class="col-sm-12">
+        <label for="password-login" class="form-label">Password:</label>
+        <input type="password" id="password-login" class="form-control" />
+      </div>
           
-              <div class="col-sm-6">
-                <button type="submit" class="btn">Login</button>
-              </div>
+      <div class="col-sm-6">
+        <button type="submit" class="btn">Login</button>
+      </div>
           
-              <div class="col-sm-6">
-                  <!-- need to input the href after the API routes complete -->
-                <a href="/signUp" class="btn">Sign Up Instead</a>
-              </div>
-            </div> 
-          </form>
+      <div class="col-sm-6">
+        <!-- need to input the href after the API routes complete -->
+        <a href="/signUp" class="btn">Sign Up Instead</a>
+      </div>
+    </form> 
+  </div>
+</section>
+
 
 <script src="/javascript/login.js"></script>
 
