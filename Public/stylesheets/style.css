@@ -357,15 +357,15 @@ label {
     margin: 0 10px;
 }
 
-#past {
+.past {
     color: var(--past);
 }
 
-#danger {
+.danger {
     color: var(--danger);
 }
 
-#safe {
+.safe {
     color: var(--safe);
 }
 
@@ -395,6 +395,7 @@ ul > li:hover {
     color: var(--text-hover);
     padding: 5px;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .aboutus {

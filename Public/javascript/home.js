@@ -1,8 +1,7 @@
-
-
-
 document.querySelector('#add-product').addEventListener('click', addProductHandler);
-document.querySelector('#dairy-list').addEventListener('click', chooseProductHandler);
+document.querySelectorAll('.accordion-list').forEach(elm => {
+    elm.addEventListener('click', chooseProductHandler);
+});
 document.querySelectorAll(".list-button").forEach(item => {
     item.addEventListener('click', runAnimate);
 });
@@ -80,19 +79,25 @@ function getQuantity() {
 }
 
 function chooseProductHandler(e) {
-    const pName = e.target.innerText;
-    const card = e.target.closest('.card');
-    const category = card.querySelector('button').innerText;
+    if (e.target.closest('li')) {
+        const pName = e.target.innerText;
+        const card = e.target.closest('.card');
+        const category = card.querySelector('button').innerText;
 
-    document.querySelector('select').value = category; 
-    document.querySelector('#p-name').value = pName; 
+        document.querySelector('select').value = category; 
+        if (pName !== 'Others') {
+            document.querySelector('#p-name').value = pName; 
+        } else {
+            document.querySelector('#p-name').value = '';
+        };
+    }
 }
 
 function runAnimate(e) {
 
-    console.log("button clicked.")
-    console.log(e.target.getAttribute("data-clicked"))
-    console.log(e.target)
+    // console.log("button clicked.")
+    // console.log(e.target.getAttribute("data-clicked"))
+    // console.log(e.target)
 
     /*
 

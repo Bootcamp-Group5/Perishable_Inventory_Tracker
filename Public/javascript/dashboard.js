@@ -1,6 +1,8 @@
 const historyList = document.querySelector('.list');
 let searchHistory = [];
 
+loadHistory();
+dateStatus();
 document.querySelector("#search-product").addEventListener('submit', searchProductHandler);
 document.querySelector("#clear").addEventListener('click', clearHistory);
 historyList.addEventListener('click', historySearchHandler);
@@ -10,6 +12,36 @@ document.querySelectorAll(".update-btn").forEach(item => {
 document.querySelectorAll(".remove-btn").forEach(elm => {
     elm.addEventListener('click', removeProductHandler);
 });
+loadProductImage();
+
+function dateStatus() {
+    document.querySelectorAll('.exp-date').forEach(date => {
+        const card = date.closest('.card-body');
+        const icon = card.querySelector('.icon-status');
+
+        const expDate = moment(date.textContent, 'YYYY-MM-DD')
+        const today = moment();
+
+        const dateDiff = today.diff(expDate, 'days');
+
+        console.log(dateDiff);
+        if (dateDiff >= 0) {
+            icon.classList.add('past');
+        } else if (dateDiff >= -3) {    
+            icon.classList.add('danger');
+        } else {
+            icon.classList.add('safe');
+        };
+
+    });
+}
+
+function loadProductImage() {
+    document.querySelectorAll('.product-image').forEach(elm => {
+        const category = elm.closest('.product-card').querySelector('.product-category').textContent.toLowerCase();
+        elm.src = `/images/${category}.png`
+    })
+}
 
 function searchProductHandler(e) {
     e.preventDefault();
@@ -99,16 +131,32 @@ async function updateProductHandler(e) {
     const id = card.getAttribute('data-id');
 
     const quantity = card.querySelector('.quantity-nu').value;
+    if (quantity === '0') {
+        deleteProductById(id);
+    } else {
+        updateProductByQuantity(id, quantity);
+    };
+    alert('Successfully updated!!')
+};
+
+async function deleteProductById(id) {
     await fetch(`/api/products/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            quantity,
-        }),
+        method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     });
 
-    alert('Successfully updated!!')
+    location.reload();
 };
+
+async function updateProductByQuantity(id, q) {
+    await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            q,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+}
 
 async function removeProductHandler(e) {
     e.preventDefault();
@@ -120,11 +168,6 @@ async function removeProductHandler(e) {
 
     const card = e.target.closest('.p-card');
     const id = card.getAttribute('data-id');
-    await fetch(`/api/products/${id}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' }
-    });
-
-    location.reload();
+    await deleteProductById(id);
     alert('Successfully deleted!')
 };
