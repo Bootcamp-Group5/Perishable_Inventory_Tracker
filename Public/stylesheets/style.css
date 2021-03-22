@@ -398,13 +398,6 @@ ul > li:hover {
     cursor: pointer;
 }
 
-.aboutus {
-    text-align: center;
-    width: 80%;
-    margin: 5vw auto;
-    height: 70%;
-    line-height: 3;
-}
 
 
 .list-button {
@@ -425,6 +418,27 @@ ul > li:hover {
 
 
 
+.goals, .aboutus {
+    display: flex;
+    justify-content: center;
+    margin: 45px 0;
+}
 
 
+.goals-card {
+    background-color: #6d1b8c;
+    margin: 0 25px;
+    color: #eeeeeb;  
+    padding: 0;
+}
+
+.card-title {
+    padding: 10px 15px 0 15px;
+    text-align: center;
+}
+
+.card-text {
+    padding: 0 15px 7px 15px;
+    text-align: center;
+}
 
