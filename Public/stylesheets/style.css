@@ -430,10 +430,11 @@ ul > li:hover {
     margin: 0 25px;
     color: #eeeeeb;  
     padding: 0;
+    height: 690px;
 }
 
 .card-title {
-    padding: 7px 15px 0 15px;
+    padding: 10px 15px 0 15px;
     text-align: center;
 }
 
@@ -443,4 +444,6 @@ ul > li:hover {
 }
 
 
-
+.card-image {
+    height: 60%;
+}
