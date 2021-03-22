@@ -28,45 +28,82 @@
 
     <main>
         <!-- this form is login handler-->
-        <section class="row">
-          <div class="col-sm-5 introduction">
-            <h2>About Us</h2>
-            <p>
-              It is time to utilize our technological advances and stop having to worry about such trivial information such as food expiration dates!
-            </p>
-          </div>
+        <div class="row">
+          <section class="col-sm-12 row aboutus">
+            <div class="col-sm-4 introduction">
+              <h2>About Us</h2>
+              <p>
+                It is time to utilize our technological advances and stop having to worry about such trivial information 
+                such as food expiration dates!
+              </p>
+            </div>
+  
+            <div class="col-sm-5 row">
+                <form class="col-sm-12 row login">
+                  <div class="col-sm-12">
+                    <h2>Log In</h2>
+                  </div>
+              
+                  <div class="col-sm-12">
+                    <label for="username-login" class="form-label">Username:</label>
+                    <input type="text" id="username-login" class="form-control" />
+                  </div>
+              
+                  <div class="col-sm-12">
+                    <label for="password-login" class="form-label">Password:</label>
+                    <input type="password" id="password-login" class="form-control" />
+                  </div>
+              
+                  <div class="col-sm-5">
+                    <button type="submit" class="btn">Login</button>
+                  </div>
+              
+                  <div class="col-sm-7">
+                      <!-- need to input the href after the API routes complete -->
+                    <a href="" class="btn">Sign Up Instead</a>
+                  </div>
+                </form> 
+            </div>
+          </section>
 
-          <div class="col-sm-6 row">
-              <form class="col-sm-12 row login">
-                <div class="col-sm-12">
-                  <h2>Log In</h2>
+            <div class="col-sm-12 row goals">
+              <div class="col-sm-3 card goals-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Reduce Fine Lines</h4>
+                  <p class="card-text">It is time to utilize our technological advances and stop having to worry about 
+                    such trivial information such as food expiration dates. With Simply Unused the user can input their 
+                    groceries into their own personal account. 
+                  </p> 
                 </div>
-            
-                <div class="col-sm-12">
-                  <label for="username-login" class="form-label">Username:</label>
-                  <input type="text" id="username-login" class="form-control" />
+                <img src="./Public/images/cheese.jpg" class="card-img-top" alt="...">
+              </div>
+    
+              <div class="col-sm-3 card goals-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Save The Date</h4>
+                  <p class="card-text">The information stored will be that of the quantity, expiration date, and a photo of the food product.  
+                    Upon adding their items this information is then saved into the “pantry” where items can be organized by name, 
+                    quantity, or expiration date. 
+                  </p>
                 </div>
-            
-                <div class="col-sm-12">
-                  <label for="password-login" class="form-label">Password:</label>
-                  <input type="password" id="password-login" class="form-control" />
+                <img src="./Public/images/pasta.jpg" class="card-img-top" alt="...">
+              </div>
+    
+              <div class="col-sm-3 card goals-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h4 class="card-title">DM</h4>
+                  <p class="card-text">As an addition to storing this information this website will alert the user 
+                    by discoloring the food card and prioritizing it in the pantry. This will also help reduce wastes that comes from 
+                    unused groceries decreasing carbon footprint.
+                  </p>
                 </div>
-            
-                <div class="col-sm-5">
-                  <button type="submit" class="btn">Login</button>
-                </div>
-            
-                <div class="col-sm-7">
-                    <!-- need to input the href after the API routes complete -->
-                  <a href="" class="btn">Sign Up Instead</a>
-                </div>
-              </form> 
-          
-          </div>
-
-        </section>
+                <img src="./Public/images/green.jpg" class="card-img-top" alt="...">
+              </div>
+            </div>
       
+  
 
+        </div>
 
 
     </main>
