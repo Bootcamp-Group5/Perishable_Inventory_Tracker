@@ -12,6 +12,7 @@ document.querySelectorAll(".update-btn").forEach(item => {
 document.querySelectorAll(".remove-btn").forEach(elm => {
     elm.addEventListener('click', removeProductHandler);
 });
+loadProductImage();
 
 function dateStatus() {
     document.querySelectorAll('.exp-date').forEach(date => {
@@ -33,6 +34,13 @@ function dateStatus() {
         };
 
     });
+}
+
+function loadProductImage() {
+    document.querySelectorAll('.product-image').forEach(elm => {
+        const category = elm.closest('.product-card').querySelector('.product-category').textContent.toLowerCase();
+        elm.src = `/images/${category}.png`
+    })
 }
 
 function searchProductHandler(e) {
