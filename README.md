@@ -32,7 +32,11 @@ Welcome to Simply Unused! This is a web application to keep track of all of your
 * <a href="https://animejs.com/"> Anime.js</a> 
 * <a href="https://handlebarsjs.com/JS"> Handlebar JS
 * <a href="https://jquery.com/download/"> Jquery 
-## Routes and api calls
+
+## Backend
+* Json 
+* Tsql for the database
+* Node.js
  
   
 
