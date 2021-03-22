@@ -399,7 +399,6 @@ ul > li:hover {
 
 
 
-
 .list-button {
     background-color: var(--font);
     color: var(--hover);
@@ -430,7 +429,6 @@ ul > li:hover {
     margin: 0 25px;
     color: #eeeeeb;  
     padding: 0;
-    height: 690px;
 }
 
 .card-title {
@@ -443,7 +441,3 @@ ul > li:hover {
     text-align: center;
 }
 
-
-.card-image {
-    height: 60%;
-}
