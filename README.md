@@ -2,8 +2,9 @@
 It is time to utilize our technological advances and stop having to worry about such trivial information such as food expiration dates!
 
 # 🍎 Table of Contents 🍎
+
 * [Contributors](#Contributors)
-* [Licenses](#Liscenses) 
+* [Licenses](#Licenses) 
 * [Overview](#Overview)
 * [Features](#Features)
 * [Technologies](#Technologies)
