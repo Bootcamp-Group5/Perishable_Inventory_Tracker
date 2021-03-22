@@ -1,3 +1,12 @@
+
+
+
+document.querySelector('#add-product').addEventListener('click', addProductHandler);
+document.querySelector('#dairy-list').addEventListener('click', chooseProductHandler);
+document.querySelectorAll(".list-button").forEach(item => {
+    item.addEventListener('click', runAnimate);
+});
+
 function insertDate() {
     let today = new Date();
     today = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
@@ -79,6 +88,81 @@ function chooseProductHandler(e) {
     document.querySelector('#p-name').value = pName; 
 }
 
+function runAnimate(e) {
+
+    console.log("button clicked.")
+    console.log(e.target.getAttribute("data-clicked"))
+    console.log(e.target)
+
+    /*
+
+    let animated = e.target.getAttribute("data-clicked")
+
+
+    if (animated === 'false') {
+
+        anime({
+            targets: '#dairy-list',
+            translateX: 250,
+            rotate: '1turn',
+            direction: 'alternate'
+          });
+
+        e.target.setAttribute("data-clicked", "true")
+
+    } else {
+
+        e.target.setAttribute("data-clicked", "false")
+        anime({
+            targets: '#dairy-list',
+            translateX: -250,
+            rotate: '1turn',
+            direction: 'alternate'
+          });
+
+        
+    }
+    */
+
+    
+
+    // anime({
+    //     // animate different elements at the same time if necessary
+    //     //targets: [".animate-category", '.mixed-array-demo .el-02', '.mixed-array-demo .el-03'],
+    //     targets: ['.animate-category'],
+    //     keyframes: [
+    //         {translateY: -40},
+    //         {translateX: 250},
+    //         {translateY: 40},
+    //         {translateX: 0},
+    //         {translateY: 0}
+    //       ],
+    //     borderRadius: 200,
+    //     //easing: 'linear',
+    //     direction: 'alternate'
+    // });  
+
+    // anime({
+    //     // animate different elements at the same time if necessary
+    //     //targets: [".animate-category", '.mixed-array-demo .el-02', '.mixed-array-demo .el-03'],
+    //     targets: ['#dairy-list'],
+    //     keyframes: [
+    //         {translateY: -40},
+    //         {translateX: 250},
+    //         {translateY: 40},
+    //         {translateX: 0},
+    //         {translateY: 0}
+    //       ],
+    //     borderRadius: 200,
+    //     //easing: 'linear',
+    //     direction: 'alternate'
+    // });  
+
+    // first time, animation is false. Animation will then run.
+    // Next run is false, it will not run and it will be changed to false, to run again.
+
+
+
+}
+
 insertDate();
-document.querySelector('#add-product').addEventListener('click', addProductHandler);
-document.querySelector('#dairy-list').addEventListener('click', chooseProductHandler);

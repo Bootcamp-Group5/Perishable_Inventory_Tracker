@@ -6,8 +6,8 @@
 
                 <div class="card sm-2 category-card" style="max-width: 500px;">
                     <div class="row" id="headingTwo">
-                        <img src="/images/dairy.png" class="col-sm-3"/>
-                        <button class="list-button collapsed multi-collapse col-sm-5" type="button" data-toggle="collapse" data-target="#Dairy" aria-expanded="false" aria-controls="collapseTwo">
+                        <img src="/images/dairy.png" class="animate-category col-sm-3"/>
+                        <button class="list-button collapsed multi-collapse col-sm-5" type="button" data-toggle="collapse" data-clicked="false" data-target="#Dairy" aria-expanded="false" aria-controls="collapseTwo">
                         Dairy
                         </button>         
                     </div>
@@ -218,7 +218,7 @@
             <div class="row">
                 <img src="/images/food.gif" class="card-img col-sm-5" />
 
-                <div class="card-body col-sm-6 row">
+                <div class="form-entry card-body col-sm-6 row animate-form">
                     <select class="form-select col-sm-11">
                         <option selected disabled value="">Please select the category from list</option>
                         <option value="Dairy">Dairy</option>
@@ -267,4 +267,5 @@
             </div>     
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="/javascript/home.js"></script>
