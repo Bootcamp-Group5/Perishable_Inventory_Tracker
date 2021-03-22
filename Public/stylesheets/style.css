@@ -2,11 +2,9 @@
     --primary: rgb(204, 234, 212);
     --gradient: linear-gradient(0deg, hsl(165deg, 86%, 37%) 0%, hsla(145, 84%, 73%, 1) 52%, hsl(165deg, 78%, 36%) 100%);
     --letter: rgba(10,138,101, 0.9);
-    --shadow-one: rgba(255,246,115,0.9);
-    --shadow-two:rgba(18,117,82,0.4);
-    --shadow-three: rgba(18,117,82,0.2);
     --hover:  #eaeaea;
-    --font: #8a28c5;
+    --text-hover: #cf8517;
+    --font: #701fa0;
     --background: rgba(0, 0, 0, 0); 
     --search-box: #c4c4c4;
     --box-color: #fff;
@@ -223,7 +221,7 @@ label {
 }
 
 .options h4:hover {
-    color: #cf8517;
+    color: var(--text-hover);
 }
 
 .sort-item {
@@ -231,7 +229,7 @@ label {
 }
 
 .sort-item:hover {
-    color: #cf8517;
+    color: var(--text-hover);
     text-decoration: none;
 }
 
@@ -394,7 +392,7 @@ ul > li {
 }
 
 ul > li:hover {
-    color: #cf8517;
+    color: var(--text-hover);
     padding: 5px;
     text-decoration: underline;
 }
@@ -406,6 +404,26 @@ ul > li:hover {
     height: 70%;
     line-height: 3;
 }
+
+
+.list-button {
+    background-color: var(--font);
+    color: var(--hover);
+    border-radius: 30px;
+    transition: all .2s ease-out;
+}
+
+.list-button:focus {
+    outline: none;
+}
+
+.list-button:hover {
+    background-color: var(--text-hover);
+    color: var(--hover);
+}
+
+
+
 
 
 
