@@ -20,16 +20,20 @@ It is time to utilize our technological advances and stop having to worry about 
 * [PowerPoint](#PowerPoint)
 
 # Overview
-
+Welcome to Simply Unused! This is a web application to keep track of all of your groceries and household items! With technology on the rise we have created a way to have one less thing to worry about. When buying groceries one of the biggest considerations is the expiration date of the items you are purchasing. With simly unused we have elimated all need for concern! We do the remebering for you! Never again will you the user have to do the sniff test on that questionable milk in the back of the fridge. WIth simply unsued we track the expiry dates for you! With our user friendly dashboard keeping track of your pantry items has never been easier.
 
 
 
 # Technologies
 
 ## Styled with 
-* <a href="https://getbootstrap.com/"> Bootstrap</a>
+* <a href="https://www.bootstrapcdn.com/fontawesome/"> Bootstrap Font Awesome</a>
+* <a href="https://www.bootstrapcdn.com/"> Bootstrap Stackpath
+* <a href="https://animejs.com/"> Anime.js</a> 
 * <a href="https://handlebarsjs.com/JS"> Handlebar JS
-* 
+* <a href="https://jquery.com/download/"> Jquery 
+## Routes and api calls
+ 
   
 
 # Status
@@ -39,7 +43,7 @@ It is time to utilize our technological advances and stop having to worry about 
 * We beleive this will help reduce waste and also save the user money, this will be a paid feature. 
 
 # Functionality
-
+This webpage uses user input to track items that they input into our system. We have a timer that will run in accordance to the expiration date and will visibly show when items are close to expiring. After being prompted to login the user will be brought to our dashboard where they will have the option to use the side bar that lists common food items in an accordian stlye drop down window. If they so choose they can also input the information manually a picture of this food item will populate the homepage, and they will then have to input the quantity and expiration date. We take care of the rest. 
 
 # Presentation
 
