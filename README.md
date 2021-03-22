@@ -26,14 +26,14 @@ Welcome to Simply Unused! This is a web application to keep track of all of your
 
 # Technologies
 
-## Styled with 
+### Styled with 
 * <a href="https://www.bootstrapcdn.com/fontawesome/"> Bootstrap Font Awesome</a>
 * <a href="https://www.bootstrapcdn.com/"> Bootstrap Stackpath
 * <a href="https://animejs.com/"> Anime.js</a> 
 * <a href="https://handlebarsjs.com/JS"> Handlebar JS
 * <a href="https://jquery.com/download/"> Jquery 
 
-## Backend
+### Backend
 * Json 
 * Tsql for the database
 * Node.js
