@@ -14,7 +14,7 @@ It is time to utilize our technological advances and stop having to worry about 
 * [Questions](#Questions)
 * [Webpage](#Webpage)
 
-<a name="contributors"></a>
+<a name="Contributors"></a>
 # 🍽 Contributors 🍽
 
 
@@ -24,8 +24,8 @@ It is time to utilize our technological advances and stop having to worry about 
 |<a href="https://github.com/shanshantina" target="_blank"> Shanshan's (Tina) Github</a>| <a href="https://github.com/Studzic"> Austin's Github</a>|<a href="https://github.com/a-taghva">Ali's Github</a>|<a href="https://github.com/Ojashri-Basnyat"> Ojashri's Github</a>|<a href="https://github.com/esroleo">Esteban's Github|
 
 <a name="Licenses"></a>
-# 📃 Licenses  📃 
-
+# 📃 License  📃 
+![GitHub](https://img.shields.io/github/license/Bootcamp-group5/simply-unused?color=purple&style=plastic)
 
 <a name="Overview"></a>
 # 🍝 Overview 🍝
