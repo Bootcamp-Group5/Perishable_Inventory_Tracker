@@ -1,5 +1,5 @@
 # <a href="">🥗 Welcome to Simply Unused! 🥗</a>
-It is time to utilize our technological advances and stop having to worry about such trivial information such as food expiration dates!
+## With Simply Unused you will never have to worry about expiry dates again!
 
 # 🍎 Table of Contents 🍎
 
