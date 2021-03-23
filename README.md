@@ -52,7 +52,7 @@ This webpage uses user input to track items that they input into our system. We 
  
  <a name="Functionality"></a> 
 # 🌮 Functionality 🌮
-
+https://user-images.githubusercontent.com/72447285/112204899-9b5b6b80-8bea-11eb-9368-e1a3f7b6b19c.mp4
 
 <a name="Status"></a>
 # 🍭 Status 🍭
@@ -63,7 +63,7 @@ This webpage uses user input to track items that they input into our system. We 
 
 <a name="Presentation"></a>
 # 🍣 Presentation 🍣
-Video link, powerpoint link and picture link
+
 
 <a name ="Questions"></a>
 # 🙋‍ Questions 🙋‍
