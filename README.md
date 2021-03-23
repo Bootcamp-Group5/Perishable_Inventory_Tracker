@@ -65,6 +65,7 @@ This webpage uses user input to track items that they input into our system. We 
 
 <a name="Presentation"></a>
 # 🍣 Presentation 🍣
+[Simply-Unused.pptx](https://github.com/Bootcamp-Group5/simply-unused/files/6192460/Simply-Unused.pptx)
 
 
 <a name ="Questions"></a>
