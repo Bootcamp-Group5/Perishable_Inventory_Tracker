@@ -1,7 +1,4 @@
 :root {
-    --primary: rgb(204, 234, 212);
-    --gradient: linear-gradient(0deg, hsl(165deg, 86%, 37%) 0%, hsla(145, 84%, 73%, 1) 52%, hsl(165deg, 78%, 36%) 100%);
-    --letter: rgba(10,138,101, 0.9);
     --hover:  #eaeaea;
     --text-hover: #cf8517;
     --font: #701fa0;
@@ -14,8 +11,16 @@
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
-    --body: linear-gradient(45deg, #ffffffe6 9%, #ecece9e6 60%, #eaeae7e6  88%);
+    --body: linear-gradient(45deg, #eeeeeb 9%, #ecece9e6 60%, #eaeae7e6  88%);
     --header: linear-gradient(45deg, #740c9a 9%, #951cc3 60%, #790fa2  88%);
+    --goal: #eeeeeb;
+    --goal-card: #6d1b8c;
+    --list-border: #ec6ac5;
+    --list-image: linear-gradient(-180deg, #FF89D6 0%, #C01F9E 100%);
+    --list-span-image: linear-gradient(0deg, #e3dae7 0%, #FEFAFD 100%);
+    --list-span: hsla(290, 100%, 20%, 1);
+    --list-before: #fff;
+    --list-before-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
 }
 
 html {
@@ -67,7 +72,7 @@ header nav a {
     font-size: 30px;
     transition: all .2s ease-out;
     color: var(--hover);
-    margin-right: 0 5vw;
+    margin: 0 5vw;
 }
 
 header nav a:hover {
@@ -79,7 +84,6 @@ header nav a:hover {
 footer {
     position: absolute;
     text-align: center;
-    bottom: 0;
     width: 100%; 
 }
 
@@ -119,10 +123,6 @@ label {
     margin: 70px 10px 0 10px;
     flex-wrap: wrap;
     text-align: center;
-}
-
-.introduction p {
-    margin-bottom: 10vw;
 }
 
 
@@ -188,14 +188,10 @@ label {
     height: 49px;
 }
 
-.quantity, .quantity div, .quantity p, .card-body, .card-img {
+.quantity, .quantity div, .quantity p, .card-body, .card-img, .product-name {
     padding: 0;
 }
 
-
-.product-name {
-    padding: 0;
-}
 
 .update {
     display: flex;
@@ -212,7 +208,7 @@ label {
 .options {
     row-gap: 14px;
     display: flex;
-    margin: 40px 0;
+    margin: 40px auto;
 }
 
 .options h4 {
@@ -247,8 +243,7 @@ label {
 
 .search-bar {
     margin: auto;
-    width: 80%;
-
+    width: 85%;
 }
 
 .bar, .item-name {
@@ -322,9 +317,7 @@ label {
 
 
 .product-image{
-    padding: 0;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    padding: 28px 0;
 }
 
 
@@ -379,6 +372,7 @@ label {
 .items {
     background-image: var(--background);
     border-radius: 45px;
+    margin: auto;
 }
 
 
@@ -410,17 +404,17 @@ ul > li:hover {
 	position: relative;
 	border-radius: 3.75rem;
 	font-weight: 600;
-	border: 1px solid #ec6ac5;
-	background-image: linear-gradient(-180deg, #FF89D6 0%, #C01F9E 100%);
-    height: 65px;
+	border: 1px solid var(--list-border);
+	background-image: var(--list-image);
+    height: 60px;
 }
 
 .list-button span {
     color: transparent;
-	background-image: linear-gradient(0deg, #e3dae7 0%, #FEFAFD 100%);
+	background-image: var(--list-span-image);
 	-webkit-background-clip: text;
 	background-clip: text;
-	filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+	filter: drop-shadow(0 2px 2px var(--list-span));
 }
 
 .list-button:before {
@@ -432,11 +426,10 @@ ul > li:hover {
 	left: 50%;
 	transform: translateX(-50%);
 	width: calc(100% - 7.5rem);
-	background: #fff;
+	background: var(--list-before);
 	border-radius: 100%;
-	
 	opacity: 0.7;
-	background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+	background-image: var(--list-before-image);
 }
 
 .list-button:focus {
@@ -452,9 +445,9 @@ ul > li:hover {
 
 
 .goals-card {
-    background-color: #6d1b8c;
+    background-color: var(--goal-card);
     margin: 0 25px;
-    color: #eeeeeb;  
+    color: var(--goal);  
     padding: 0;
 }
 
@@ -475,13 +468,19 @@ ul > li:hover {
 }
 
 
+.card-icon {
+    width: 70%;
+    margin: 5px 0;
+}
+
+
+
 /* media query for screen = < 1400px */
 @media screen and (max-width: 1400px) {
     .list-button {
         height: 50px;
+        margin: 5px 0;
     }
-
- 
 }
 
 
@@ -515,16 +514,55 @@ ul > li:hover {
         font-size: 20px;
     }
 
-    .form-select {
+    .form-select, .history button, .list li {
         font-size: 18px;
     }
+ 
+
 }
 
-/* media query for screen = < 940px */
-@media screen and (max-width: 940px) {
+/* media query for screen = < 992px */
+@media screen and (max-width: 991px) {
+    .history {
+        max-width: 100%;
+    }
+
+    .list {
+        display: flex;
+        margin-top: 10px;
+        gap: 0;
+        column-gap: 20px;
+    }
+
+
     ul > li {
         font-size: 17px;
-    }   
+    } 
+
+    .options h4 {
+        font-size: 21px;
+    }
+
+    .introduction p {
+        font-size: 18px;
+    }
+
+    .introduction h2 {
+        font-size: 32px;
+    }
+
+    .login label {
+        font-size: 20px;
+    }
+
+    .login button, .login a {
+        font-size: 18px;
+    }
+
+    .bar {
+       font-size: 18px;  
+    }
+
 }
 
 
@@ -554,10 +592,18 @@ ul > li:hover {
     header div h1 {
         font-size: 52px;
     }
+
+    .showall {
+        font-size: 19px;
+    }
+
+    .options h4 {
+        font-size: 19px;
+    }
 }
 
 /* media query for screen = < 760px */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
     .list-button span {
         font-size: 16px;
     }
@@ -590,6 +636,58 @@ ul > li:hover {
     ul > li {   
         font-size: 13px;
     }
+
+    .product-image {
+        display: none;
+    }
+
+    .items{
+        margin: 5px auto;
+    }
+
+    .inventory {
+        gap: 0;
+    }
+
+    .options h4 {
+        font-size: 17px;
+    }
+
+    .introduction {
+        margin: auto;
+    }
+
+    .introduction h2 {
+        font-size: 30px;
+    }
+
+    .login h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .item-card {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        margin: auto;
+    }
+
+    .showall button, .search-bar button {
+        font-size: 18px;
+    }
+
+    .bar {
+        font-size: 16px;
+    }
+
+    .item-info {
+        font-size: 18px;
+    }
+
+    .item-info h4 {
+        font-size: 21px;
+    }
+
 }
 
 
@@ -623,6 +721,52 @@ ul > li:hover {
     ul > li {   
         font-size: 11px;
     }
+
+    .login h2, .introduction h2 {
+        font-size: 28px;
+    }
+
+    .goals-card h4 {
+        font-size: 20px;
+    }
+
+    .goals-card p {
+        font-size: 18px;
+    }
+
+    .search-bar {
+        width: 95%;
+    }
+
+    .bar {
+        font-size: 14px;
+    }
+
+    .item-info {
+        font-size: 16px;
+    }
+
+    .item-info h4 {
+        font-size: 19px;
+    }
+
+    .options {
+        row-gap: 0;
+        margin: 20px auto;
+    }
+
+    .options h4 {
+        font-size: 14px;
+    }
+
+    .list li, .history button {
+        font-size: 15px;
+    }
+
+    .showall button, .update button, .history button, .search {
+        font-size: 14px;
+    }
+
 }
 
 
@@ -633,7 +777,7 @@ ul > li:hover {
     }
 
     .list-button span {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     header div h1 {
@@ -647,4 +791,34 @@ ul > li:hover {
     .add-form button, footer {
         font-size: 16px;
     }
+
+    .login h2, .introduction h2 {
+        font-size: 26px;
+    }
+
+    .goals-card h4, .login label {
+        font-size: 18px;
+    }
+
+    .goals-card p, .introduction p, .login button, .login a  {
+        font-size: 16px;
+    }
+
+    .item-info {
+        font-size: 14px;
+    }
+
+    .item-info h4 {
+        font-size: 16px;
+    }
+
+    .showall button, .update button, .history button {
+        font-size: 12px;
+    }
+
+    .search {
+        font-size: 12px;
+        padding: 0;
+    }
+
 }

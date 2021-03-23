@@ -81,7 +81,7 @@ function getQuantity() {
 function chooseProductHandler(e) {
     if (e.target.closest('li')) {
         const pName = e.target.innerText;
-        const card = e.target.closest('.card');
+        const card = e.target.closest('.category-card');
         const category = card.querySelector('button').innerText;
 
         document.querySelector('select').value = category; 
