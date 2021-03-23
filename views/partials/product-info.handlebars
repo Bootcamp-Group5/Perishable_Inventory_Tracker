@@ -1,26 +1,26 @@
 
             <div class="row g-0 product-card">
                 <!-- this image is the default in case javascript doesn't work -->
-                <img src="/images/card2.jpg" class="col-sm-5 product-image"/>
+                <img src="/images/card2.jpg" class="col-xl-5 col-lg-5 col-md-5 product-image"/>
                 
-                <div class="col-sm-7 p-card item-card" data-id="{{ id }}">
+                <div class="col-xl-7 col-lg-7 col-md-7 p-card item-card" data-id="{{ id }}">
                     <div class="card-body row item-info">
-                        <h4 class="col-sm-12 product-name">{{ name }} <span class='icon-status'><i class='fa fa-circle'></i></span></h4>
+                        <h4 class="col-xl-12 col-lg-12 col-md-12 product-name">{{ name }} <span class='icon-status'><i class='fa fa-circle'></i></span></h4>
                         <p class='product-category'>{{ category }}</p>
-                        <div class="col-sm-12 date row">
-                            <p class="col-sm-11">Expire Date: </p>
+                        <div class="ol-xl-12 col-lg-12 col-md-12 date row">
+                            <p class="col-xl-11 col-lg-11 col-md-11">Expire Date: </p>
                             <p class="exp-date">{{ expiration_date }}</p>
                         </div>
 
-                        <div class="col-sm-12 quantity row">
-                            <p class="col-sm-7">Quantity: </p>
-                            <div class="col-sm-4">
+                        <div class="col-xl-12 col-lg-12 col-md-12 quantity row">
+                            <p class="col-xl-7 col-lg-6 col-md-6">Quantity: </p>
+                            <div class="col-xl-4 col-lg-5 col-md-5">
                                 <!-- should add quantity to the value -->
-                                <input type="number" value="{{ quantity }}" class="quantity-nu" min="0" max="100" step="1" class="amount" />
+                                <input type="number" value="{{ quantity }}" class="quantity-nu amount" min="0" max="100" step="1" />
                             </div>
                         </div>
 
-                        <div class="col-sm-12 update">
+                        <div class="col-xl-12 col-lg-12 col-md-12 update">
                             <button type="submit" class="btn update-btn">Update</button>
                             <button type="submit" class="btn remove-btn">Remove</button>
                         </div>

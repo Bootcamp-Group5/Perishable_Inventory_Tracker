@@ -67,7 +67,7 @@ header nav a {
     font-size: 30px;
     transition: all .2s ease-out;
     color: var(--hover);
-    margin-right: 8vw;
+    margin-right: 0 5vw;
 }
 
 header nav a:hover {
@@ -131,8 +131,8 @@ label {
 }
 
 .form-select {
-    padding: 9px;
-    margin: auto auto 30px auto;
+    padding: 10px;
+    margin: auto auto 25px auto;
     border: 1px solid var(--search-box);
     border-radius: 5px;
     background-color: var(--box-color);
@@ -146,7 +146,8 @@ label {
 }
 
 .input-form {
-    margin: 60px auto auto 60px;
+    margin: 60px auto auto 35px;
+    padding: 0;
 }
 
 
@@ -187,7 +188,7 @@ label {
     height: 49px;
 }
 
-.quantity, .quantity div, .quantity p, .card-body {
+.quantity, .quantity div, .quantity p, .card-body, .card-img {
     padding: 0;
 }
 
@@ -204,7 +205,7 @@ label {
 
 .update button {
     font-size: 16px;
-    margin: 0 5px;
+    margin: 2px 5px 0 0;
 }
 
 
@@ -234,7 +235,7 @@ label {
 }
 
 .inventory {
-    gap: 40px;
+    gap: 45px;
     margin: 50px 10px;
 }
 
@@ -277,19 +278,22 @@ label {
     background: var(--font);
     border-radius: 10px;
     color: var(--hover);
-    padding: 3px;
+    text-decoration: none;
 }
 
 
 
-.dates, .add-items {
-    margin: auto;
+.dates, .add-items, .add-form {
+    margin: auto auto 20px auto;
+    row-gap: 40px;
+    padding: 0;
 }
-
 
 .dates p, .add-items p {
     text-align: left;
     margin-left: 20px;
+    padding: 0;
+    font-size: 24px;
 }
 
 .dates div {
@@ -301,9 +305,6 @@ label {
     padding: 0;
 }
 
-.add-form {
-    row-gap: 40px;
-}
 
 .add-form button {
     margin: 10px 30px;
@@ -315,7 +316,8 @@ label {
 }
 
 .category-card {
-    margin: 10px auto;
+    margin: auto;
+    padding: 0;
 }
 
 
@@ -340,7 +342,7 @@ label {
 
 .item-info {
     margin: 5px 0;
-    line-height: 25px;
+    line-height: 15px;
 }
 
 .item-selection {
@@ -386,18 +388,15 @@ ul {
 }
 
 ul > li {
-    margin: 5px 65px;
     text-align: start;
     transition: all .2s ease-out;
 }
 
 ul > li:hover {
     color: var(--text-hover);
-    padding: 5px;
     text-decoration: underline;
     cursor: pointer;
 }
-
 
 
 .list-button {
@@ -407,15 +406,42 @@ ul > li:hover {
     transition: all .2s ease-out;
 }
 
+.list-button {
+	position: relative;
+	border-radius: 3.75rem;
+	font-weight: 600;
+	border: 1px solid #ec6ac5;
+	background-image: linear-gradient(-180deg, #FF89D6 0%, #C01F9E 100%);
+    height: 65px;
+}
+
+.list-button span {
+    color: transparent;
+	background-image: linear-gradient(0deg, #e3dae7 0%, #FEFAFD 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+}
+
+.list-button:before {
+    content: "";
+	display: block;
+	height: 0.25rem;
+	position: absolute;
+	top: 0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 7.5rem);
+	background: #fff;
+	border-radius: 100%;
+	
+	opacity: 0.7;
+	background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+}
+
 .list-button:focus {
     outline: none;
 }
-
-.list-button:hover {
-    background-color: var(--text-hover);
-    color: var(--hover);
-}
-
 
 
 .goals, .aboutus {
@@ -442,3 +468,183 @@ ul > li:hover {
     text-align: center;
 }
 
+
+.category-section {
+    display: flex;
+    align-items: center;
+}
+
+
+/* media query for screen = < 1400px */
+@media screen and (max-width: 1400px) {
+    .list-button {
+        height: 50px;
+    }
+
+ 
+}
+
+
+/* media query for screen = < 1220px */
+@media screen and (max-width: 1220px) {
+    .list-button span {
+        font-size: 18px;
+    }
+
+    .dates p, .add-items p {
+        font-size: 22px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 6.5rem);
+    }
+}
+
+
+/* media query for screen = < 1180px */
+@media screen and (max-width: 1180px) {
+    .list-button span {
+        font-size: 16px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 5.5rem);
+    }
+
+    .dates p, .add-items p {
+        font-size: 20px;
+    }
+
+    .form-select {
+        font-size: 18px;
+    }
+}
+
+/* media query for screen = < 940px */
+@media screen and (max-width: 940px) {
+    ul > li {
+        font-size: 17px;
+    }   
+}
+
+
+/* media query for screen = < 830px */
+@media screen and (max-width: 830px) {
+    .list-button span {
+        font-size: 15px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 4.5rem);
+    }
+
+    .list-button {
+        height: 40px;
+    }
+
+    ul > li {
+        font-size: 16px;
+    } 
+
+    header nav a {
+        margin: auto;
+        font-size: 28px;
+    }
+
+    header div h1 {
+        font-size: 52px;
+    }
+}
+
+/* media query for screen = < 760px */
+@media screen and (max-width: 760px) {
+    .list-button span {
+        font-size: 16px;
+    }
+
+    .list-button {
+        height: 45px;
+    }
+
+    header nav a {
+        font-size: 26px;
+    }
+
+    .category-section img, .card-img {
+        display: none;
+    }
+
+    .input-form {
+        margin: 20px auto auto auto;
+    }
+
+    .add-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    header div h1 {
+        font-size: 45px;
+    }
+
+    ul > li {   
+        font-size: 13px;
+    }
+}
+
+
+/* media query for screen = < 575px */
+@media screen and (max-width: 575px) {
+    .list-button span {
+        font-size: 14px;
+        
+    }
+
+    .list-button:before {
+        width: calc(100% - 3.5rem);
+    }
+
+    header div h1 {
+        font-size: 30px;
+    }
+
+    header nav a {
+        font-size: 18px;
+    }
+
+    .dates p, .add-items p, .form-select, .expire-date, .item-name, .amount {
+        font-size: 15px;
+    }
+
+    .add-form button, footer {
+        font-size: 18px;
+    }
+
+    ul > li {   
+        font-size: 11px;
+    }
+}
+
+
+/* media query for screen = < 392px */
+@media screen and (max-width: 392px) {
+    .dates p, .add-items p, .form-select, .expire-date, .item-name, .amount {
+        font-size: 12px;
+    }
+
+    .list-button span {
+        font-size: 10px;
+    }
+
+    header div h1 {
+        font-size: 25px;
+    }
+
+    header nav a {
+        font-size: 13px;
+    }
+
+    .add-form button, footer {
+        font-size: 16px;
+    }
+}
