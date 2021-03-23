@@ -38,16 +38,17 @@ router.get('/', (req, res) => {
 
 
   // select x,y from post where x or y
-router.get('/:id', (req, res) => {
-    Product.findOne({
+router.get('/:name', (req, res) => {
+    Product.findAll({
         where: {
-        id: req.params.id
+          name: req.params.name
         },
         attributes: [
-          'id',
+          'id', 
           'name',
           'image_string',
           'expiration_date',
+          'category',
           'quantity'
          // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -59,15 +60,17 @@ router.get('/:id', (req, res) => {
         ]
     })
         .then(dbProductData => {
-        if (!dbProductData) {
-            res.status(404).json({ message: 'No product found with this id' });
-            return;
-        }
-        res.json(dbProductData);
+          if (!dbProductData) {
+              res.status(404).json({ message: 'No product found with this id' });
+              return;
+          }
+          // res.json(dbProductData);
+          const products = dbProductData.map(product => product.get({ plain: true }));
+          res.render('dashboard', { products, loggedIn: true });
         })
         .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+          console.log(err);
+          res.status(500).json(err);
         });
 });
 
