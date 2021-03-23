@@ -372,7 +372,6 @@ label {
 .items {
     background-image: var(--background);
     border-radius: 45px;
-    margin: auto;
 }
 
 
@@ -561,6 +560,10 @@ ul > li:hover {
 
     .bar {
        font-size: 18px;  
+    }
+
+    .items {
+        margin: auto;
     }
 
 }
@@ -763,7 +766,12 @@ ul > li:hover {
         font-size: 15px;
     }
 
-    .showall button, .update button, .history button, .search {
+    .showall button, .update button, .history button {
+        font-size: 14px;
+    }
+
+    .search {
+        padding: 0;
         font-size: 14px;
     }
 
@@ -812,13 +820,7 @@ ul > li:hover {
         font-size: 16px;
     }
 
-    .showall button, .update button, .history button {
+    .showall button, .update button, .history button, .search {
         font-size: 12px;
     }
-
-    .search {
-        font-size: 12px;
-        padding: 0;
-    }
-
 }
