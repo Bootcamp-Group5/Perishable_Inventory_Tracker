@@ -33,7 +33,7 @@ Welcome to Simply Unused! This is a web application to keep track of all of your
 
 <a name="Features"></a>
 # 🥩 Features 🥩
-
+This website features 
 <a name="Technologies"></a>
 # 🍲 Technologies 🍲
 
@@ -66,6 +66,8 @@ Video link, powerpoint link and picture link
 
 <a name ="Questions"></a>
 # 🙋‍ Questions 🙋‍
+Any questions can be sent to our group email at uoft.group.five@gmail.com !
+
 <a name="Webpage"></a>
 # 🍱 Webpage 🍱
 
