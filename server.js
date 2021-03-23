@@ -15,7 +15,7 @@ const sequelize = require('./config/connection');
 // *** End of Import Sequelize library require *** //
 
 // Helper functions
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers'); //
 
 // *** Start of Import Handlebars library require *** // 
 // Used to add back the concept of layout, partials and others.
