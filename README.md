@@ -33,7 +33,8 @@ Welcome to Simply Unused! This is a web application to keep track of all of your
 
 <a name="Features"></a>
 # 🥩 Features 🥩
-This website features 
+This webpage uses user input to track items that they input into our system. We have a timer that will run in accordance to the expiration date and will visibly show when items are close to expiring. After being prompted to login the user will be brought to our dashboard where they will have the option to use the side bar that lists common food items in an accordian stlye drop down window. If they so choose they can also input the information manually a picture of this food item will populate the homepage, and they will then have to input the quantity and expiration date. We take care of the rest.  
+
 <a name="Technologies"></a>
 # 🍲 Technologies 🍲
 
@@ -51,7 +52,7 @@ This website features
  
  <a name="Functionality"></a> 
 # 🌮 Functionality 🌮
-This webpage uses user input to track items that they input into our system. We have a timer that will run in accordance to the expiration date and will visibly show when items are close to expiring. After being prompted to login the user will be brought to our dashboard where they will have the option to use the side bar that lists common food items in an accordian stlye drop down window. If they so choose they can also input the information manually a picture of this food item will populate the homepage, and they will then have to input the quantity and expiration date. We take care of the rest. 
+
 
 <a name="Status"></a>
 # 🍭 Status 🍭
