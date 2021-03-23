@@ -22,10 +22,10 @@ const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 //const hbs = exphbs.create({ helpers }); 
 const hbs = exphbs.create({helpers}); 
-// *** End of Import Handlebars library require *** // 
+// *** End of Import Handlebars library require *** //
 
 
-// *** Start of express session store *** //
+// *** Start of express session store *** /
 /* Description of express-session
 The express-session package is an Express.js middleware 
 that uses sessions, a mechanism that helps applications
