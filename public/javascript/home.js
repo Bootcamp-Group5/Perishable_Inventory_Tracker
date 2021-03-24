@@ -5,6 +5,59 @@ document.querySelectorAll('.accordion-list').forEach(elm => {
 document.querySelectorAll(".list-button").forEach(item => {
     item.addEventListener('click', runAnimate);
 });
+document.querySelector('select').addEventListener('change', checkCategory);
+document.querySelector('#p-name').addEventListener('change', checkInput);
+document.querySelector('#date').onchange = checkDate;
+document.querySelector('#quantity').onchange = checkQuantity;
+
+function checkQuantity() {
+    const quantityEl = document.querySelector('#quantity');
+    const quantity = quantityEl.value.trim();
+
+    if (!quantity || quantity === '0') {
+        quantityEl.classList.add('input-err');
+        quantityEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        quantityEl.classList.remove('input-err');
+        quantityEl.nextElementSibling.classList.add('hdn');
+    };
+}
+
+function checkDate() {
+    const expDateEl = document.querySelector('#date');
+    const expiration_date = expDateEl.value;
+
+    if (!expiration_date) {
+        expDateEl.classList.add('input-err');
+        expDateEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        expDateEl.classList.remove('input-err');
+        expDateEl.nextElementSibling.classList.add('hdn');
+    };
+}
+
+function checkCategory() {
+    const category = getCategory();
+    if (!category) {
+        document.querySelector('select').classList.add('input-err');
+    } else {
+        document.querySelector('select').classList.remove('input-err');
+    }
+}
+
+function checkInput() {
+    const pNameEl = document.querySelector('#p-name');
+    const pName = pNameEl.value.trim();
+    console.log(pName);
+    
+    if (!pName) {
+        pNameEl.classList.add('input-err');
+        pNameEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        pNameEl.classList.remove('input-err');
+        pNameEl.nextElementSibling.classList.add('hdn');
+    };
+}
 
 function insertDate() {
     let today = new Date();
@@ -44,7 +97,7 @@ async function addProductHandler(e) {
         expDateEl.nextElementSibling.classList.add('hdn');
     };
 
-    if (!quantity) {
+    if (!quantity || quantity === '0') {
         quantityEl.classList.add('input-err');
         quantityEl.nextElementSibling.classList.remove('hdn');
         isOk = false;
