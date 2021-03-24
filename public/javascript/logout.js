@@ -11,7 +11,7 @@ async function logout(event) {
         //console.log("response of function log out good")
         alert("Logging you out")
        // document.location.replace('/login');
-        document.location.replace('/');
+        document.location.replace('/login');
       } else {
         //console.log("response of function log out bad")
         //document.location.replace('/');

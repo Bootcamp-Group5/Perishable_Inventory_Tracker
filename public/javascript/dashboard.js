@@ -12,7 +12,60 @@ document.querySelectorAll(".update-btn").forEach(item => {
 document.querySelectorAll(".remove-btn").forEach(elm => {
     elm.addEventListener('click', removeProductHandler);
 });
+document.querySelector('#showall').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    window.location = "/dashboard";
+});
+document.querySelector('#order-exp').addEventListener('click', sortByExp);
+document.querySelector('#order-q').addEventListener('click', sortByQ);
 loadProductImage();
+checkOrderBy();
+
+function checkOrderBy() {
+    const ordered = window.location.pathname.split('/').pop() === 'd';
+
+    if (ordered) {
+        const idArr = ['#sort-by-category', '#sort-by-name'];
+        for (id of idArr) {
+            const h4El = document.querySelector(id);
+            h4El.classList.add('dbld');
+            h4El.querySelector('a').classList.add('dbld');
+            h4El.querySelector('a').href = "javascript: void(0)";
+            console.log('added');
+        };
+    };
+};
+
+function sortByExp() {
+    const locArr = window.location.pathname.split('/');
+    const ordered = locArr.pop() === 'd';
+    const pName = locArr.pop();
+
+    if (ordered) {
+        loc = '/dashboard/orderBy/expiration_date/' + pName + '/d';
+        console.log(loc);
+
+        return window.location = loc;
+    };
+
+    window.location = '/dashboard/orderBy/expiration_date';
+};
+
+function sortByQ() {
+    const locArr = window.location.pathname.split('/');
+    const ordered = locArr.pop() === 'd';
+    const pName = locArr.pop();
+
+    if (ordered) {
+        loc = '/dashboard/orderBy/quantity/' + pName + '/d';
+        console.log(loc);
+
+        return window.location = loc;
+    };
+
+    window.location = '/dashboard/orderBy/quantity';
+};
 
 function dateStatus() {
     document.querySelectorAll('.exp-date').forEach(date => {
@@ -24,7 +77,6 @@ function dateStatus() {
 
         const dateDiff = today.diff(expDate, 'days');
 
-        console.log(dateDiff);
         if (dateDiff >= 0) {
             icon.classList.add('past');
         } else if (dateDiff >= -3) {    
@@ -89,7 +141,7 @@ function getProductName() {
 
 function searchProduct(pName) {
     console.log(pName);
-    window.location = `/api/products/${pName}`;
+    window.location = `/api/products/${pName}/d`;
 };
 
 function saveProducts(products) {
@@ -131,6 +183,12 @@ async function updateProductHandler(e) {
     const id = card.getAttribute('data-id');
 
     const quantity = card.querySelector('.quantity-nu').value;
+
+    if (!quantity) {
+        alert('Invalid value for quantity!');
+        return 0;
+    };
+
     if (quantity === '0') {
         deleteProductById(id);
     } else {
@@ -148,11 +206,11 @@ async function deleteProductById(id) {
     location.reload();
 };
 
-async function updateProductByQuantity(id, q) {
+async function updateProductByQuantity(id, quantity) {
     await fetch(`/api/products/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            q,
+            quantity,
         }),
         headers: { 'Content-Type': 'application/json' }
     });
