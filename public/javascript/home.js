@@ -16,26 +16,60 @@ function insertDate() {
 
 async function addProductHandler(e) {
     e.preventDefault();
+    let isOk = true;
 
     const name = getProductName();
     const category = getCategory();
     const expiration_date = getDate();
     const quantity = +getQuantity();
 
+    const pNameEl = document.querySelector('#p-name');
+    const expDateEl = document.querySelector('#date');
+    const quantityEl = document.querySelector('#quantity');
+    if (!name) {
+        pNameEl.classList.add('input-err');
+        pNameEl.nextElementSibling.classList.remove('hdn');
+        isOk = false;
+    } else {
+        pNameEl.classList.remove('input-err');
+        pNameEl.nextElementSibling.classList.add('hdn');
+    };
+ 
+    if (!expiration_date) {
+        expDateEl.classList.add('input-err');
+        expDateEl.nextElementSibling.classList.remove('hdn');
+        isOk = false;
+    } else {
+        expDateEl.classList.remove('input-err');
+        expDateEl.nextElementSibling.classList.add('hdn');
+    };
+
+    if (!quantity) {
+        quantityEl.classList.add('input-err');
+        quantityEl.nextElementSibling.classList.remove('hdn');
+        isOk = false;
+    } else {
+        quantityEl.classList.remove('input-err');
+        quantityEl.nextElementSibling.classList.add('hdn');
+    };
+
     if (!category) {
-        return alert('You need to select a category');
+        document.querySelector('select').classList.add('input-err');
+        isOk = false;
     };
 
-    const product = {
-        name,
-        category,
-        expiration_date,
-        quantity
-    };
+    if (isOk) {
+        const product = {
+            name,
+            category,
+            expiration_date,
+            quantity
+        };
 
-    await saveProduct(product);
-    resetForm();
-    alert('Added!');
+        await saveProduct(product);
+        resetForm();
+        alert('Added!');
+    };
 };
 
 function saveProduct(product) {
@@ -60,7 +94,7 @@ function getProductName() {
     const pName = document.querySelector('#p-name').value.trim();
 
     if (!pName) {
-        return alert('You need to enter the product name!');
+        return "";
     }
     
     return pName[0].toUpperCase() + pName.substring(1).toLowerCase();  

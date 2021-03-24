@@ -267,6 +267,20 @@ h4.dbld:hover {
     width: 85%;
 }
 
+.err {
+    position: absolute;
+    top: 95%;
+    left: 45%;
+    color: red;
+    font-weight: bold;
+}
+
+.input-err {
+    border: 1px solid red;
+    border-radius: 5px
+};
+
+
 .bar, .item-name {
     border: 1px solid var(--search-box);
     border-radius: 5px;
@@ -456,7 +470,6 @@ ul > li:hover {
     outline: none;
 }
 
-
 .goals, .aboutus {
     display: flex;
     justify-content: center;
@@ -493,6 +506,9 @@ ul > li:hover {
     margin: 5px 0;
 }
 
+.hdn {
+    display: none;
+};
 
 
 /* media query for screen = < 1400px */
