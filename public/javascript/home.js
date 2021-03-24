@@ -59,6 +59,7 @@ async function addProductHandler(e) {
     };
 
     if (isOk) {
+        document.querySelector('select').classList.remove('input-err');
         const product = {
             name,
             category,
