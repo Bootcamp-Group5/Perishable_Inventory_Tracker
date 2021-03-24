@@ -24,7 +24,6 @@ function dateStatus() {
 
         const dateDiff = today.diff(expDate, 'days');
 
-        console.log(dateDiff);
         if (dateDiff >= 0) {
             icon.classList.add('past');
         } else if (dateDiff >= -3) {    
@@ -131,6 +130,12 @@ async function updateProductHandler(e) {
     const id = card.getAttribute('data-id');
 
     const quantity = card.querySelector('.quantity-nu').value;
+
+    if (!quantity) {
+        alert('Invalid value for quantity!');
+        return 0;
+    };
+
     if (quantity === '0') {
         deleteProductById(id);
     } else {

@@ -38,10 +38,11 @@ router.get('/', (req, res) => {
 
 
   // select x,y from post where x or y
-router.get('/:name', (req, res) => {
+router.get('/:name', withAuth, (req, res) => {
     Product.findAll({
         where: {
-          name: req.params.name
+          name: req.params.name,
+          user_id: req.session.user_id
         },
         attributes: [
           'id', 
