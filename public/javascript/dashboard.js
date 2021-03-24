@@ -17,6 +17,22 @@ document.querySelector('#showall').addEventListener('click', (e) => {
 
     window.location = "/dashboard";
 });
+document.querySelector('#order-exp').addEventListener('click', sortByExp);
+
+function sortByExp() {
+    let loc = window.location.pathname.split('/');
+    const pName = loc.pop();
+    loc = loc.join('/');
+
+    if (loc === '/api/products') {
+        loc = '/dashboard/orderBy/expiration_date/' + pName;
+
+        return window.location = loc;
+    };
+
+    window.location = '/dashboard/orderBy/expiration_date';
+};
+
 loadProductImage();
 
 function dateStatus() {
