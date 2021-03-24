@@ -13,7 +13,6 @@ function checkCategory() {
     const category = getCategory();
     if (!category) {
         document.querySelector('select').classList.add('input-err');
-        isOk = false;
     } else {
         document.querySelector('select').classList.remove('input-err');
     }
