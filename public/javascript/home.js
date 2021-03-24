@@ -5,6 +5,33 @@ document.querySelectorAll('.accordion-list').forEach(elm => {
 document.querySelectorAll(".list-button").forEach(item => {
     item.addEventListener('click', runAnimate);
 });
+document.querySelector('select').addEventListener('change', checkCategory);
+document.querySelector('#p-name').addEventListener('change', checkInput);
+
+
+function checkCategory() {
+    const category = getCategory();
+    if (!category) {
+        document.querySelector('select').classList.add('input-err');
+        isOk = false;
+    } else {
+        document.querySelector('select').classList.remove('input-err');
+    }
+}
+
+function checkInput() {
+    const pNameEl = document.querySelector('#p-name');
+    const pName = pNameEl.value.trim();
+    console.log(pName);
+    
+    if (!pName) {
+        pNameEl.classList.add('input-err');
+        pNameEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        pNameEl.classList.remove('input-err');
+        pNameEl.nextElementSibling.classList.add('hdn');
+    };
+}
 
 function insertDate() {
     let today = new Date();
