@@ -13,7 +13,7 @@
                 <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 storage">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 row options"> 
                         <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-6">
-                            <h4 id="sort-by-exp"><i class='fa fa-calendar'></i><a href="/dashboard/orderBy/expiration_date" class="sort-item"> Order By Expiration Date</a></h4>
+                            <h4 id="sort-by-exp"><i class='fa fa-calendar'></i><a id="order-exp" class="sort-item"> Order By Expiration Date</a></h4>
                             
                         </div>    
                         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
@@ -25,7 +25,7 @@
                         </div>
                         
                         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
-                            <h4 id="sort-by-quantity"><i class='fa fa-sort-numeric-asc'></i><a href="/dashboard/orderBy/quantity" class="sort-item"> Order By Quantity</a></h4>
+                            <h4 id="sort-by-quantity"><i class='fa fa-sort-numeric-asc'></i><a id="order-q" class="sort-item"> Order By Quantity</a></h4>
                         </div>    
                     </div>
 
@@ -35,7 +35,7 @@
                             <input type="text" class="col-7 bar" placeholder="Enter A Product's Name" id="p-name" />
                             <button type="submit" class="btn col-1 search"><i class='fa fa-search'></i></button>
                             <div class="col-4 showall">
-                                <button type="submit" class="btn">Show All</button> 
+                                <button id="showall" class="btn">Show All</button> 
                             </div> 
                             
                         </form>
