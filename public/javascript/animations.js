@@ -28,8 +28,8 @@ anime({
     keyframes: [
         //{translateY: -500},
         
-        {translateX: -100},
-        {translateY: 100},
+        //{translateX: -100},
+        {translateY: 200},
        
       ],
       scale: [
@@ -60,8 +60,8 @@ anime({
   keyframes: [
     //{translateY: -500},
     
-    {translateX: -100},
-    {translateY: 100},
+   // {translateX: -100},
+    {translateY: 200},
    
   ],
     scale: [
@@ -81,8 +81,8 @@ anime({
   keyframes: [
     //{translateY: -500},
     
-    {translateX: -100},
-    {translateY: 100},
+    
+    {translateY: 200},
    
   ],
     scale: [
