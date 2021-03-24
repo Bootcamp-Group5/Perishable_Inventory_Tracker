@@ -22,7 +22,7 @@ const helpers = require('./utils/helpers'); //
 const exphbs = require('express-handlebars');
 //const hbs = exphbs.create({ helpers }); 
 const hbs = exphbs.create({helpers}); 
-// *** End of Import Handlebars library require *** // 
+// *** End of Import Handlebars library require *** //
 
 
 // *** Start of express session store *** /
