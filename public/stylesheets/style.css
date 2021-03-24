@@ -7,7 +7,8 @@
     --box-color: #fff;
     --box-shadow: rgba(0,0,0,0.1);
     --button-color: #b84ecf;
-    --button-image: linear-gradient(45deg, #b74cd1 0%, #eab15c 52%, #b74cd1 90%);
+    --button-image1: rgba(156,39,176, 0.3);
+    --button-image2: rgba(156,39,176,0.29);
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
@@ -99,17 +100,14 @@ label {
 }
 
 .btn {
-    background-color: var(--button-color);
-    background-image: var(--button-image);
+    background-color: var(--button-color);    
     transition: all .5s ease-out;
-    background-size: 1px 120px;
-    background-position: 0 -10px;
     color: var(--hover);
     font-size: 20px;
 }
 
 .btn:hover {
-    background-position: 1px -50px;
+    box-shadow: 0 8px 16px 0 var(--button-image1), 0 6px 20px 0 var(--button-image2);
     color: var(--hover);
 }
 
@@ -511,6 +509,20 @@ ul > li:hover {
     display: none;
 };
 
+.introduction h2 {
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 20%;
+}
+
 
 /* media query for screen = < 1400px */
 @media screen and (max-width: 1400px) {
@@ -602,6 +614,14 @@ ul > li:hover {
 
     .items {
         margin: auto;
+    }
+
+    .input-form {
+        margin: 60px auto auto auto;
+    }
+
+    .logo {
+        width: 23%;
     }
 
 }
@@ -729,6 +749,10 @@ ul > li:hover {
         font-size: 21px;
     }
 
+    .logo {
+        width: 26%;
+    }
+
 }
 
 
@@ -813,6 +837,9 @@ ul > li:hover {
         font-size: 14px;
     }
 
+    .logo {
+        width: 35%;
+    }
 }
 
 
@@ -860,5 +887,9 @@ ul > li:hover {
 
     .showall button, .update button, .history button, .search {
         font-size: 12px;
+    }
+
+    .logo {
+        width: 50%;
     }
 }
