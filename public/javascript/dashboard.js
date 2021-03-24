@@ -20,6 +20,22 @@ document.querySelector('#showall').addEventListener('click', (e) => {
 document.querySelector('#order-exp').addEventListener('click', sortByExp);
 document.querySelector('#order-q').addEventListener('click', sortByQ);
 loadProductImage();
+checkOrderBy();
+
+function checkOrderBy() {
+    const ordered = window.location.pathname.split('/').pop() === 'd';
+
+    if (ordered) {
+        const idArr = ['#sort-by-category', '#sort-by-name'];
+        for (id of idArr) {
+            const h4El = document.querySelector(id);
+            h4El.classList.add('dbld');
+            h4El.querySelector('a').classList.add('dbld');
+            h4El.querySelector('a').href = "javascript: void(0)";
+            console.log('added');
+        };
+    };
+};
 
 function sortByExp() {
     const locArr = window.location.pathname.split('/');

@@ -219,6 +219,27 @@ label {
 
 .options h4:hover {
     color: var(--text-hover);
+    cursor: pointer;
+}
+
+h4.dbld {
+    color: gray;
+}
+
+h4.dbld a {
+    color: gray;
+}
+
+h4.dbld a:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+h4.dbld:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .sort-item {
@@ -498,7 +519,6 @@ ul > li:hover {
     }
 }
 
-
 /* media query for screen = < 1180px */
 @media screen and (max-width: 1180px) {
     .list-button span {
@@ -519,6 +539,7 @@ ul > li:hover {
  
 
 }
+
 
 /* media query for screen = < 992px */
 @media screen and (max-width: 991px) {
