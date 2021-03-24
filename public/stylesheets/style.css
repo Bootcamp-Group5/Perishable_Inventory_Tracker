@@ -220,6 +220,27 @@ label {
 
 .options h4:hover {
     color: var(--text-hover);
+    cursor: pointer;
+}
+
+h4.dbld {
+    color: gray;
+}
+
+h4.dbld a {
+    color: gray;
+}
+
+h4.dbld a:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+h4.dbld:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .sort-item {
@@ -246,6 +267,20 @@ label {
     margin: auto;
     width: 85%;
 }
+
+.err {
+    position: absolute;
+    top: 95%;
+    left: 45%;
+    color: red;
+    font-weight: bold;
+}
+
+.input-err {
+    border: 1px solid red;
+    border-radius: 5px
+};
+
 
 .bar, .item-name {
     border: 1px solid var(--search-box);
@@ -436,7 +471,6 @@ ul > li:hover {
     outline: none;
 }
 
-
 .goals, .aboutus {
     display: flex;
     justify-content: center;
@@ -473,9 +507,9 @@ ul > li:hover {
     margin: 5px 0;
 }
 
-.introduction h2 {
-    margin-bottom: 20px;
-}
+.hdn {
+    display: none;
+};
 
 
 /* media query for screen = < 1400px */
@@ -502,7 +536,6 @@ ul > li:hover {
     }
 }
 
-
 /* media query for screen = < 1180px */
 @media screen and (max-width: 1180px) {
     .list-button span {
@@ -523,6 +556,7 @@ ul > li:hover {
  
 
 }
+
 
 /* media query for screen = < 992px */
 @media screen and (max-width: 991px) {

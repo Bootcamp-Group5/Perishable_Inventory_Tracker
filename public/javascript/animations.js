@@ -28,16 +28,16 @@ anime({
     keyframes: [
         //{translateY: -500},
         
-        {translateY: 500},
-        {translateX: 500},
+        //{translateX: -100},
+        {translateY: 200},
        
       ],
       scale: [
-        {value: .1, easing: 'easeOutSine', duration: 500},
-        {value: 1, easing: 'easeInOutQuad', duration: 1200}
+        {value: .1, easing: 'easeOutCirc', duration: 600},
+        {value: 1, easing: 'easeOutCirc', duration: 600}
       ],
     borderRadius: 450,
-    //easing: 'linear',
+    easing: 'linear',
     direction: 'alternate'
 });  
 
@@ -58,20 +58,46 @@ anime({
 anime({
   targets: [".animate-form"],
   keyframes: [
-      //{translateY: -500},
-      
-      {translateX: -500},
-      {translateY: 500},
-     
-    ],
+    //{translateY: -500},
+    
+   // {translateX: -100},
+    {translateY: 200},
+   
+  ],
     scale: [
-      {value: .1, easing: 'easeOutSine', duration: 500},
-      {value: 1, easing: 'easeInOutQuad', duration: 1200}
+      {value: .1, easing: 'easeOutCirc', duration: 600},
+      {value: 1, easing: 'easeOutCirc', duration: 600}
+
     ],
   borderRadius: 450,
+  easing: 'linear',
   //easing: 'linear',
   direction: 'alternate'
 });  
+
+
+anime({
+  targets: [".animate-footer"],
+  keyframes: [
+    //{translateY: -500},
+    
+    
+    {translateY: 200},
+   
+  ],
+    scale: [
+      {value: .1, easing: 'easeOutCirc', duration: 600},
+      {value: 1, easing: 'easeOutCirc', duration: 600}
+
+    ],
+  borderRadius: 450,
+  easing: 'linear',
+  //easing: 'linear',
+  direction: 'alternate'
+});  
+
+
+
 
 
 

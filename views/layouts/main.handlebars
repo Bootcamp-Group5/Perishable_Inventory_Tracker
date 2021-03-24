@@ -21,13 +21,12 @@
         <nav class="col-sm-12 nav">
           <!-- need to input the href after the API routes complete -->
           {{#if loggedIn}}
-            <a href="/" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Add Product</a>
             <a href="/dashboard" class="nav-link">Dashboard</a>
             <a href="/" id="logout" class="nav-link">Logout</a>
           {{else}}
-            <a href="/" class="nav-link">Home</a>
-            <a href="/dashboard" class="nav-link">Dashboard</a>
-            <a href="/login" class="nav-link">Login</a>   
+          <!-- Home Route added -->
+            <a href="/login" class="nav-link">Home</a>   
            {{/if}}
         </nav>
     </header>
@@ -35,7 +34,7 @@
     {{{ body }}}
     </main>
 
-    <footer>
+    <footer class="animate-footer">
      
         &copy; 2021 Simply Unused, Inc.
        
