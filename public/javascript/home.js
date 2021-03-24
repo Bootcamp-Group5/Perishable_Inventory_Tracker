@@ -7,7 +7,34 @@ document.querySelectorAll(".list-button").forEach(item => {
 });
 document.querySelector('select').addEventListener('change', checkCategory);
 document.querySelector('#p-name').addEventListener('change', checkInput);
+document.querySelector('#date').onchange = checkDate;
+document.querySelector('#quantity').onchange = checkQuantity;
 
+function checkQuantity() {
+    const quantityEl = document.querySelector('#quantity');
+    const quantity = quantityEl.value.trim();
+
+    if (!quantity || quantity === '0') {
+        quantityEl.classList.add('input-err');
+        quantityEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        quantityEl.classList.remove('input-err');
+        quantityEl.nextElementSibling.classList.add('hdn');
+    };
+}
+
+function checkDate() {
+    const expDateEl = document.querySelector('#date');
+    const expiration_date = expDateEl.value;
+
+    if (!expiration_date) {
+        expDateEl.classList.add('input-err');
+        expDateEl.nextElementSibling.classList.remove('hdn');
+    } else {
+        expDateEl.classList.remove('input-err');
+        expDateEl.nextElementSibling.classList.add('hdn');
+    };
+}
 
 function checkCategory() {
     const category = getCategory();
@@ -70,7 +97,7 @@ async function addProductHandler(e) {
         expDateEl.nextElementSibling.classList.add('hdn');
     };
 
-    if (!quantity) {
+    if (!quantity || quantity === '0') {
         quantityEl.classList.add('input-err');
         quantityEl.nextElementSibling.classList.remove('hdn');
         isOk = false;
