@@ -12,6 +12,7 @@
 * [Presentation](#Presentation)
 * [Status](#Status)
 * [Questions](#Questions)
+* [Credits](#Credits)
 * [Webpage](#Webpage)
 
 <a name="Contributors"></a>
@@ -69,9 +70,11 @@ This webpage uses user input to track items that they input into our system. We 
 
 
 <a name ="Questions"></a>
-# 🙋‍ Questions 🙋‍
-Any questions can be sent to our group email at uoft.group.five@gmail.com !
+# 🙋‍ Questions / Contributions 🙋‍
+Any questions or contributions can be sent to our group email at uoft.group.five@gmail.com !
 
+<a name ="Credits"></a>
+A special thank you to 
 <a name="Webpage"></a>
 # 🍱 Webpage 🍱
 <a href= "https://boiling-stream-03491.herokuapp.com/"> Simply Unused Link
