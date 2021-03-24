@@ -61,7 +61,7 @@ router.get('/homepage', withAuth,(req, res) => {
       'image_string',
       'expiration_date',
       'quantity',
-      //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      
     ],
     include: [
       {
