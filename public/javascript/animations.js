@@ -76,6 +76,30 @@ anime({
 });  
 
 
+anime({
+  targets: [".animate-footer"],
+  keyframes: [
+    //{translateY: -500},
+    
+    {translateX: -100},
+    {translateY: 100},
+   
+  ],
+    scale: [
+      {value: .1, easing: 'easeOutCirc', duration: 600},
+      {value: 1, easing: 'easeOutCirc', duration: 600}
+
+    ],
+  borderRadius: 450,
+  easing: 'linear',
+  //easing: 'linear',
+  direction: 'alternate'
+});  
+
+
+
+
+
 
 
 // let animationFormEntry = anime({
