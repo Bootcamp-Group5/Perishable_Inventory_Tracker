@@ -148,7 +148,7 @@ router.get('/orderBy/:sort', withAuth, (req, res) => {
 
 });
 
-router.get('/orderBy/:sort/:name', withAuth, (req, res) => {
+router.get('/orderBy/:sort/:name/d', withAuth, (req, res) => {
   console.log('======================');
   const order = req.params.sort;
   Product.findAll({

@@ -18,14 +18,17 @@ document.querySelector('#showall').addEventListener('click', (e) => {
     window.location = "/dashboard";
 });
 document.querySelector('#order-exp').addEventListener('click', sortByExp);
+document.querySelector('#order-q').addEventListener('click', sortByQ);
+loadProductImage();
 
 function sortByExp() {
-    let loc = window.location.pathname.split('/');
-    const pName = loc.pop();
-    loc = loc.join('/');
+    const locArr = window.location.pathname.split('/');
+    const ordered = locArr.pop() === 'd';
+    const pName = locArr.pop();
 
-    if (loc === '/api/products') {
-        loc = '/dashboard/orderBy/expiration_date/' + pName;
+    if (ordered) {
+        loc = '/dashboard/orderBy/expiration_date/' + pName + '/d';
+        console.log(loc);
 
         return window.location = loc;
     };
@@ -33,7 +36,20 @@ function sortByExp() {
     window.location = '/dashboard/orderBy/expiration_date';
 };
 
-loadProductImage();
+function sortByQ() {
+    const locArr = window.location.pathname.split('/');
+    const ordered = locArr.pop() === 'd';
+    const pName = locArr.pop();
+
+    if (ordered) {
+        loc = '/dashboard/orderBy/quantity/' + pName + '/d';
+        console.log(loc);
+
+        return window.location = loc;
+    };
+
+    window.location = '/dashboard/orderBy/quantity';
+};
 
 function dateStatus() {
     document.querySelectorAll('.exp-date').forEach(date => {
@@ -109,7 +125,7 @@ function getProductName() {
 
 function searchProduct(pName) {
     console.log(pName);
-    window.location = `/api/products/${pName}`;
+    window.location = `/api/products/${pName}/d`;
 };
 
 function saveProducts(products) {
@@ -174,11 +190,11 @@ async function deleteProductById(id) {
     location.reload();
 };
 
-async function updateProductByQuantity(id, q) {
+async function updateProductByQuantity(id, quantity) {
     await fetch(`/api/products/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            q,
+            quantity,
         }),
         headers: { 'Content-Type': 'application/json' }
     });

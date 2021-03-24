@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 
 
   // select x,y from post where x or y
-router.get('/:name', withAuth, (req, res) => {
+router.get('/:name/d', withAuth, (req, res) => {
     Product.findAll({
         where: {
           name: req.params.name,
