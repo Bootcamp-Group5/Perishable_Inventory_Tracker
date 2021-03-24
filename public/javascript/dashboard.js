@@ -12,6 +12,11 @@ document.querySelectorAll(".update-btn").forEach(item => {
 document.querySelectorAll(".remove-btn").forEach(elm => {
     elm.addEventListener('click', removeProductHandler);
 });
+document.querySelector('#showall').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    window.location = "/dashboard";
+});
 loadProductImage();
 
 function dateStatus() {
