@@ -7,7 +7,8 @@
     --box-color: #fff;
     --box-shadow: rgba(0,0,0,0.1);
     --button-color: #b84ecf;
-    --button-image: linear-gradient(45deg, #b74cd1 0%, #eab15c 52%, #b74cd1 90%);
+    --button-image1: rgba(183,76,209, 0.3);
+    --button-image2: rgba(234,177,92,0.29);
     --past: #f33a31;
     --danger: #f3b631;
     --safe: #0ca74c;
@@ -61,21 +62,18 @@ header div h1 {
 
 }
 
-
-header nav {
-    width: 100%;
-    justify-content: center;
-}
-
-header nav a {
+.nav-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-size: 30px;
     transition: all .2s ease-out;
     color: var(--hover);
-    margin: 0 5vw;
+    margin: 0 20px;
 }
 
-header nav a:hover {
+
+.nav-link:hover {
     background: var(--hover);
     border-radius: 15px;
     color: var(--font);
@@ -84,7 +82,8 @@ header nav a:hover {
 footer {
     position: absolute;
     text-align: center;
-    width: 100%; 
+    width: 100%;
+    bottom: 0
 }
 
 
@@ -98,17 +97,14 @@ label {
 }
 
 .btn {
-    background-color: var(--button-color);
-    background-image: var(--button-image);
+    background-color: var(--button-color);    
     transition: all .5s ease-out;
-    background-size: 1px 120px;
-    background-position: 0 -10px;
     color: var(--hover);
     font-size: 20px;
 }
 
 .btn:hover {
-    background-position: 1px -50px;
+    box-shadow: 0 8px 16px 0 var(--button-image1), 0 6px 20px 0 var(--button-image2), 0 8px 16px 0 var(--button-image1);
     color: var(--hover);
 }
 
@@ -120,7 +116,7 @@ label {
 .introduction {
     display: flex;
     justify-content: center;
-    margin: 70px 10px 0 10px;
+    margin: 60px 10px 0 10px;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -510,6 +506,19 @@ ul > li:hover {
     display: none;
 };
 
+.introduction h2 {
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 65%;
+}
+
 
 /* media query for screen = < 1400px */
 @media screen and (max-width: 1400px) {
@@ -552,7 +561,14 @@ ul > li:hover {
     .form-select, .history button, .list li {
         font-size: 18px;
     }
- 
+    
+   .nav-link {
+        font-size: 25px;
+    }
+
+    .logo {
+        width: 75%;
+    }
 
 }
 
@@ -569,7 +585,6 @@ ul > li:hover {
         gap: 0;
         column-gap: 20px;
     }
-
 
     ul > li {
         font-size: 17px;
@@ -603,6 +618,19 @@ ul > li:hover {
         margin: auto;
     }
 
+    .input-form {
+        margin: 60px auto auto auto;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 22px;
+        margin: 0 14px;
+    }
+
 }
 
 
@@ -624,10 +652,6 @@ ul > li:hover {
         font-size: 16px;
     } 
 
-    header nav a {
-        margin: auto;
-        font-size: 28px;
-    }
 
     header div h1 {
         font-size: 52px;
@@ -639,6 +663,10 @@ ul > li:hover {
 
     .options h4 {
         font-size: 19px;
+    }
+
+    .nav-link {
+        margin: 0 8px;
     }
 }
 
@@ -652,8 +680,9 @@ ul > li:hover {
         height: 45px;
     }
 
-    header nav a {
-        font-size: 26px;
+    .nav-link {
+        font-size: 16px; 
+        margin: 0;   
     }
 
     .category-section img, .card-img {
@@ -727,7 +756,6 @@ ul > li:hover {
     .item-info h4 {
         font-size: 21px;
     }
-
 }
 
 
@@ -746,8 +774,9 @@ ul > li:hover {
         font-size: 30px;
     }
 
-    header nav a {
+    .nav-link {
         font-size: 18px;
+        margin: auto;
     }
 
     .dates p, .add-items p, .form-select, .expire-date, .item-name, .amount {
@@ -812,6 +841,10 @@ ul > li:hover {
         font-size: 14px;
     }
 
+    .logo {
+        width: 45%;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -829,7 +862,7 @@ ul > li:hover {
         font-size: 25px;
     }
 
-    header nav a {
+    .nav-link {
         font-size: 13px;
     }
 
@@ -859,5 +892,9 @@ ul > li:hover {
 
     .showall button, .update button, .history button, .search {
         font-size: 12px;
+    }
+
+    .logo {
+        width: 60%;
     }
 }
