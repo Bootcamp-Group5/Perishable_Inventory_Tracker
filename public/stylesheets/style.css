@@ -51,16 +51,10 @@ header {
     line-height: 2.0;
 }
 
-header div h1 {
-    display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    font-size: 55px;    
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--hover);
-
+.nav {
+    padding: 30px 0;
 }
+
 
 .nav-link {
     display: flex;
@@ -346,8 +340,13 @@ h4.dbld:hover {
     padding: 0;
 }
 
+.image-container {
+    display: flex;
+    padding: 0;
+}
 
-.product-image{
+.product-image {
+    width: 100%;
     padding: 28px 0;
 }
 
@@ -775,7 +774,7 @@ ul > li:hover {
     }
 
     .nav-link {
-        font-size: 18px;
+        font-size: 16px;
         margin: auto;
     }
 
@@ -843,7 +842,10 @@ ul > li:hover {
 
     .logo {
         width: 45%;
-        margin-bottom: 10px;
+    }
+
+    .nav {
+        padding: 10px 0 0 0;
     }
 }
 
@@ -863,7 +865,7 @@ ul > li:hover {
     }
 
     .nav-link {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .add-form button, footer {
