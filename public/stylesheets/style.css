@@ -434,10 +434,6 @@ ul > li:hover {
     padding: 0;
 }
 
-.product-image {
-    width: 100%;
-    padding: 28px 0;
-}
 
 .item-card {
     background-color: var(--hover);
