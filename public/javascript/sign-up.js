@@ -3,6 +3,7 @@ async function signupFormHandler(event) {
     console.log("button clicked")
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const phone_number = document.querySelector('#phone_number-signup').value.trim();
   
   
     if (username !== "" && password !== "") {
@@ -12,7 +13,8 @@ async function signupFormHandler(event) {
           method: 'post',
           body: JSON.stringify({
             username,
-            password
+            password,
+            phone_number
           }),
           headers: { 'Content-Type': 'application/json' }
         });

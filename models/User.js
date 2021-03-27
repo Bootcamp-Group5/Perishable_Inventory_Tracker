@@ -62,7 +62,11 @@ User.init(
           // this means the password must be at least four characters long
           len: [4]
         }
-      }
+      },
+      phone_number: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
     },
     {
         //promise funciton async/await
