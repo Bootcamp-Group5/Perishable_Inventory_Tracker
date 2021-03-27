@@ -2,6 +2,27 @@ const router = require('express').Router();
 //const { User, Post, Vote, Comment } = require('../../models');
 const { User, Product} = require('../../models');
 
+// *** Start of TWILIO text messaging service ***//
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio') (accountSid, authToken)
+
+function sendTextMessage (phone_number, username) {
+
+  console.log("function started")
+  console.log(typeof(phone_number))
+  console.log(phone_number);
+
+  client.messages.create({
+    to: phone_number,
+    from: '+12892076557',
+    body: `Hey ${username}, welcome to simply unused!
+    Please enter a product to start!`
+  });
+
+}
+
+
 
 
 // GET /api/users ALL
@@ -58,14 +79,15 @@ router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
       //email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      phone_number: req.body.phone_number
     })
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-      
+        sendTextMessage(dbUserData.phone_number, dbUserData.username);
         res.json(dbUserData);
       });
     })

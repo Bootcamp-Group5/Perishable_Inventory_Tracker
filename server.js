@@ -47,6 +47,21 @@ issues and is compatible with the Sequelize ORM."
 */
 // *** End of express session store *** //
 
+
+// *** Start of TWILIO text messaging service ***//
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio') (accountSid, authToken)
+
+client.messages.create({
+  to: '+12899413550',
+  from: '+12892076557',
+  body: 'Text message test 1234'
+});
+// *** End of TWILIO text messaging service ***//
+
+
+
 // *** Initiate Express *** //
 const app = express();
 // Port start node js with express listening port
