@@ -12,7 +12,8 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.1"
+    "sequelize": "^6.6.1",
+    "twilio": "^3.59.0"
   },
   "devDependencies": {},
   "scripts": {
