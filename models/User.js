@@ -65,7 +65,11 @@ User.init(
       },
       phone_number: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        validate: {
+          // phone number should be only 11 digits. Includes +1
+          len: [11]
+        }
       },
     },
     {
