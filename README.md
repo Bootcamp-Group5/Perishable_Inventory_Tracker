@@ -11,6 +11,7 @@
 * [Functionality](#Functionality)
 * [Presentation](#Presentation)
 * [Status](#Status)
+* [Texting](#Texting)
 * [Questions](#Questions)
 * [Credits](#Credits)
 * [Webpage](#Webpage)
@@ -68,13 +69,16 @@ This webpage uses user input to track items that they input into our system. We 
 # 🍣 Presentation 🍣
 [Simply-Unused.pptx](https://github.com/Bootcamp-Group5/simply-unused/files/6192460/Simply-Unused.pptx)
 
+<a name="Texting"></a>
+# 🤳 Texting 🤳
+We have introduced texting notifications to our website! This will update the user via text when their food is close to expiration! Although we are currently limited to the free version of this technology as traffic starts to increase we will move int the paid version and unlock this feature to the general public! If you would like to add your number to the texting list please contact us at uoft.group.five@gmail.com !
 
 <a name ="Questions"></a>
 # 🙋‍ Questions / Contributions 🙋‍
 Any questions or contributions can be sent to our group email at uoft.group.five@gmail.com !
 
 <a name ="Credits"></a>
-A special thank you to 
+A special thank you to our teachers, and to the technologies we used. A special thank you to trillio for a free membership to include our texting functionality!
 <a name="Webpage"></a>
 # 🍱 Webpage 🍱
 <a href= "https://boiling-stream-03491.herokuapp.com/"> Simply Unused Link
