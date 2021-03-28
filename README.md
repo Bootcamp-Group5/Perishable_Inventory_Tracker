@@ -1,4 +1,4 @@
-# <a href="">🥗 Welcome to Simply Unused! 🥗</a>
+# <a href="https://boiling-stream-03491.herokuapp.com/">🥗 Welcome to Simply Unused! 🥗</a>
 ## With Simply Unused you will never have to worry about expiry dates again!
 
 # 🍎 Table of Contents 🍎
@@ -54,14 +54,14 @@ This webpage uses user input to track items that they input into our system. We 
  
  <a name="Functionality"></a> 
 # 🌮 Functionality 🌮
+![Untitled_ Mar 28, 2021 2_17 PM (1)](https://user-images.githubusercontent.com/72447285/112763187-6a57ae00-8fd1-11eb-9885-fbba7501fdf0.gif)
 
-![Untitled_ Mar 23, 2021 3_12 PM](https://user-images.githubusercontent.com/72447285/112205194-f2f9d700-8bea-11eb-8cd1-6860ce386516.gif)
+
 
 
 <a name="Status"></a>
 # 🍭 Status 🍭
 * We are currently testing the possibiltys of barcode reading and picture recognition software.
-* We are also trying to implement a notification system that will alert the user through email or text that will tell them when the food is close to expiring.
 * Lastly we are going to give recipe alerts to the user, these alerts will be based on the items in their pantry and recommend easy to make dishes with their food products.
 * We beleive this will help reduce waste and also save the user money, this will be a paid feature. 
 
@@ -81,7 +81,7 @@ Any questions or contributions can be sent to our group email at uoft.group.five
 A special thank you to our teachers, and to the technologies we used. A special thank you to trillio for a free membership to include our texting functionality!
 <a name="Webpage"></a>
 # 🍱 Webpage 🍱
-<a href= "https://boiling-stream-03491.herokuapp.com/"> Simply Unused Link
-![image](https://user-images.githubusercontent.com/72447285/112203646-263b6680-8be9-11eb-888c-f7ae03b7a9f5.png)
+# <a href= "https://boiling-stream-03491.herokuapp.com/"> Simply Unused Link
+![Screenshot (42)](https://user-images.githubusercontent.com/72447285/112763119-1fd63180-8fd1-11eb-9511-caf85d8c1fc9.png)
 
 
