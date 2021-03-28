@@ -100,9 +100,7 @@ const client = require('twilio') (accountSid, authToken)
 
 const { Product, User} = require('./models');
 
-let userArr = [];
-getAllUsers();
-
+setInterval(getAllUsers, 1000 * 60 * 60 * 24);
 
 function getAllUsers() {
   User.findAll({
@@ -121,6 +119,8 @@ function getAllUsers() {
       ]
   })
     .then(dbUserData => {
+      const userArr = [];
+
       const users = dbUserData.map(user => user.get({ plain: true }));
 
       for (let i = 0; i < users.length; i++) {
@@ -202,6 +202,8 @@ function sendMessage(userObj) {
     from: '+12892076557',
     body: txt
   });
+
+  console.log(`msg sent to ${userObj.username}`);
 };
 
 function generateText(userObj) {
