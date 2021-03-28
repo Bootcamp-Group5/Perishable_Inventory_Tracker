@@ -98,17 +98,100 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio') (accountSid, authToken)
 
-  const { Product, User} = require('./models');
-  let productNameArrray = []
-  let productQuantityArrray = []
-  let userName = ''
-  let phoneNumber = ''
+const { Product, User} = require('./models');
+let productNameArrray = []
+let productQuantityArrray = []
+let userName = ''
+let phoneNumber = ''
 
-    //console.log(req.session);
-    User.findAll({
-      //username
-      //phonenumber
-      attributes: { exclude: ['password'] },
+// User.findAll({
+//   attributes: { exclude: ['password'] },
+//     include: [
+//       {
+//         model: Product,
+//         attributes: [
+//           'id',
+//           'name',
+//           'image_string',
+//           'expiration_date',
+//           'quantity'
+//         ]
+//       },
+//     ]
+// })
+//   .then(dbProductData => {
+//     const users = dbProductData.map(product => product.get({ plain: true }));
+    
+//     dateStatus(users);
+
+
+//     function sendTextMessage (userDeets, usersProducts,textStatus) {
+       
+//        productNameArrray.push(`${usersProducts.name}`)
+//        productQuantityArrray.push(`${usersProducts.quantity}`)
+//       //  productNameArrray.join('')
+//       //  productQuantityArrray.join('')
+//        userName = userDeets.username
+//        phoneNumber = userDeets.phone_number
+    
+//      }
+
+
+//         function dateStatus(users) {
+
+//             for (i=0; i < users.length; i++) {
+//               for (let j = 0; j < users[i].products.length; j++) {
+                // let expDate = moment(users[i].products[j].expiration_date, 'YYYY-MM-DD')
+                // let today = moment();
+                // let dateDiff = today.diff(expDate, 'days');
+                // let textStatus =""
+
+//                 // if (dateDiff >= 0) {
+//                 //  console.log("Danger Due Now")
+//                 //  textStatus = "expiring today"
+//                 //  sendTextMessage(users[i], users[i].products[j] , textStatus);
+
+//                 // } else if (dateDiff >= -3) {    
+//                 //   console.log("Warning 3 days")
+//                 //   sendTextMessage(users[i], users[i].products[j] , textStatus);
+
+//                 // } else {
+//                 //   console.log("Ok or note expiring 3day +")
+//                 // };
+//               }
+
+//             }
+
+//             client.messages.create({
+//               to: phoneNumber,
+//               from: '+12892076557',
+//               body: `
+// Hey ${userName},
+// Items that require your attention.
+// Product/Quantity 
+// ${productNameArrray.join(' ')} / ${productQuantityArrray.join(' ')}
+
+// `
+// });
+//       }
+
+
+
+//       })
+//       .catch(err => {
+//         console.log('\n!!!!!!!!!! ERROR !!!!!!!!!!\n');
+//         console.log(err);
+//       });
+
+
+// setInterval(getAllUsers, 5000);
+let userArr = [];
+getAllUsers();
+
+
+function getAllUsers() {
+  User.findAll({
+    attributes: { exclude: ['password'] },
       include: [
         {
           model: Product,
@@ -121,131 +204,53 @@ const client = require('twilio') (accountSid, authToken)
           ]
         },
       ]
-    })
-      .then(dbProductData => {
-        // pass a single post object into the homepage template
-        // note that we had res.json(dbPostData) now we use res.render
-        // render is from handlebars engine
-        // to avoid getting all of sequelize object, we need the plain rendering
-        // get({ plain: true }) will get us the attributes that we defined.
-       // console.log(dbPostData[0].get({ plain: true }));
-        // We need full sequelize array
-        const users = dbProductData.map(product => product.get({ plain: true }));
-        
-        dateStatus(users);
-        
-        //res.render('homepage', dbPostData[0].get({ plain: true }));
-        // res.render('homepage', { 
-        //   products,
-        //   loggedIn: req.session.loggedIn
-        //  });
+  })
+    .then(dbUserData => {
+      const users = dbUserData.map(user => user.get({ plain: true }));
 
-        //expiration_date: '2021-03-29'
+      for (let i = 0; i < users.length; i++) {
+        const currUser = users[i];
 
-    
-  
-        function sendTextMessage (userDeets, usersProducts,textStatus) {
-                  //  console.log(userDeets);
-                  //  console.log(usersProducts);
+        currUser.products = currUser.products.filter(product => {
+          const diff = getDateDiff(product.expiration_date);
           
-  
-          // let userName = users.username
-          // let phone_number = users.phone_number
-          // let productName =  users.product.name
-          // let productQuantity = users.product.quantity
-           
-           productNameArrray.push(`${usersProducts.name}`)
-           productQuantityArrray.push(`${usersProducts.quantity}`)
-          //  productNameArrray.join('')
-          //  productQuantityArrray.join('')
-           userName = userDeets.username
-           phoneNumber = userDeets.phone_number
-         
-          //  console.log(`
-          //  Product      | Quantity
-          //  ${productName} | ${productQuantity}`)
-  
-          // for (i=0; i < users.products.length; i++) {
-            
-          
-          // productNameArrray.push(users.product[i].name)
-          
-          // productQuantityArrray.push(users.product[i].quantity)
-  
-          // }
-  
-          // console.log(productNameArrray)
-          // console.log(productQuantityArrray)
-  
-  
-          // let productNameArrray = []
-          // productNameArrray.push(users.product.name)
-          // let productQuantityArrray = []
-          // productQuantityArrray.push(users.product.quantity)
-  
-          // console.log(productNameArrray)
-          // console.log(productQuantityArrray)
-          
-          // console.log("function started")
-          // console.log(typeof(phone_number))
-          // console.log(phone_number);
-          // console.log(userName )
-          // console.log(productName)
-          // console.log(productQuantity)
-  
+          switch(diff) {
+            case 0:
+              product.date_diff = 0;
+              return true;
+              
+            case -1:
+              product.date_diff = 1;
+              return true;
+              
+            case -2:
+              product.date_diff = 2;
+              return true;
 
-        
-         }
+            case -3:
+              product.date_diff = 3;
+              return true;
 
+            default:
+              return false;
+          };
+        });
 
-        function dateStatus(users) {
-          
-            console.log(users.length)
+      };
 
-            for (i=0; i < users.length; i++) {
-              for (let j = 0; j < users[i].products.length; j++) {
-                          
-                let expDate = moment(users[i].products[j].expiration_date, 'YYYY-MM-DD')
-                let today = moment();
-                let dateDiff = today.diff(expDate, 'days');
-                let textStatus =""
-                if (dateDiff >= 0) {
-                 console.log("Danger Due Now")
-                 textStatus = "expiring today"
-                 sendTextMessage(users[i], users[i].products[j] , textStatus);
-              } else if (dateDiff >= -3) {    
-                console.log("Warning 3 days")
-                sendTextMessage(users[i], users[i].products[j] , textStatus);
-              } else {
-                console.log("Ok or note expiring 3day +")
-              };
-                //console.log(products[i].expiration_date)
-                //console.log(expDate)
+      userArr = [...users];
+      console.log(userArr);
+      console.log(userArr[0].products);
+    });
+};
 
-              }
+function getDateDiff(date) {
+  let expDate = moment(date, 'YYYY-MM-DD')
+  let today = moment();
 
-            }
+  let dateDiff = today.diff(expDate, 'days');
 
-            // console.log(productNameArrray.join(' '))
-            // console.log(productQuantityArrray.join(' '))
-            client.messages.create({
-              to: phoneNumber,
-              from: '+12892076557',
-              body: `
-Hey ${userName},
-Items that require your attention.
-Product/Quantity 
-${productNameArrray.join(' ')} / ${productQuantityArrray.join(' ')}
+  return dateDiff;
+};
 
-`
-});
-      }
-
-
-
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
 
