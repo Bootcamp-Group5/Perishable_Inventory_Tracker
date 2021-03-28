@@ -100,8 +100,8 @@ const client = require('twilio') (accountSid, authToken)
 
 const { Product, User} = require('./models');
 
-// setInterval(getAllUsers, 1000 * 60 * 60 * 24);
-getAllUsers();
+setInterval(getAllUsers, 1000 * 60 * 60 * 24);
+// getAllUsers();
 
 function getAllUsers() {
   User.findAll({
