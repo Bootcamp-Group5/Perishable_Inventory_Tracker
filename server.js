@@ -99,92 +99,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio') (accountSid, authToken)
 
 const { Product, User} = require('./models');
-let productNameArrray = []
-let productQuantityArrray = []
-let userName = ''
-let phoneNumber = ''
 
-// User.findAll({
-//   attributes: { exclude: ['password'] },
-//     include: [
-//       {
-//         model: Product,
-//         attributes: [
-//           'id',
-//           'name',
-//           'image_string',
-//           'expiration_date',
-//           'quantity'
-//         ]
-//       },
-//     ]
-// })
-//   .then(dbProductData => {
-//     const users = dbProductData.map(product => product.get({ plain: true }));
-    
-//     dateStatus(users);
-
-
-//     function sendTextMessage (userDeets, usersProducts,textStatus) {
-       
-//        productNameArrray.push(`${usersProducts.name}`)
-//        productQuantityArrray.push(`${usersProducts.quantity}`)
-//       //  productNameArrray.join('')
-//       //  productQuantityArrray.join('')
-//        userName = userDeets.username
-//        phoneNumber = userDeets.phone_number
-    
-//      }
-
-
-//         function dateStatus(users) {
-
-//             for (i=0; i < users.length; i++) {
-//               for (let j = 0; j < users[i].products.length; j++) {
-                // let expDate = moment(users[i].products[j].expiration_date, 'YYYY-MM-DD')
-                // let today = moment();
-                // let dateDiff = today.diff(expDate, 'days');
-                // let textStatus =""
-
-//                 // if (dateDiff >= 0) {
-//                 //  console.log("Danger Due Now")
-//                 //  textStatus = "expiring today"
-//                 //  sendTextMessage(users[i], users[i].products[j] , textStatus);
-
-//                 // } else if (dateDiff >= -3) {    
-//                 //   console.log("Warning 3 days")
-//                 //   sendTextMessage(users[i], users[i].products[j] , textStatus);
-
-//                 // } else {
-//                 //   console.log("Ok or note expiring 3day +")
-//                 // };
-//               }
-
-//             }
-
-//             client.messages.create({
-//               to: phoneNumber,
-//               from: '+12892076557',
-//               body: `
-// Hey ${userName},
-// Items that require your attention.
-// Product/Quantity 
-// ${productNameArrray.join(' ')} / ${productQuantityArrray.join(' ')}
-
-// `
-// });
-//       }
-
-
-
-//       })
-//       .catch(err => {
-//         console.log('\n!!!!!!!!!! ERROR !!!!!!!!!!\n');
-//         console.log(err);
-//       });
-
-
-// setInterval(getAllUsers, 5000);
 let userArr = [];
 getAllUsers();
 
@@ -211,6 +126,10 @@ function getAllUsers() {
       for (let i = 0; i < users.length; i++) {
         const currUser = users[i];
 
+        if (!currUser.phone_number) {
+          continue;
+        };
+
         currUser.products = currUser.products.filter(product => {
           const diff = getDateDiff(product.expiration_date);
           
@@ -236,11 +155,30 @@ function getAllUsers() {
           };
         });
 
+        if (!currUser.products.length) {
+          continue;
+        };
+
+        // sort products based on their date_diff property (from lowest to highest);
+        currUser.products.sort((a, b) => {
+          const aDiff = a.date_diff
+          const bDiff = b.date_diff
+
+          if (aDiff > bDiff) {
+            return 1;
+          };
+
+          if (aDiff < bDiff) {
+            return -1;
+          };
+
+          return 0;
+
+        });
+
+        userArr.push(currUser);
       };
 
-      userArr = [...users];
-      console.log(userArr);
-      console.log(userArr[0].products);
     });
 };
 
