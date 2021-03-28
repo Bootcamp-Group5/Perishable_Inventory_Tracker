@@ -179,6 +179,7 @@ function getAllUsers() {
         userArr.push(currUser);
       };
 
+      userArr.forEach(sendMessage);
     });
 };
 
@@ -189,6 +190,28 @@ function getDateDiff(date) {
   let dateDiff = today.diff(expDate, 'days');
 
   return dateDiff;
+};
+
+function sendMessage(userObj) {
+
+  const txt = generateText(userObj);
+  const phoneNumber = userObj.phone_number;
+
+  client.messages.create({
+    to: phoneNumber,
+    from: '+12892076557',
+    body: txt
+  });
+};
+
+function generateText(userObj) {
+  let text = `Hey ${userObj.username}!\n`;
+
+  userObj.products.forEach(product => {
+    text += `${product.name} expires in ${product.date_diff} days!\n`;
+  });
+
+  return text;
 };
 
 
