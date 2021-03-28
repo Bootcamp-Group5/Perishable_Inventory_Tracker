@@ -1,4 +1,5 @@
 # <a href="https://boiling-stream-03491.herokuapp.com/">🥗 Welcome to Simply Unused! 🥗</a>
+
 ## With Simply Unused you will never have to worry about expiry dates again!
 
 # 🍎 Table of Contents 🍎
@@ -81,7 +82,7 @@ Any questions or contributions can be sent to our group email at uoft.group.five
 A special thank you to our teachers, and to the technologies we used. A special thank you to trillio for a free membership to include our texting functionality!
 <a name="Webpage"></a>
 # 🍱 Webpage 🍱
+
 # <a href= "https://boiling-stream-03491.herokuapp.com/"> Simply Unused Link
 ![Screenshot (42)](https://user-images.githubusercontent.com/72447285/112763119-1fd63180-8fd1-11eb-9511-caf85d8c1fc9.png)
-
 

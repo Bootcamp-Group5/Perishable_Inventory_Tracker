@@ -1,108 +1,295 @@
-{{!-- <div class="container"> 
-    {{#each <posts> as |post|}}
-    {{> post-info post }}
-  {{/each}}
-</div> --}}
+<!-- this form is homepage handler-->
+    <section class="row category">
 
+        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="accordion row" id="accordionExample">
 
-     <!-- this form is homepage handler-->
-        <section class="row justify-content-center">
-            <div class="col-sm-12 row justify-content-center">
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/dairy-products.png"/>
-                        <div>
-                           <h3>Dairy Products</h3>
-                        </div> 
+                <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-2 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/dairy.png" class="animate-category card-icon" alt="Picture of Milk, Cheese and Egg"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-clicked="false" data-target="#Dairy" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Dairy</span>
+                        </button>         
                     </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/grains.png"/>
-                        <div>
-                           <h3>Grains</h3>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/fruits.png" />
-                        <div>
-                           <h3>Fruits</h3>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/vegetables.png"/>
-                        <div>
-                           <h3>Vegetables</h3>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 row justify-content-center">
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/meats.png"/>
+                    <div id="Dairy" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                           <h3>Meats</h3>
-                        </div> 
+                            <ul id="" class="accordion-list">
+                                <li>
+                                    Cheese
+                                </li>
+                                <li>
+                                    Milk
+                                </li>
+                                <li>
+                                    Cream
+                                </li>
+                                <li>
+                                    Yogurt
+                                </li>
+                                <li>
+                                    Butter
+                                </li> 
+                                <li>
+                                    Icecream
+                                </li> 
+                                <li>
+                                    Whey
+                                </li> 
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                 <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/grains.png" class="card-icon" alt="Bag of Rice"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Grains" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Grains</span>
+                        </button>  
+                    </div>
+                    <div id="Grains" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="" class="accordion-list">
+                                <li>
+                                    Rice
+                                </li>
+                                <li>
+                                    Corn
+                                </li>
+                                <li>
+                                    Barley
+                                </li>
+                                <li>
+                                    Oats
+                                </li>
+                                <li>
+                                    Buckwheat
+                                </li> 
+                                <li>
+                                    Millet
+                                </li> 
+                                <li>
+                                    Wheat
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/vegetables.png" class=" card-icon" alt="Mix Vegetables"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Vegetables" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Vegetables</span>
+                        </button> 
+                    </div>
+                    <div id="Vegetables" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="" class="accordion-list">
+                                <li>
+                                    Leafy Green
+                                </li>
+                                <li>
+                                    Cruciferous
+                                </li>
+                                <li>
+                                    Marrow
+                                </li>
+                                <li>
+                                    Root
+                                </li>
+                                <li>
+                                    Allium
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/fruits.png" class="card-icon" alt="Mix Fruits"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Fruits" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Fruits</span>
+                        </button>   
+                     
+                    </div>
+                    <div id="Fruits" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="fruits-list" class="accordion-list">
+                                <li>
+                                    Apple
+                                </li>
+                                <li>
+                                    Pear
+                                </li>
+                                <li>
+                                    Citrus
+                                </li>
+                                <li>
+                                    Tropical
+                                </li>
+                                <li>
+                                    Berries
+                                </li> 
+                                <li>
+                                    Melon
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/sauce-spice.png"/>
-                        <div>
-                           <h3>Sauce & Spice</h3>
-                        </div> 
+                <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/meats.png" class="card-icon" alt="Ham"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Meats" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Meats</span>
+                        </button>  
+                    </div>
+                    <div id="Meats" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="meats-list" class="accordion-list">
+                                <li>
+                                    Lean Meat
+                                </li>
+                                <li>
+                                    Poultry
+                                </li>
+                                <li>
+                                    Fish
+                                </li>
+                                <li>
+                                    Seafood
+                                </li>
+                                <li>
+                                    Eggs
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div>    
-                        <img src="./assets/images/others.png"/>
-                        <div>
-                           <h3>Others</h3>
-                        </div> 
+
+                <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/seasoning.png" class="card-icon" alt="Seasoning"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Seasoning" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Seasoning</span>
+                        </button>  
+                    </div>
+                    <div id="Seasoning" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="seasoning-list" class="accordion-list">
+                                <li>
+                                    Salt
+                                </li>
+                                <li>
+                                    Pepper
+                                </li>
+                                <li>
+                                    Herbs  
+                                </li>
+                                <li>
+                                    Spices
+                                </li>
+                                <li>
+                                    Spice Mixes
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div class="category-card col-xxl-5 col-xl-12 col-lg-12 col-md-3 col-sm-3 col-4">
+                    <div class="row category-section" id="headingTwo">
+                        <div class="col-xxl-1 col-xl-4 col-lg-5 col-md-5 col-sm-0 col-0">
+                            <img src="/images/others.png" class="card-icon" alt="A Picnic Basket"/>
+                        </div>
+                        
+                        <button class="list-button collapsed multi-collapse col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-10 col-11" type="button" data-toggle="collapse" data-target="#Others" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>Others</span>
+                        </button>   
+                    </div>
+                    <div id="Others" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul id="others-list" class="accordion-list">
+                                <li>
+                                    Others
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </section>
-
+        </div>
         <!-- Add produts -->
-        <form>
-            <div class="row justify-content-center">
-                <div class="select-item">
-                    <select class="form-select col-sm-12">
-                        <option selected>Please select the item from list</option>
-                        <option value="one">Apple</option>
-                        <option value="two">Pear</option>
-                        <option value="three">Orange</option>
-                    </select>
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 input-form card" style="max-width: 1000px;">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-0 col-0">
+                    <img src="/images/food.gif" class="card-img" alt="An animation to show food turns rotten from fresh"/>
+                </div>
 
-                    <div class="col-sm-12">
-                        <img src="./assets/images/apple.png" />
+                <div class="form-entry col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 row animate-form">
+                    <select class="form-select col-sm-12 col-xxl-12 col-xl-12 col-lg-12 col-md-10 col-sm-10 col-10">
+                        <option selected disabled value="">Please select the category from list</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Meats">Meats</option>
+                        <option value="Seasoning">Seasoning</option>
+                        <option value="Others">Others</option>
+                    </select> 
+ 
+                    <div class="col-sm-12 col-xxl-12 col-xl-12 col-lg-12 col-md-10 col-sm-10 col-10 row dates">
+                        <p class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-4 col-4">Product Name: 
+                        </p>
+                        <input type="text" id="p-name" class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 item-name"/>  
+                        <span class="err hdn">*Please enter a name</span>
                     </div>
-                </div>    
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-sm-3">
-                    <button type="submit" class="btn">Add Item</button>
-                </div>
 
-                <div class="col-sm-4">
-                    <input id="datepicker" width="276" placeholder="Pick An Expire Date"/>
-                </div>
-
-                <div class="col-sm-3">
-                    <input type="number" value="0" min="0" max="50" step="1"/>
-                </div>
-            </div>
-        </form>
+                    <div class="col-sm-12 col-xxl-12 col-xl-12 col-lg-12 col-md-10 col-sm-10 col-10 row dates">
+                        <p class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-4 col-4">Expire Date: </p>
+                        <input type="date" id="date" class="expire-date">
+                        <span class="err hdn">*Please pick a date</span>
+                    </div>
+                        
+                    <div class="col-sm-12 col-xxl-12 col-xl-12 col-lg-12 col-md-10 col-sm-10 col-10 row add-items">
+                        <p class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-4 col-4">Quantity: </p>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                            <input type="number" id="quantity" value="1" min="1" max="50" step="1" class="amount" />
+                            <!-- <span class="err hdn">*Please enter a value</span> -->
+                            <br/>
+                        </div>
+                    </div> 
+                    <div class="col-sm-12 col-xxl-12 col-xl-12 col-lg-12 col-md-10 col-sm-10 col-10 add-form">
+                        <button type="submit" class="btn" id="add-product">Add Item</button> 
+                    </div>     
+                </div> 
+                  
+            </div>     
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="/javascript/home.js"></script>

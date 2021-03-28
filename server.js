@@ -1,4 +1,4 @@
-// *** Start of Import Express library require *** //
+// *** Start of Import Express library require *** ///
 const express = require('express');
 // *** End of Import Express library require *** //
 
@@ -15,17 +15,17 @@ const sequelize = require('./config/connection');
 // *** End of Import Sequelize library require *** //
 
 // Helper functions
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers'); //
 
 // *** Start of Import Handlebars library require *** // 
 // Used to add back the concept of layout, partials and others.
 const exphbs = require('express-handlebars');
 //const hbs = exphbs.create({ helpers }); 
-const hbs = exphbs.create({}); 
-// *** End of Import Handlebars library require *** // 
+const hbs = exphbs.create({helpers}); 
+// *** End of Import Handlebars library require *** //
 
 
-// *** Start of express session store *** //
+// *** Start of express session store *** /
 /* Description of express-session
 The express-session package is an Express.js middleware 
 that uses sessions, a mechanism that helps applications

@@ -1,0 +1,901 @@
+:root {
+    --hover:  #eaeaea;
+    --text-hover: #cf8517;
+    --font: #701fa0;
+    --background: rgba(0, 0, 0, 0); 
+    --search-box: #c4c4c4;
+    --box-color: #fff;
+    --box-shadow: rgba(0,0,0,0.1);
+    --button-color: #b84ecf;
+    --button-image1: rgba(183,76,209, 0.3);
+    --button-image2: rgba(234,177,92,0.29);
+    --past: #f33a31;
+    --danger: #f3b631;
+    --safe: #0ca74c;
+    --body: linear-gradient(45deg, #eeeeeb 9%, #ecece9e6 60%, #eaeae7e6  88%);
+    --header: linear-gradient(45deg, #740c9a 9%, #951cc3 60%, #790fa2  88%);
+    --goal: #eeeeeb;
+    --goal-card: #6d1b8c;
+    --list-border: #ec6ac5;
+    --list-image: linear-gradient(-180deg, #FF89D6 0%, #C01F9E 100%);
+    --list-span-image: linear-gradient(0deg, #e3dae7 0%, #FEFAFD 100%);
+    --list-span: hsla(290, 100%, 20%, 1);
+    --list-before: #fff;
+    --list-before-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+}
+
+/* general style start */
+.row {
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    color: var(--font);
+    font-family: Helvetica, Arial, sans-serif;
+    background-image: var(--body);
+    font-size: 20px;
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0
+}
+
+label {
+    font-size: 24px;
+}
+
+.btn {
+    background-color: var(--button-color);    
+    transition: all .5s ease-out;
+    color: var(--hover);
+    font-size: 20px;
+}
+
+.btn:hover {
+    box-shadow: 0 8px 16px 0 var(--button-image1), 0 6px 20px 0 var(--button-image2), 0 8px 16px 0 var(--button-image1);
+    color: var(--hover);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.quantity, .quantity div, .quantity p, .card-body, .card-img, .product-name {
+    padding: 0;
+}
+
+.item-name, .bar {
+    border: 1px solid var(--search-box);
+    border-radius: 5px;
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
+}
+
+.card {
+    background-color: var(--background);
+    border: none;
+}
+
+h4.dbld {
+    color: gray;
+}
+
+h4.dbld a {
+    color: gray;
+}
+
+h4.dbld a:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+h4.dbld:hover {
+    color: gray;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.history {
+    margin-top: 30px;
+    max-width: 15%; 
+}
+/* general style end */
+
+
+/* header style start */
+header {
+    background-image: var(--header);
+    background-size: cover;
+    background-position: bottom;
+    padding: 20px 35px;
+    line-height: 2.0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 70%;
+    height: 87%;
+}
+
+.nav {
+    padding: 30px 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    transition: all .2s ease-out;
+    color: var(--hover);
+    margin: 0 20px;
+}
+
+.nav-link:hover {
+    background: var(--hover);
+    border-radius: 15px;
+    color: var(--font);
+}
+/* header style end */
+
+
+/* login/sign up page style start */
+.login {
+    margin-top: 60px;
+    row-gap: 25px;
+}
+
+.introduction {
+    display: flex;
+    justify-content: center;
+    margin: 60px 10px 0 10px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.introduction h2 {
+    margin-bottom: 20px;
+}
+
+.goals, .aboutus {
+    display: flex;
+    justify-content: center;
+    margin: 45px 0;
+}
+
+
+.goals-card {
+    background-color: var(--goal-card);
+    margin: 0 25px;
+    color: var(--goal);  
+    padding: 0;
+}
+
+.card-title {
+    padding: 10px 15px 0 15px;
+    text-align: center;
+}
+
+.card-text {
+    padding: 0 15px 7px 15px;
+    text-align: center;
+}
+/* login/sign up page style end */
+
+
+/* add product page style start */
+.category {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.category-card {
+    margin: auto;
+    padding: 0;
+}
+
+.category-section {
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    width: 70%;
+    margin: 5px 0;
+}
+
+.list-button {
+    background-color: var(--font);
+    color: var(--hover);
+    border-radius: 30px;
+    transition: all .2s ease-out;
+}
+
+.list-button {
+	position: relative;
+	border-radius: 3.75rem;
+	font-weight: 600;
+	border: 1px solid var(--list-border);
+	background-image: var(--list-image);
+    height: 60px;
+}
+
+.list-button span {
+    color: transparent;
+	background-image: var(--list-span-image);
+	-webkit-background-clip: text;
+	background-clip: text;
+	filter: drop-shadow(0 2px 2px var(--list-span));
+}
+
+.list-button:before {
+    content: "";
+	display: block;
+	height: 0.25rem;
+	position: absolute;
+	top: 0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 7.5rem);
+	background: var(--list-before);
+	border-radius: 100%;
+	opacity: 0.7;
+	background-image: var(--list-before-image);
+}
+
+.list-button:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li {
+    text-align: start;
+    transition: all .2s ease-out;
+}
+
+ul > li:hover {
+    color: var(--text-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-form {
+    margin: 60px auto auto 35px;
+    padding: 0;
+}
+
+.form-select {
+    padding: 10px;
+    margin: auto auto 25px auto;
+    border: 1px solid var(--search-box);
+    border-radius: 5px;
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
+}
+
+.dates, .add-items, .add-form {
+    margin: auto auto 20px auto;
+    row-gap: 40px;
+    padding: 0;
+}
+
+.dates p, .add-items p {
+    text-align: left;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 24px;
+}
+
+.dates div {
+    text-align: start;
+}
+
+.expire-date {   
+    border: 1px solid var(--search-box);
+    border-radius: 5px;
+    background-color: var(--box-color);
+    padding: 3px 5px;
+    box-shadow: inset 0 3px 6px var(--box-shadow);
+    width: 190px;
+}
+
+.add-items div {
+    text-align: start;
+    padding: 0;
+}
+
+.amount {
+    padding: 5px;
+    border: 1px solid var(--search-box);
+    border-radius: 5px;
+    background-color: var(--box-color);
+    box-shadow: inset 0 3px 6px var(--box-shadow);
+}
+
+.add-form button {
+    margin: 10px 30px;
+}
+
+.hdn {
+    display: none;
+};
+
+.err {
+    position: absolute;
+    top: 95%;
+    left: 45%;
+    color: red;
+    font-weight: bold;
+}
+
+.input-err {
+    border: 1px solid red;
+    border-radius: 5px
+};
+/* add product page style end */
+
+
+/* dashboard page style start */
+.list {
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    gap: 6px;
+}
+
+.list li {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 23px;
+    transition: all .2s ease-out;
+}
+
+.list li:hover {
+    background: var(--font);
+    border-radius: 10px;
+    color: var(--hover);
+    text-decoration: none;
+}
+
+.storage {
+    padding: 0;
+    margin: auto;
+}
+
+.options {
+    row-gap: 14px;
+    display: flex;
+    margin: 40px auto;
+}
+
+.options h4 {
+    margin: 10px;
+    transition: all .2s ease-out;
+    text-align: center;
+}
+
+.options h4:hover {
+    color: var(--text-hover);
+    cursor: pointer;
+}
+
+.sort-item {
+    color: var(--font);
+}
+
+.sort-item:hover {
+    color: var(--text-hover);
+    text-decoration: none;
+}
+
+.search-bar {
+    margin: auto;
+    width: 85%;
+}
+
+.inventory {
+    gap: 45px;
+    margin: 50px 10px;
+}
+
+.items {
+    background-image: var(--background);
+    border-radius: 45px;
+}
+
+.product-card {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.image-container {
+    display: flex;
+    padding: 0;
+}
+
+
+.item-card {
+    background-color: var(--hover);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.item-info {
+    margin: 5px 0;
+    line-height: 15px;
+}
+
+.product-name span {
+    margin: 0 10px;
+}
+
+.date {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.date p {
+    padding: 0;
+}
+
+.update {
+    display: flex;
+    padding: 0;
+}
+
+
+.update button {
+    font-size: 16px;
+    margin: 2px 5px 0 0;
+}
+
+.past {
+    color: var(--past);
+}
+
+.danger {
+    color: var(--danger);
+}
+
+.safe {
+    color: var(--safe);
+}
+/* dashboard page style end */
+
+
+/* media query for screen = < 1400px */
+@media screen and (max-width: 1400px) {
+    .list-button {
+        height: 50px;
+        margin: 5px 0;
+    }
+}
+
+
+/* media query for screen = < 1220px */
+@media screen and (max-width: 1220px) {
+    .list-button span {
+        font-size: 18px;
+    }
+
+    .dates p, .add-items p {
+        font-size: 22px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 6.5rem);
+    }
+
+    .logo {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+
+/* media query for screen = < 1180px */
+@media screen and (max-width: 1180px) {
+    .list-button span {
+        font-size: 16px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 5.5rem);
+    }
+
+    .dates p, .add-items p {
+        font-size: 20px;
+    }
+
+    .form-select, .history button, .list li {
+        font-size: 18px;
+    }
+    
+   .nav-link {
+        font-size: 25px;
+    }
+
+    .logo {
+        width: 90%;
+    }
+}
+
+
+/* media query for screen = < 992px */
+@media screen and (max-width: 991px) {
+    .history {
+        max-width: 100%;
+    }
+
+    .list {
+        display: flex;
+        margin-top: 10px;
+        gap: 0;
+        column-gap: 20px;
+    }
+
+    ul > li {
+        font-size: 17px;
+    } 
+
+    .options h4 {
+        font-size: 21px;
+    }
+
+    .introduction p {
+        font-size: 18px;
+    }
+
+    .introduction h2 {
+        font-size: 32px;
+    }
+
+    .login label {
+        font-size: 20px;
+    }
+
+    .login button, .login a {
+        font-size: 18px;
+    }
+
+    .bar {
+       font-size: 18px;  
+    }
+
+    .items {
+        margin: auto;
+    }
+
+    .input-form {
+        margin: 60px auto auto auto;
+    }
+
+    .nav-link {
+        font-size: 22px;
+        margin: 0 14px;
+    }
+
+    .logo {
+        width: 100%;
+        height: 82%;
+    }
+
+}
+
+
+/* media query for screen = < 830px */
+@media screen and (max-width: 830px) {
+    .list-button span {
+        font-size: 15px;
+    }
+
+    .list-button:before {
+        width: calc(100% - 4.5rem);
+    }
+
+    .list-button {
+        height: 40px;
+    }
+
+    ul > li {
+        font-size: 16px;
+    } 
+
+    header div h1 {
+        font-size: 52px;
+    }
+
+    .showall {
+        font-size: 19px;
+    }
+
+    .options h4 {
+        font-size: 19px;
+    }
+
+    .nav-link {
+        margin: 0 8px;
+    }
+
+    .logo {
+        height: 70%;
+    }
+    
+    .dates {
+        row-gap: 20px;
+    }
+}
+
+
+/* media query for screen = < 760px */
+@media screen and (max-width: 767px) {
+    .list-button span {
+        font-size: 16px;
+    }
+
+    .list-button {
+        height: 45px;
+    }
+
+    .nav-link {
+        font-size: 16px; 
+        margin: 0;   
+    }
+
+    .category-section img, .card-img {
+        display: none;
+    }
+
+    .input-form {
+        margin: 20px auto auto auto;
+    }
+
+    .add-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    header div h1 {
+        font-size: 45px;
+    }
+
+    ul > li {   
+        font-size: 13px;
+    }
+
+    .product-image {
+        display: none;
+    }
+
+    .items{
+        margin: 5px auto;
+    }
+
+    .inventory {
+        gap: 0;
+    }
+
+    .options h4 {
+        font-size: 17px;
+    }
+
+    .introduction {
+        margin: auto;
+    }
+
+    .introduction h2 {
+        font-size: 30px;
+    }
+
+    .login h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .item-card {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        margin: auto;
+    }
+
+    .showall button, .search-bar button {
+        font-size: 18px;
+    }
+
+    .bar {
+        font-size: 16px;
+    }
+
+    .item-info {
+        font-size: 18px;
+    }
+
+    .item-info h4 {
+        font-size: 21px;
+    }
+
+    .logo {
+        width: 110%;
+        height: 66%;
+    }
+  
+}
+
+
+/* media query for screen = < 575px */
+@media screen and (max-width: 575px) {
+    .list-button span {
+        font-size: 14px;
+        
+    }
+
+    .list-button:before {
+        width: calc(100% - 3.5rem);
+    }
+
+    header div h1 {
+        font-size: 30px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        margin: auto;
+    }
+
+    .dates p, .add-items p, .form-select, .expire-date, .item-name, .amount {
+        font-size: 15px;
+    }
+
+    .dates {
+        row-gap: 10px;
+    }
+
+    .add-form button, footer {
+        font-size: 18px;
+    }
+
+    ul > li {   
+        font-size: 11px;
+    }
+
+    .login h2, .introduction h2 {
+        font-size: 28px;
+    }
+
+    .goals-card h4 {
+        font-size: 20px;
+    }
+
+    .goals-card p {
+        font-size: 18px;
+    }
+
+    .search-bar {
+        width: 95%;
+    }
+
+    .bar {
+        font-size: 14px;
+    }
+
+    .item-info {
+        font-size: 16px;
+    }
+
+    .item-info h4 {
+        font-size: 19px;
+    }
+
+    .options {
+        row-gap: 0;
+        margin: 20px auto;
+    }
+
+    .options h4 {
+        font-size: 14px;
+    }
+
+    .list li, .history button {
+        font-size: 15px;
+    }
+
+    .showall button, .update button, .history button {
+        font-size: 14px;
+    }
+
+    .search {
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 45%;
+        height: 85%;
+    }
+
+    .nav {
+        padding: 10px 0 0 0;
+    }
+
+    .login button, .login a {
+        margin: 10px 0;
+    }
+}
+
+
+/* media query for screen = < 392px */
+@media screen and (max-width: 392px) {
+    .dates p, .add-items p, .form-select, .expire-date, .item-name, .amount {
+        font-size: 12px;
+    }
+
+    .dates {
+        row-gap: 0;
+    }
+
+    .list-button span {
+        font-size: 11px;
+    }
+
+    header div h1 {
+        font-size: 25px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .add-form button, footer {
+        font-size: 16px;
+    }
+
+    .login h2, .introduction h2 {
+        font-size: 26px;
+    }
+
+    .goals-card h4, .login label {
+        font-size: 18px;
+    }
+
+    .goals-card p, .introduction p, .login button, .login a  {
+        font-size: 16px;
+    }
+
+    .item-info {
+        font-size: 14px;
+    }
+
+    .item-info h4 {
+        font-size: 16px;
+    }
+
+    .showall button, .update button, .history button, .search {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 60%;
+    }
+}

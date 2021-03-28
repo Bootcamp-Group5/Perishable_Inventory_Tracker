@@ -1,26 +1,45 @@
- <!-- this form is sign up handler-->
-        <form class="signup-form row login-form justify-content-center">
-            <div class="col-sm-6 row login">
-              <div class="col-sm-12">
-                <h2>Sign Up</h2>
-              </div>
+
+        <!-- this form is sign up handler-->
+<div class="row">
+  <section class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 row aboutus">
+   {{> about-us introduction}}
+
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-10 col-10 signup-form row login-form">
+      <form class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 row login">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <h2>Sign Up</h2>
+        </div>
           
-              <div class="col-sm-12">
-                <label for="username-signup" class="form-label">Username:</label>
-                <input type="text" id="username-signup" class="form-control" />
-              </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="username-signup" class="form-label">Username:</label>
+          <input type="text" id="username-signup" class="form-control" />
+        </div>
           
-              <div class="col-sm-12">
-                <label for="password-signup" class="form-label">Password:</label>
-                <input type="password" id="password-signup" class="form-control" />
-              </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="password-signup" class="form-label">Password:</label>
+          <input type="password" id="password-signup" class="form-control" />
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="phone_number-signup" class="form-label">Phone number:</label>
+          <input type="phone_number" id="phone_number-signup" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="e.g 123-456-7890" minlength="12" maxlength="12" />
+        </div>
+
           
-              <div class="col-sm-6">
-                <button type="submit" class="btn">Sign Up</button>
-              </div>
+        <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 col-12">
+          <button type="submit" class="btn">Sign Up</button>
+        </div>
           
-              <div class="col-sm-6">
-                <a href="/login" class="btn">Login Instead</a>
-              </div>
-            </div>
-        </form>
+        <div class="col-xl-6 col-lg-6 col-md-7 col-sm-6 col-12">
+         <a href="/login" class="btn">Login Instead</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+   {{> main-cards cards}}
+</div>
+        
+
+
+<script src="/javascript/sign-up.js"></script>

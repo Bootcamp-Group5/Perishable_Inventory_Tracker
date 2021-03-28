@@ -1,58 +1,43 @@
-<!-- This is the  main handler -->
-<!DOCTYPE html>
-<html lang="en">
+<!-- this form is login handler-->
+<div class="row">
+  <section class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 row aboutus">
+    {{> about-us introduction}}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Perishable Invertory Tracker</title>
-</head>
-
-<body>
-
-
-    <main>
-        <!-- this form is login handler-->
-        <div class="introduction">
-            <h3>
-               This is a barcode reading application that will track your perishable foods and give you recipes.
-            </h3>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-10 col-10 row login-form">
+      <form class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 row login">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <h2>Log In</h2>
         </div>
-
-        <form class="row justify-content-center">
-            <div class="col-sm-6 row login">
-              <div class="col-sm-12">
-                <h2>Log In</h2>
-              </div>
           
-              <div class="col-sm-12">
-                <label for="username-login" class="form-label">Username:</label>
-                <input type="text" id="username-login" class="form-control" />
-              </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="username-login" class="form-label">Username:</label>
+          <input type="text" id="username-login" class="form-control" />
+        </div>
           
-              <div class="col-sm-12">
-                <label for="password-login" class="form-label">Password:</label>
-                <input type="password" id="password-login" class="form-control" />
-              </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="password-login" class="form-label">Password:</label>
+          <input type="password" id="password-login" class="form-control" />
+        </div>
           
-              <div class="col-sm-6">
-                <button type="submit" class="btn">Login</button>
-              </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-12">
+         <button type="submit" class="btn">Login</button>
+        </div>
           
-              <div class="col-sm-6">
-                  <!-- need to input the href after the API routes complete -->
-                <a href="" class="btn">Sign Up Instead</a>
-              </div>
-            </div> 
-          </form>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+        <!-- need to input the href after the API routes complete -->
+          <a href="/signUp" class="btn">Sign Up Instead</a>
+        </div>
+      </form> 
+    </div>
+  </section>
 
-    </main>
+  {{> main-cards cards}}
 
-    <footer></footer>
+</div>
 
-</body>
 
-</html>
+
+<script src="/javascript/login.js"></script>
+
+
+
