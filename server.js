@@ -100,7 +100,8 @@ const client = require('twilio') (accountSid, authToken)
 
 const { Product, User} = require('./models');
 
-setInterval(getAllUsers, 1000 * 60 * 60 * 24);
+// setInterval(getAllUsers, 1000 * 60 * 60 * 24);
+getAllUsers();
 
 function getAllUsers() {
   User.findAll({
@@ -210,9 +211,16 @@ function generateText(userObj) {
   let text = `Hey ${userObj.username}!\n`;
 
   userObj.products.forEach(product => {
-    text += `${product.name} expires in ${product.date_diff} days!\n`;
+    let datetxt = `in ${product.date_diff} days!`;
+    if (product.date_diff === 0) {
+      datetxt = 'today!'
+    } else if (product.date_diff === 1) {
+      datetxt = `tomorrow!`;
+    };
+    text += `${product.quantity} ${product.name} expires ${datetxt}`;
   });
 
+  console.log(text);
   return text;
 };
 
