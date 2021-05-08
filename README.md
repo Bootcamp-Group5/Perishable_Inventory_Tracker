@@ -50,7 +50,7 @@ This webpage uses user input to track items that they input into our system. We 
 
 ### Backend
 * Json 
-* Tsql for the database
+* Sequelize (mysql2) for the database
 * Node.js
  
  <a name="Functionality"></a> 
